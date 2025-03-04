@@ -13,8 +13,8 @@
         android:id="@+id/imgWallpaper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.5"
-        android:contentDescription="Wallpaper"
+        android:alpha="0.3"
+        android:contentDescription="@string/wallpapertitle"
         android:scaleType="centerCrop" />
 
     <View
@@ -58,7 +58,7 @@
             android:layout_height="match_parent"
             android:layout_margin="5dp"
 
-            android:contentDescription="Preview Image"
+            android:contentDescription="@string/preview_image"
             android:scaleType="centerCrop" />
 
         <!-- Time Display -->
@@ -108,8 +108,9 @@
                 android:layout_height="64dp"
                 android:layout_marginEnd="48dp"
                 android:background="@null"
-                android:contentDescription="Call"
-                android:src="@drawable/flashlight" />
+                android:contentDescription="@string/call"
+                android:src="@drawable/flashlight"
+                app:tint="@color/white" />
 
             <ImageButton
                 android:id="@+id/btnAction2"
@@ -117,7 +118,7 @@
                 android:layout_height="64dp"
                 android:layout_marginStart="48dp"
                 android:background="@null"
-                android:contentDescription="Camera"
+                android:contentDescription="@string/camera"
                 android:src="@drawable/camera" />
         </LinearLayout>
 

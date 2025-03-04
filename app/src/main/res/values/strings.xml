@@ -21,4 +21,14 @@
 
     <string name="exclusive_content_title">Exclusive Content</string>
     <string name="exclusive_content_description">Get access to premium wallpapers tones.</string>
+    <string name="wallpapertitle">Wallpaper</string>
+    <string name="camera">Camera</string>
+    <string name="call">Call</string>
+    <string name="preview_image">Preview Image</string>
+    <string name="wallpaperTitle">Wallpaper</string>
+    <string name="previewimage">Preview Image</string>
+    <string name="callTitle">Call</string>
+    <string name="Title">Camera</string>
+    <string name="browserTitle">Browser</string>
+    <string name="youtube">YouTube</string>
 </resources>
