@@ -3,66 +3,67 @@ package com.wallpaper.setting
 import android.app.WallpaperManager
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.wallpaper.R
 import com.wallpaper.databinding.ActivitySettingBinding
 import java.io.IOException
 
 class Setting : AppCompatActivity() {
-    private lateinit var binding:ActivitySettingBinding
+    private lateinit var binding: ActivitySettingBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivitySettingBinding.inflate(layoutInflater)
+        binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
-        }
+        setupUI()
+    }
 
-        binding.rateButton.setOnClickListener {
-            try {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName"))
-                startActivity(intent)
-            } catch (e: ActivityNotFoundException) {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=$packageName"))
-                startActivity(intent)
-            }
-        }
-        val packageInfo = packageManager.getPackageInfo(packageName, 0)
-        val versionName = packageInfo.versionName
-
-        binding.versionButton.text= "Version $versionName"
-
-        binding.shareButton.setOnClickListener {
-            val appPackageName = packageName
-            val shareIntent = Intent(Intent.ACTION_SEND).apply {
-                type = "text/plain"
-                putExtra(
-                    Intent.EXTRA_TEXT,
-                    "Check out this amazing app: https://play.google.com/store/apps/details?id=$appPackageName"
-                )
-            }
-            startActivity(Intent.createChooser(shareIntent, "Share app via"))
-        }
-        binding.wallpaperButton.setOnClickListener {
-           resetToDefaultWallpaper()
+    private fun setupUI() {
+        binding.apply {
+            btnBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
+            rateButton.setOnClickListener { openAppInStore() }
+            shareButton.setOnClickListener { shareApp() }
+            wallpaperButton.setOnClickListener { resetToDefaultWallpaper() }
+            val versionName = packageManager.getPackageInfo(packageName, 0).versionName
+            versionText.text = versionName
         }
     }
+
+
+    private fun openAppInStore() {
+        val appUri = Uri.parse("market://details?id=$packageName")
+        val webUri = Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+        try {
+            startActivity(Intent(Intent.ACTION_VIEW, appUri))
+        } catch (e: ActivityNotFoundException) {
+            startActivity(Intent(Intent.ACTION_VIEW, webUri))
+        }
+    }
+
+    private fun shareApp() {
+        val shareIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(
+                Intent.EXTRA_TEXT,
+                "Check out this amazing app: https://play.google.com/store/apps/details?id=$packageName"
+            )
+        }
+        startActivity(Intent.createChooser(shareIntent, "Share app via"))
+    }
+
     private fun resetToDefaultWallpaper() {
         try {
-            val wallpaperManager = WallpaperManager.getInstance(this)
-            wallpaperManager.clear() // Reset to system default wallpaper
-
-            Toast.makeText(this, "Wallpaper reset to default!", Toast.LENGTH_SHORT).show()
+            WallpaperManager.getInstance(this).clear()
+            showToast("Wallpaper reset to default!")
         } catch (e: IOException) {
-            e.printStackTrace()
-            Toast.makeText(this, "Failed to reset wallpaper", Toast.LENGTH_SHORT).show()
+            showToast("Failed to reset wallpaper")
         }
     }
 
-
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
 }

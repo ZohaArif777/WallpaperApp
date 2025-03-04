@@ -10,5 +10,9 @@
     <color name="button">#FFB6C1</color>
     <color name="tint">#80000000</color>
 
+    <color name="dark_primary">#BB86FC</color>
+    <color name="dark_surface">#121212</color>
+    <color name="light_surface">#FFFFFF</color>
+
 
 </resources>

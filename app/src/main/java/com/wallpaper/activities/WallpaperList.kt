@@ -28,11 +28,11 @@ class WallpaperList : AppCompatActivity() {
 
         adapter = RecyclerviewAdapter(wallpaperList, { selectedWallpaper ->
             val intent = Intent(this, WallpaperPlayer::class.java)
-            intent.putExtra("WALLPAPER_IMAGE", selectedWallpaper.img) // Pass the wallpaper image resource ID
+            intent.putExtra("WALLPAPER_IMAGE", selectedWallpaper.img)
             startActivity(intent)
         }, isDetailedView = true)
 
-        binding.recyclerView.layoutManager = GridLayoutManager(this, 3) // 3 columns in a row
+        binding.recyclerView.layoutManager = GridLayoutManager(this, 3)
         binding.recyclerView.adapter = adapter
     }
 

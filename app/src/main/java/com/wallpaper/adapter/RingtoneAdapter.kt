@@ -12,13 +12,14 @@ import com.wallpaper.databinding.RingtoneListBinding
 class RingtoneAdapter(
     private val context: Context,
     private val ringtoneList: List<Ringtones>,
-    private val soundType: String // "ringtone" or "notification"
+    private val soundType: String
 ) : RecyclerView.Adapter<RingtoneAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: RingtoneListBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = RingtoneListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            RingtoneListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -35,7 +36,7 @@ class RingtoneAdapter(
                     putExtra("RINGTONE_SIZE", ringtone.size)
                     putExtra("RINGTONE_DURATION", ringtone.duration)
                     putExtra("RINGTONE_RES_ID", ringtone.rawResId)
-                    putExtra("SOUND_TYPE", soundType) // Pass correct type
+                    putExtra("SOUND_TYPE", soundType)
                 }
                 context.startActivity(intent)
             }

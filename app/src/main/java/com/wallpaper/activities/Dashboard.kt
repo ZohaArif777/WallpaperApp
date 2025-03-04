@@ -16,18 +16,30 @@ class Dashboard : AppCompatActivity() {
 
         setupButtonListeners()
         binding.setting.setOnClickListener {
-            val intent=Intent(this, Setting::class.java)
+            val intent = Intent(this, Setting::class.java)
             startActivity(intent)
         }
     }
 
     private fun setupButtonListeners() {
-        binding.iphone.setOnClickListener { navigateToWallpaper("iPhone") }
-        binding.hd.setOnClickListener { navigateToWallpaper("HD") }
-        binding.ios.setOnClickListener { navigateToWallpaper("iOS") }
-        binding.samsung.setOnClickListener { navigateToWallpaper("Samsung") }
-        binding.ringtone.setOnClickListener { navigateToRingtone() }
-        binding.setting.setOnClickListener { navigateToSetting() }
+        binding.iphone.setOnClickListener {
+            navigateToWallpaper("iPhone")
+        }
+        binding.hd.setOnClickListener {
+            navigateToWallpaper("HD")
+        }
+        binding.ios.setOnClickListener {
+            navigateToWallpaper("iOS")
+        }
+        binding.samsung.setOnClickListener {
+            navigateToWallpaper("Samsung")
+        }
+        binding.ringtone.setOnClickListener {
+            navigateToRingtone()
+        }
+        binding.setting.setOnClickListener {
+            navigateToSetting()
+        }
     }
 
     private fun navigateToWallpaper(category: String) {
@@ -40,6 +52,7 @@ class Dashboard : AppCompatActivity() {
         val intent = Intent(this, Setting::class.java)
         startActivity(intent)
     }
+
     private fun navigateToRingtone() {
         val intent = Intent(this, Ringtone::class.java)
         startActivity(intent)

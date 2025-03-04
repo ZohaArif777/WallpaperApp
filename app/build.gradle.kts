@@ -26,8 +26,8 @@ android {
             )
         }
     }
-    buildFeatures{
-        viewBinding=true
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -48,7 +48,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation ("com.makeramen:roundedimageview:2.3.0")
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.roundedimageview)
+    implementation(libs.glide)
+    implementation (libs.circleindicator)
+
 
 }

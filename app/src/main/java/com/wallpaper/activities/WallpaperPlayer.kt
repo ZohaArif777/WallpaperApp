@@ -28,20 +28,30 @@ class WallpaperPlayer : AppCompatActivity() {
             Toast.makeText(this, "No wallpaper selected!", Toast.LENGTH_SHORT).show()
         }
 
-        binding.btnBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
-        binding.btnHome.setOnClickListener { openPreviewActivity(wallpaperResId) }
-        binding.btnLock.setOnClickListener { openLockPreviewActivity(wallpaperResId) }
-        binding.btnWallpaper.setOnClickListener { showWallpaperOptions(wallpaperResId) }
+        binding.btnBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+        binding.btnHome.setOnClickListener {
+            openPreviewActivity(wallpaperResId)
+        }
+        binding.btnLock.setOnClickListener {
+            openLockPreviewActivity(wallpaperResId)
+        }
+        binding.btnWallpaper.setOnClickListener {
+            showWallpaperOptions(wallpaperResId)
+        }
 
-        // Toggle Fullscreen Mode on btnFit click
-        binding.btnFit.setOnClickListener { toggleFullscreenMode() }
+        binding.btnFit.setOnClickListener {
+            toggleFullscreenMode()
+        }
 
-        // Restore buttons when clicking anywhere on the screen
-        binding.img.setOnClickListener { if (isFullscreen) toggleFullscreenMode() }
+        binding.img.setOnClickListener {
+            if (isFullscreen) toggleFullscreenMode()
+        }
     }
 
     private fun toggleFullscreenMode() {
-        isFullscreen = !isFullscreen // Toggle state
+        isFullscreen = !isFullscreen
 
         val visibility = if (isFullscreen) View.GONE else View.VISIBLE
         binding.btnBack.visibility = visibility
@@ -58,7 +68,7 @@ class WallpaperPlayer : AppCompatActivity() {
     }
 
     private fun openLockPreviewActivity(wallpaperId: Int) {
-        val intent = Intent(this, lockscreen_preview::class.java)
+        val intent = Intent(this, lockscreenPreview::class.java)
         intent.putExtra("WALLPAPER_IMAGE", wallpaperId)
         startActivity(intent)
     }

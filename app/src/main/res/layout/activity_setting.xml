@@ -151,7 +151,7 @@
             android:gravity="start"
             android:paddingStart="2dp"
             android:paddingEnd="2dp"
-            android:text="Share app with friend and family"
+            android:text="Share app with friends and family"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -183,19 +183,41 @@
             android:textColor="@color/black"
             android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/version_button"
+        <!-- Version Button and TextView in one row -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/version"
-            android:fontFamily="@font/aclonica"
-            android:gravity="start"
-            android:paddingStart="0dp"
-            android:paddingEnd="0dp"
-            android:text="version "
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="8dp">
+
+            <Button
+                android:id="@+id/version_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:backgroundTint="@color/white"
+                android:drawableLeft="@drawable/version"
+                android:fontFamily="@font/aclonica"
+                android:gravity="start"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:text="Version"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/version_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="1.0.0"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
     </LinearLayout>
 
 

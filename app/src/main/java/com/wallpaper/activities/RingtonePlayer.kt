@@ -30,13 +30,10 @@ class RingtonePlayer : AppCompatActivity() {
         R.raw.ringtone4,
         R.raw.ringtone5,
         R.raw.ringtones6,
-        R.raw.ringtones6,
-        R.raw.ringtones2,
         R.raw.ringtone7,
         R.raw.ringtone8,
         R.raw.ringtone9,
-        R.raw.ringtone10,
-
+        R.raw.ringtone10
     )
 
     private val notificationList = listOf(
@@ -49,7 +46,6 @@ class RingtonePlayer : AppCompatActivity() {
         R.raw.notification7,
         R.raw.notification8,
         R.raw.notification9,
-        R.raw.notification10,
         R.raw.notification1
     )
 
@@ -69,7 +65,7 @@ class RingtonePlayer : AppCompatActivity() {
         selectedList = if (soundType == "notification") notificationList else ringtoneList
         currentIndex = selectedList.indexOf(ringtoneResId).takeIf { it != -1 } ?: 0
 
-        binding.textName.text = ringtoneName
+        updateSoundName() // Set initial name
 
         binding.btnPlayPause.setOnClickListener { togglePlayPause() }
         binding.btnNext.setOnClickListener { playNextSound() }
@@ -126,6 +122,7 @@ class RingtonePlayer : AppCompatActivity() {
         if (currentIndex < selectedList.size - 1) {
             currentIndex++
             playSound()
+            updateSoundName()
         }
     }
 
@@ -133,7 +130,14 @@ class RingtonePlayer : AppCompatActivity() {
         if (currentIndex > 0) {
             currentIndex--
             playSound()
+            updateSoundName()
         }
+    }
+
+    private fun updateSoundName() {
+        val resourceId = selectedList[currentIndex]
+        val soundName = resources.getResourceEntryName(resourceId).replace("_", " ")
+        binding.textName.text = soundName
     }
 
     private fun updateSeekBar() {
@@ -223,12 +227,14 @@ class RingtonePlayer : AppCompatActivity() {
 
     private fun setSoundAs(type: String) {
         val soundUri = Uri.parse("android.resource://$packageName/${selectedList[currentIndex]}")
-        RingtoneManager.setActualDefaultRingtoneUri(this, when (type) {
-            "Ringtone" -> RingtoneManager.TYPE_RINGTONE
-            "Notification" -> RingtoneManager.TYPE_NOTIFICATION
-            "Alarm" -> RingtoneManager.TYPE_ALARM
-            else -> return
-        }, soundUri)
+        RingtoneManager.setActualDefaultRingtoneUri(
+            this, when (type) {
+                "Ringtone" -> RingtoneManager.TYPE_RINGTONE
+                "Notification" -> RingtoneManager.TYPE_NOTIFICATION
+                "Alarm" -> RingtoneManager.TYPE_ALARM
+                else -> return
+            }, soundUri
+        )
 
         Toast.makeText(this, "$type set successfully!", Toast.LENGTH_SHORT).show()
     }

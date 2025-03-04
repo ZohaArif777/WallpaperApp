@@ -1,17 +1,14 @@
 package com.wallpaper.activities
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.wallpaper.R
 import com.wallpaper.databinding.ActivityLockscreenPreviewBinding
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class lockscreen_preview : AppCompatActivity() {
+class lockscreenPreview : AppCompatActivity() {
     private lateinit var binding: ActivityLockscreenPreviewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding=ActivityLockscreenPreviewBinding.inflate(layoutInflater)

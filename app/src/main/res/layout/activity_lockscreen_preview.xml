@@ -6,15 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pink"
-    tools:context=".activities.lockscreen_preview">
+    tools:context=".activities.lockscreenPreview">
 
     <!-- Background Wallpaper -->
     <ImageView
         android:id="@+id/imgWallpaper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:alpha="0.5"
         android:contentDescription="Wallpaper"
         android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="#80000000" />
+
 
     <!-- Back Button -->
     <ImageButton

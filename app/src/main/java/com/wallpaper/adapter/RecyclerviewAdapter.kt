@@ -10,7 +10,7 @@ import com.wallpaper.dataclass.Wallpaper
 class RecyclerviewAdapter(
     private var wallpaperList: List<Wallpaper>,
     private val onItemClick: (Wallpaper) -> Unit,
-    private val isDetailedView: Boolean // Determines which layout to use
+    private val isDetailedView: Boolean
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -34,7 +34,7 @@ class RecyclerviewAdapter(
                 holder.binding.img.setImageResource(wallpaper.img)
 
                 holder.binding.root.setOnClickListener {
-                    onItemClick(wallpaper) // Pass wallpaper object to click listener
+                    onItemClick(wallpaper)
                 }
             }
 
@@ -42,7 +42,7 @@ class RecyclerviewAdapter(
                 holder.binding.img.setImageResource(wallpaper.img)
 
                 holder.binding.root.setOnClickListener {
-                    onItemClick(wallpaper) // Pass wallpaper object to click listener
+                    onItemClick(wallpaper)
                 }
             }
         }
@@ -51,5 +51,6 @@ class RecyclerviewAdapter(
     override fun getItemCount(): Int = wallpaperList.size
 
     class WallpaperViewHolder(val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root)
-    class WallpaperListViewHolder(val binding: DetailedListItemBinding) : RecyclerView.ViewHolder(binding.root)
+    class WallpaperListViewHolder(val binding: DetailedListItemBinding) :
+        RecyclerView.ViewHolder(binding.root)
 }

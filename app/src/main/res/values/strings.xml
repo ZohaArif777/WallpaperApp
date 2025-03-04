@@ -9,4 +9,16 @@
     <string name="hd">HD</string>
     <string name="iphone">iPhone</string>
     <string name="write_your_feedback_here">Write your feedback here</string>
+    <string name="toggle_theme">toggle_theme</string>
+    <string name="wallpaper_title">Stunning Wallpapers</string>
+    <string name="wallpaper_description">Discover an exclusive collection of high-quality wallpaper to make your phone screen stand out</string>
+
+    <string name="ringtones_title">Unique Phone Ringtones</string>
+    <string name="ringtones_description">Refresh your ringtone collection with our handpicked selection of unique sounds</string>
+
+    <string name="hd_wallpaper_title">HD Wallpaper For Every Style</string>
+    <string name="hd_wallpaper_description">Explore stunning HD wallpaper for every style, from nature to abstract art. Find the perfect match for your phone!</string>
+
+    <string name="exclusive_content_title">Exclusive Content</string>
+    <string name="exclusive_content_description">Get access to premium wallpapers tones.</string>
 </resources>
