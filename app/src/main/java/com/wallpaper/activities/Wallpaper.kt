@@ -31,7 +31,7 @@ class Wallpaper : AppCompatActivity() {
     private fun setupRecyclerView(category: String) {
         val wallpaperList = getWallpapersByCategory(category)
 
-        adapter = RecyclerviewAdapter(wallpaperList, { selectedWallpaper ->
+        adapter = RecyclerviewAdapter(wallpaperList, {
             val intent = Intent(this, WallpaperList::class.java)
             intent.putExtra("WALLPAPER_CATEGORY", category)
             startActivity(intent)
@@ -76,6 +76,7 @@ class Wallpaper : AppCompatActivity() {
                 Wallpaper(R.drawable.samsung_wallpaper4, "Samsung Wallpaper 4"),
                 Wallpaper(R.drawable.samsung_wallpaper, "Samsung Wallpaper 5")
             )
+
             "Ringtones" -> listOf(
                 Wallpaper(R.drawable.ringtones, "Ringtone Wallpaper 1"),
                 Wallpaper(R.drawable.ringtone_wallpaper1, "Ringtone Wallpaper 2")

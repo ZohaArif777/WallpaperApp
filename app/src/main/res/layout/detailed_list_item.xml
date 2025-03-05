@@ -16,6 +16,7 @@
             android:id="@+id/img"
             android:layout_width="match_parent"
             android:layout_height="250dp"
+            android:contentDescription="@string/img"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

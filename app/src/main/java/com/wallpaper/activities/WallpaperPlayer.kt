@@ -14,7 +14,7 @@ import java.io.IOException
 
 class WallpaperPlayer : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperPlayerBinding
-    private var isFullscreen = false // Track fullscreen state
+    private var isFullscreen = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,11 +100,7 @@ class WallpaperPlayer : AppCompatActivity() {
             val wallpaperManager = WallpaperManager.getInstance(this)
             val bitmap = BitmapFactory.decodeResource(resources, wallpaperResId)
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                wallpaperManager.setBitmap(bitmap, null, true, flag)
-            } else {
-                wallpaperManager.setBitmap(bitmap)
-            }
+            wallpaperManager.setBitmap(bitmap, null, true, flag)
 
             Toast.makeText(this, "Wallpaper set successfully!", Toast.LENGTH_SHORT).show()
         } catch (e: IOException) {

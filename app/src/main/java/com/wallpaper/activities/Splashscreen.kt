@@ -16,7 +16,6 @@ class Splashscreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashscreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         simulateSeekBarProgress()
     }
 

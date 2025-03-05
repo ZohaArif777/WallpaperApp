@@ -21,11 +21,8 @@ class wallpaperPreview : AppCompatActivity() {
         }
 
         val wallpaperResId = intent.getIntExtra("WALLPAPER_IMAGE", R.drawable.hd_wallpaper1)
-
         binding.imgWallpaper.setImageResource(wallpaperResId)
-
         binding.preImg.setImageResource(wallpaperResId)
-
         updateDateTime()
     }
 

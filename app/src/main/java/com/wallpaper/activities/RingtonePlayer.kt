@@ -25,28 +25,28 @@ class RingtonePlayer : AppCompatActivity() {
 
     private val ringtoneList = listOf(
         R.raw.ringtone1,
-        R.raw.ringtones2,
-        R.raw.ringtones3,
+        R.raw.ringtone2,
+        R.raw.ringtone3,
         R.raw.ringtone4,
         R.raw.ringtone5,
-        R.raw.ringtones6,
-        R.raw.ringtone7,
+        R.raw.ringtone6,
+        R.raw.ringtone6,
         R.raw.ringtone8,
         R.raw.ringtone9,
         R.raw.ringtone10
     )
 
     private val notificationList = listOf(
-        R.raw.notification11,
-        R.raw.notification2,
+        R.raw.notification1,
+        R.raw.notification8,
         R.raw.notification3,
         R.raw.notification4,
-        R.raw.notification5,
+        R.raw.notification4,
         R.raw.notification6,
         R.raw.notification7,
         R.raw.notification8,
         R.raw.notification9,
-        R.raw.notification1
+        R.raw.notification10
     )
 
     private var currentIndex: Int = 0
@@ -65,7 +65,7 @@ class RingtonePlayer : AppCompatActivity() {
         selectedList = if (soundType == "notification") notificationList else ringtoneList
         currentIndex = selectedList.indexOf(ringtoneResId).takeIf { it != -1 } ?: 0
 
-        updateSoundName() // Set initial name
+        updateSoundName()
 
         binding.btnPlayPause.setOnClickListener { togglePlayPause() }
         binding.btnNext.setOnClickListener { playNextSound() }

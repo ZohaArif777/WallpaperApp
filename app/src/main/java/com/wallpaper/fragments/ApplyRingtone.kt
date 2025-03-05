@@ -39,9 +39,9 @@ class ApplyRingtone : Fragment() {
 
     private fun loadRingtones() {
         val rawResources = listOf(
-            R.raw.ringtone1, R.raw.ringtones2, R.raw.ringtones3,
-            R.raw.ringtone4, R.raw.ringtone5, R.raw.ringtones6,
-            R.raw.ringtone7, R.raw.ringtone8, R.raw.ringtone9,
+            R.raw.ringtone1, R.raw.ringtone2, R.raw.ringtone3,
+            R.raw.ringtone4, R.raw.ringtone5, R.raw.ringtone6,
+            R.raw.ringtone6, R.raw.ringtone8, R.raw.ringtone9,
             R.raw.ringtone10
         )
 

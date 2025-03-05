@@ -53,7 +53,6 @@ class OnBoardingScreens : AppCompatActivity() {
 
         binding.indicator.setViewPager(binding.viewPager)
 
-        // Page change listener to update button text
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)

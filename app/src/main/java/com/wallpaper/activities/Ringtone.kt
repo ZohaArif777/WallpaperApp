@@ -11,7 +11,6 @@ import com.wallpaper.fragments.Notification
 
 class Ringtone : AppCompatActivity() {
     private lateinit var binding: ActivityRingtoneBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRingtoneBinding.inflate(layoutInflater)

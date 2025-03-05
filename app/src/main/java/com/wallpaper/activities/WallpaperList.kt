@@ -72,6 +72,7 @@ class WallpaperList : AppCompatActivity() {
                 Wallpaper(R.drawable.samsung_wallpaper4),
                 Wallpaper(R.drawable.samsung_wallpaper)
             )
+
             "Ringtones" -> listOf(
                 Wallpaper(R.drawable.ringtones, "Ringtone Wallpaper 1"),
                 Wallpaper(R.drawable.ringtone_wallpaper1, "Ringtone Wallpaper 2")

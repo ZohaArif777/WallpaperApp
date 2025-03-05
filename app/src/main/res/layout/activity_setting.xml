@@ -30,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/back"
                 android:src="@drawable/arrow"
                 app:tint="@color/white" />
 
@@ -39,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/aclonica"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -61,7 +62,7 @@
             android:id="@+id/premium_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Premium"
+            android:text="@string/premium"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -71,13 +72,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/premium"
-            android:drawableRight="@drawable/lestarrow"
+            android:drawableStart="@drawable/premium"
+            android:drawableEnd="@drawable/lestarrow"
             android:fontFamily="@font/aclonica"
             android:gravity="start"
             android:paddingStart="2dp"
             android:paddingEnd="2dp"
-            android:text="Buy Premium Version"
+            android:text="@string/buy_premium_version"
             android:textColor="@color/black"
             android:textSize="16sp" />
     </LinearLayout>
@@ -99,7 +100,7 @@
             android:id="@+id/wallpaper_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wallpaper Settings"
+            android:text="@string/wallpaper_settings"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -110,12 +111,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/gallery"
+            android:drawableStart="@drawable/gallery"
             android:fontFamily="@font/aclonica"
             android:gravity="start"
             android:paddingStart="2dp"
             android:paddingEnd="2dp"
-            android:text="Restore to system wallpaper"
+            android:text="@string/restore_to_system_wallpaper"
             android:textColor="@color/black"
             android:textSize="16sp" />
     </LinearLayout>
@@ -136,7 +137,7 @@
             android:id="@+id/general_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="General"
+            android:text="@string/general"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -146,12 +147,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/share"
+            android:drawableStart="@drawable/share"
             android:fontFamily="@font/aclonica"
             android:gravity="start"
             android:paddingStart="2dp"
             android:paddingEnd="2dp"
-            android:text="Share app with friends and family"
+            android:text="@string/share_app_with_friends_and_family"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -161,11 +162,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/star"
+            android:drawableStart="@drawable/star"
             android:fontFamily="@font/aclonica"
             android:gravity="start"
             android:paddingStart="2dp"
-            android:text="Rate Application"
+            android:paddingEnd="2dp"
+            android:text="@string/rate_application"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -174,12 +176,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/privacy"
+            android:drawableStart="@drawable/privacy"
             android:fontFamily="@font/aclonica"
             android:gravity="start"
             android:paddingStart="2dp"
             android:paddingEnd="2dp"
-            android:text="Privacy Policy"
+            android:text="@string/privacy_policy"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -198,12 +200,12 @@
                 android:layout_weight="1"
                 android:background="?android:selectableItemBackground"
                 android:backgroundTint="@color/white"
-                android:drawableLeft="@drawable/version"
+                android:drawableStart="@drawable/version"
                 android:fontFamily="@font/aclonica"
                 android:gravity="start"
                 android:paddingStart="2dp"
                 android:paddingEnd="2dp"
-                android:text="Version"
+                android:text="@string/version"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
@@ -212,7 +214,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
-                android:text="1.0.0"
+                android:paddingEnd="8dp"
+                android:text="@string/_1_0_0"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />

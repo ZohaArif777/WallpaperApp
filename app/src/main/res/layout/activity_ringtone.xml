@@ -30,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/back"
                 android:src="@drawable/arrow"
                 android:layout_marginEnd="15dp"
                 app:tint="@color/white" />
@@ -40,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:fontFamily="@font/aclonica"
-                android:text="Ringtones"
+                android:text="@string/ringtones"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>

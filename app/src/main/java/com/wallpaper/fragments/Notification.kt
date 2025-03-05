@@ -40,17 +40,16 @@ class Notification : Fragment() {
 
     private fun loadNotifications() {
         val rawResources = listOf(
-            R.raw.notification11,
-            R.raw.notification2,
+            R.raw.notification1,
+            R.raw.notification8,
             R.raw.notification3,
             R.raw.notification4,
-            R.raw.notification5,
+            R.raw.notification4,
             R.raw.notification6,
             R.raw.notification7,
             R.raw.notification8,
             R.raw.notification9,
-            R.raw.notification10,
-            R.raw.notification1
+            R.raw.notification10
         )
 
         rawResources.forEach { resId ->

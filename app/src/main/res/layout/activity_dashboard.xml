@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="@font/aclonica"
-                android:text="Dashboard"
+                android:text="@string/dashboard"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -39,6 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/setting"
                 android:src="@drawable/settings" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
@@ -57,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/aclonica"
-            android:text="iPhone"
+            android:text="@string/iphone_button"
             app:layout_constraintEnd_toStartOf="@id/hd"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +70,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/aclonica"
-            android:text="HD"
+            android:text="@string/hd_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iphone"
             app:layout_constraintTop_toTopOf="parent"
@@ -80,7 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/aclonica"
-            android:text="iOS"
+            android:text="@string/ios_button"
             app:layout_constraintEnd_toStartOf="@id/samsung"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iphone"
@@ -91,7 +92,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/aclonica"
-            android:text="Samsung"
+            android:text="@string/samsung_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/ios"
             app:layout_constraintTop_toBottomOf="@id/hd"
@@ -102,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/aclonica"
-            android:text="Ringtones"
+            android:text="@string/Ringtones"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
