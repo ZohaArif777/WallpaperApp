@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000073</color>
+    <color name="pink">#6F2A3F</color>
+    <color name="darkpink">#E91E63</color>
+    <color name="grey">#494546</color>
+    <color name="background">#A27E8C</color>
+    <color name="button">#FFB6C1</color>
+    <color name="tint">#80000000</color>
+    <color name="green">#10C08E</color>
+    <color name="app_black">#1E1D1D</color>
+    <color name="darkGrey">#5A5A5B</color>
+    <color name="Grey">#2B2B2C</color>
+    <color name="lightGrey"> #94949499</color>
+    <color name="dark_primary">#BB86FC</color>
+    <color name="dark_surface">#121212</color>
+    <color name="light_surface">#FFFFFF</color>
+    <color name="greyLight"> #4D4D4D</color>
+
+
+</resources>

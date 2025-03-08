@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "23853083528",
+    "project_id": "wallpaper-dadd9",
+    "storage_bucket": "wallpaper-dadd9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23853083528:android:9d996bc294e4c192c8a83d",
+        "android_client_info": {
+          "package_name": "com.wallpaper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrd_nT3ghzXShixr_yXsc1-ijNexHnTIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

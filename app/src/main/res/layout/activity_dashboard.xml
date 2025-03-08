@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1D1D"
+    tools:context=".base_app.Dashboard">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar"
+        android:backgroundTint="#1E1D1D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/toolbar_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/outfit"
+                android:text="@string/iphone_Wallpaper"
+                android:textColor="@color/white"
+                android:textSize="26sp" />
+
+            <ImageButton
+                android:id="@+id/premium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/setting"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:src="@drawable/premium_img" />
+
+            <ImageButton
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/setting"
+                android:src="@drawable/setting" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/iphone_Wallpaper"
+        android:layout_width="0dp"
+        android:layout_height="190dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/layout_shape"
+        android:backgroundTint="#374151"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iphoneimg1"
+            style="@style/RoundedShape"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iphonewallpaper2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/iphoneimg2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:contentDescription="@string/screen2"
+            android:src="@drawable/iphonewallpaper1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/outfit"
+            android:text="@string/iphone"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/iphoneimg2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/outfit"
+            android:text="@string/wallpaper_title"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iphoneimg2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.601" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/outfit"
+        android:text="@string/more_catagories"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iphone_Wallpaper" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <!-- iOS Button Layout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Ios_button"
+                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/layout_shape"
+                android:backgroundTint="#374151"
+                android:paddingStart="2dp"
+                android:paddingEnd="15dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iOSWallpaper1"
+                    style="@style/RoundedShape"
+                    android:layout_width="120dp"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ioswallpaper2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iOSWallpaper2"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/iosscreen"
+                    android:src="@drawable/ioswallpaper1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/arrow_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/arrow_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/outfit"
+                    android:text="@string/IOS"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/iOSWallpaper1"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Samsung Button Layout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/samsung"
+                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/layout_shape"
+                android:backgroundTint="#374151"
+                android:paddingStart="2dp"
+                android:paddingEnd="15dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/SamsungWallpaper1"
+                    style="@style/RoundedShape"
+                    android:layout_width="120dp"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/samsungwallpaper1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/SamsungWallpaper2"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/samsungscreen"
+                    android:src="@drawable/samsungwallpaper2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/Samsung_arrow_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="190dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/arrow_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/outfit"
+                    android:text="@string/samsung"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/SamsungWallpaper1"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- HD Button Layout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hd"
+                android:layout_width="190dp"
+                android:layout_height="170dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/layout_shape"
+                android:backgroundTint="#374151">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/HDWallpaper1"
+                    style="@style/RoundedShape"
+                    android:layout_width="120dp"
+                    android:layout_height="112dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/hdwallpaper1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/HDWallpaper2"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="20dp"
+                    android:contentDescription="@string/hdscreen"
+                    android:src="@drawable/hdwallpaper2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/HD_arrow_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/transparent"
+                    android:src="@drawable/arrow_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/outfit"
+                    android:text="@string/HD"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/HDWallpaper1"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <!--    Ringtones-->
+
+    <TextView
+        android:id="@+id/ringtones_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="260dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/outfit"
+        android:text="@string/Ringtones"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iphone_Wallpaper" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ringtones_button"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/layout_shape"
+        android:backgroundTint="#304441"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ringtones_title"
+        app:layout_constraintVertical_bias="0.126">
+
+
+        <ImageView
+            android:id="@+id/ringtone_img"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:background="@drawable/ringtone_button_shape"
+            android:contentDescription="@string/ringtones_screen"
+            android:padding="10dp"
+            android:src="@drawable/phone_img"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="@font/outfit"
+            android:text="@string/Ringtones"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
+            app:layout_constraintStart_toEndOf="@+id/ringtone_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="@font/outfit"
+            android:text="@string/explore_new_ringtones_n_in_one_place"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toEndOf="@+id/ringtone_img"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.661" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ringtone_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/transparent"
+            android:src="@drawable/arrow_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/music"
+            android:src="@drawable/ringtone_img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
