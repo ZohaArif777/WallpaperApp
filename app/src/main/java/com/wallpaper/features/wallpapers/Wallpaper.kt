@@ -1,13 +1,13 @@
-package com.wallpaper.features
+package com.wallpaper.features.wallpapers
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.wallpaper.R
-import com.wallpaper.adapter.RecyclerviewAdapter
+import com.wallpaper.features.adapters.RecyclerviewAdapter
 import com.wallpaper.databinding.ActivityWallpaperBinding
-import com.wallpaper.dataclass.Wallpaper
+import com.wallpaper.features.data_class.Wallpaper
 
 class Wallpaper : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperBinding
@@ -53,11 +53,12 @@ class Wallpaper : AppCompatActivity() {
             )
 
             "HD" -> listOf(
-                Wallpaper(R.drawable.hd_wallpaper1, "HD Wallpaper 1"),
-                Wallpaper(R.drawable.hd_wallpaper2, "HD Wallpaper 2"),
-                Wallpaper(R.drawable.hd_wallpaper3, "HD Wallpaper 3"),
-                Wallpaper(R.drawable.hd_wallpaper4, "HD Wallpaper 4"),
-                Wallpaper(R.drawable.hd_wallpaper5, "HD Wallpaper 5")
+                Wallpaper(R.drawable.hd_wallpaper1, "Car"),
+                Wallpaper(R.drawable.hd_wallpaper2, "Animals"),
+                Wallpaper(R.drawable.hd_wallpaper3, "Nature"),
+                Wallpaper(R.drawable.hd_wallpaper4, "Aesthetics"),
+                Wallpaper(R.drawable.hd_wallpaper5, "City"),
+                Wallpaper(R.drawable.hd_wallpaper5, "Abstract")
             )
 
             "iOS" -> listOf(
@@ -65,7 +66,8 @@ class Wallpaper : AppCompatActivity() {
                 Wallpaper(R.drawable.ios_wallpaper2, "iOS 17"),
                 Wallpaper(R.drawable.ios_wallpaper3, "iOS 16"),
                 Wallpaper(R.drawable.ios_wallpaper4, "iOS 15"),
-                Wallpaper(R.drawable.ios_wallpaper5, "iOS 14")
+                Wallpaper(R.drawable.ios_wallpaper5, "iOS 14"),
+                Wallpaper(R.drawable.ios_wallpaper5, "iOS 13")
             )
 
             "Samsung" -> listOf(

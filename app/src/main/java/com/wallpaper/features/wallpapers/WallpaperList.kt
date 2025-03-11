@@ -1,14 +1,13 @@
-package com.wallpaper.features
+package com.wallpaper.features.wallpapers
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wallpaper.R
-import com.wallpaper.adapter.RecyclerviewAdapter
+import com.wallpaper.features.adapters.RecyclerviewAdapter
 import com.wallpaper.databinding.ActivityWallpaperListBinding
-import com.wallpaper.dataclass.Wallpaper
+import com.wallpaper.features.data_class.Wallpaper
 
 class WallpaperList : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperListBinding
@@ -78,7 +77,27 @@ class WallpaperList : AppCompatActivity() {
                 Wallpaper(R.drawable.iphone_15)
             )
 
-            "HD Wallpaper 1" -> listOf(
+            "Car" -> listOf(
+                Wallpaper(R.drawable.hd_wallpaper1),
+                Wallpaper(R.drawable.hd_wallpaper2)
+            )
+            "Animal" -> listOf(
+                Wallpaper(R.drawable.hd_wallpaper1),
+                Wallpaper(R.drawable.hd_wallpaper2)
+            )
+            "Nature" -> listOf(
+                Wallpaper(R.drawable.hd_wallpaper1),
+                Wallpaper(R.drawable.hd_wallpaper2)
+            )
+            "Aesthetics" -> listOf(
+                Wallpaper(R.drawable.hd_wallpaper1),
+                Wallpaper(R.drawable.hd_wallpaper2)
+            )
+            "City" -> listOf(
+                Wallpaper(R.drawable.hd_wallpaper1),
+                Wallpaper(R.drawable.hd_wallpaper2)
+            )
+            "Abstract" -> listOf(
                 Wallpaper(R.drawable.hd_wallpaper1),
                 Wallpaper(R.drawable.hd_wallpaper2)
             )
