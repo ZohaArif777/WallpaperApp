@@ -1,4 +1,4 @@
-package com.wallpaper.features
+package com.wallpaper.features.wallpapers
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +20,7 @@ class wallpaperPreview : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        val wallpaperResId = intent.getIntExtra("WALLPAPER_IMAGE", R.drawable.hd_wallpaper1)
+        val wallpaperResId = intent.getIntExtra("WALLPAPER_IMAGE", R.drawable.hd1)
         binding.imgWallpaper.setImageResource(wallpaperResId)
         binding.preImg.setImageResource(wallpaperResId)
         updateDateTime()

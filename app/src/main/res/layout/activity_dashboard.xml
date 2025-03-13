@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1E1D1D"
-    tools:context=".base_app.Dashboard">
+    tools:context=".base_app.activites.Dashboard">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/toolbar"
         android:backgroundTint="#1E1D1D"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,8 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/toolbar_text"
@@ -48,6 +48,7 @@
                 android:id="@+id/setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/setting"
                 android:src="@drawable/setting" />
@@ -124,9 +125,8 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginHorizontal="12dp"
         android:layout_marginTop="24dp"
-        android:layout_marginRight="20dp"
         android:fontFamily="@font/outfit"
         android:text="@string/more_catagories"
         android:textColor="@color/white"
@@ -137,6 +137,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iphone_Wallpaper" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
@@ -147,15 +148,17 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <!-- iOS Button Layout -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Ios_button"
                 android:layout_width="wrap_content"
                 android:layout_height="170dp"
-                android:layout_marginStart="16dp"
                 android:background="@drawable/layout_shape"
                 android:backgroundTint="#374151"
                 android:paddingStart="2dp"
@@ -167,7 +170,7 @@
                     android:layout_width="120dp"
                     android:layout_height="112dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/ioswallpaper2"
+                    android:src="@drawable/ios2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -179,7 +182,7 @@
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="20dp"
                     android:contentDescription="@string/iosscreen"
-                    android:src="@drawable/ioswallpaper1"
+                    android:src="@drawable/ios1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -228,7 +231,7 @@
                     android:layout_width="120dp"
                     android:layout_height="112dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/samsungwallpaper1"
+                    android:src="@drawable/samsung1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -240,7 +243,7 @@
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="20dp"
                     android:contentDescription="@string/samsungscreen"
-                    android:src="@drawable/samsungwallpaper2"
+                    android:src="@drawable/samsung2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -287,7 +290,7 @@
                     android:layout_width="120dp"
                     android:layout_height="112dp"
                     android:layout_marginTop="24dp"
-                    android:src="@drawable/hdwallpaper1"
+                    android:src="@drawable/hd1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -299,7 +302,7 @@
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="20dp"
                     android:contentDescription="@string/hdscreen"
-                    android:src="@drawable/hdwallpaper2"
+                    android:src="@drawable/hd2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -341,9 +344,8 @@
         android:id="@+id/ringtones_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/outfit"
         android:text="@string/Ringtones"
         android:textColor="@color/white"
@@ -351,17 +353,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iphone_Wallpaper" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ringtones_button"
         android:layout_width="0dp"
         android:layout_height="170dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="10dp"
         android:background="@drawable/layout_shape"
         android:backgroundTint="#304441"
         android:padding="16dp"

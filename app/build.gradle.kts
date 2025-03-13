@@ -54,6 +54,6 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.circleindicator)
     implementation(libs.firebase.crashlytics)
-
+    implementation (libs.glide.v4151)
 
 }

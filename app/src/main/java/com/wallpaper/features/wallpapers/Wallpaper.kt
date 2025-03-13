@@ -31,7 +31,7 @@ class Wallpaper : AppCompatActivity() {
     private fun setupRecyclerView(category: String) {
         val wallpaperList = getSubCategories(category)
 
-        adapter = RecyclerviewAdapter(wallpaperList, { selectedCategory ->
+        adapter = RecyclerviewAdapter(this,wallpaperList, { selectedCategory ->
             val intent = Intent(this, WallpaperList::class.java)
             intent.putExtra("WALLPAPER_SUBCATEGORY", selectedCategory.txt)
             startActivity(intent)
@@ -44,39 +44,39 @@ class Wallpaper : AppCompatActivity() {
     private fun getSubCategories(category: String): List<Wallpaper> {
         return when (category) {
             "iPhone" -> listOf(
-                Wallpaper(R.drawable.iphone_16, "iPhone 16"),
-                Wallpaper(R.drawable.iphone_15, "iPhone 15"),
-                Wallpaper(R.drawable.iphone_14, "iPhone 14"),
-                Wallpaper(R.drawable.iphone_13, "iPhone 13"),
-                Wallpaper(R.drawable.iphone12, "iPhone 12"),
-                Wallpaper(R.drawable.iphone11, "iPhone 11")
+                Wallpaper(R.drawable.iphone16_1, "iPhone 16"),
+                Wallpaper(R.drawable.iphone15_1, "iPhone 15"),
+                Wallpaper(R.drawable.iphone14_1, "iPhone 14"),
+                Wallpaper(R.drawable.iphone13_1, "iPhone 13"),
+                Wallpaper(R.drawable.iphone12_1, "iPhone 12"),
+                Wallpaper(R.drawable.iphone11_1, "iPhone 11")
             )
 
             "HD" -> listOf(
-                Wallpaper(R.drawable.hd_wallpaper1, "Car"),
-                Wallpaper(R.drawable.hd_wallpaper2, "Animals"),
-                Wallpaper(R.drawable.hd_wallpaper3, "Nature"),
-                Wallpaper(R.drawable.hd_wallpaper4, "Aesthetics"),
-                Wallpaper(R.drawable.hd_wallpaper5, "City"),
-                Wallpaper(R.drawable.hd_wallpaper5, "Abstract")
+                Wallpaper(R.drawable.car, "Car"),
+                Wallpaper(R.drawable.animal, "Animal"),
+                Wallpaper(R.drawable.nature, "Nature"),
+                Wallpaper(R.drawable.aesthetics, "Aesthetics"),
+                Wallpaper(R.drawable.city, "City"),
+                Wallpaper(R.drawable.abstracts, "Abstract")
             )
 
             "iOS" -> listOf(
-                Wallpaper(R.drawable.ios_wallpaper1, "iOS 18"),
-                Wallpaper(R.drawable.ios_wallpaper2, "iOS 17"),
-                Wallpaper(R.drawable.ios_wallpaper3, "iOS 16"),
-                Wallpaper(R.drawable.ios_wallpaper4, "iOS 15"),
-                Wallpaper(R.drawable.ios_wallpaper5, "iOS 14"),
-                Wallpaper(R.drawable.ios_wallpaper5, "iOS 13")
+                Wallpaper(R.drawable.ios18, "iOS 18"),
+                Wallpaper(R.drawable.ios17, "iOS 17"),
+                Wallpaper(R.drawable.ios16, "iOS 16"),
+                Wallpaper(R.drawable.ios15, "iOS 15"),
+                Wallpaper(R.drawable.ios14, "iOS 14"),
+                Wallpaper(R.drawable.ios13, "iOS 13")
             )
 
             "Samsung" -> listOf(
-                Wallpaper(R.drawable.samsung_wallpaper1, "S25"),
-                Wallpaper(R.drawable.samsung_wallpaper2, "S24"),
-                Wallpaper(R.drawable.samsung_wallpaper3, "S23"),
-                Wallpaper(R.drawable.samsung_wallpaper4, "S22"),
-                Wallpaper(R.drawable.samsung_wallpaper, "S21"),
-                Wallpaper(R.drawable.samsung_wallpaper, "S20")
+                Wallpaper(R.drawable.s25, "S25"),
+                Wallpaper(R.drawable.s24, "S24"),
+                Wallpaper(R.drawable.s23, "S23"),
+                Wallpaper(R.drawable.s22, "S22"),
+                Wallpaper(R.drawable.s21, "S21"),
+                Wallpaper(R.drawable.s20, "S20")
             )
 
             else -> emptyList()

@@ -1,12 +1,13 @@
-package com.wallpaper.base_app
+package com.wallpaper.base_app.on_boardings
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.wallpaper.R
-import com.wallpaper.adapter.ViewPagerAdapter
-import com.wallpaper.adapter.ViewPagerItem
+import com.wallpaper.features.adapters.ViewPagerAdapter
+import com.wallpaper.features.adapters.ViewPagerItem
+import com.wallpaper.base_app.activites.Dashboard
 import com.wallpaper.databinding.OnboardingScreensBinding
 
 class OnBoardingScreens : AppCompatActivity() {
@@ -25,7 +26,7 @@ class OnBoardingScreens : AppCompatActivity() {
     private fun setupViewPager() {
         val items = listOf(
             ViewPagerItem(
-                R.drawable.iphone_screen,
+                R.drawable.group_272,
                 getString(R.string.iphone_wallpaper),
                 getString(R.string.explore_stunning_iphone_wallpaper_to_n_personalize_your_screen_effortlessly)
             ),

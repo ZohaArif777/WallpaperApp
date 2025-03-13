@@ -1,12 +1,12 @@
-package com.wallpaper.base_app
+package com.wallpaper.base_app.activites
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.wallpaper.features.Ringtone
-import com.wallpaper.features.Wallpaper
+import com.wallpaper.features.ringtons.Ringtone
+import com.wallpaper.features.wallpapers.Wallpaper
 import com.wallpaper.databinding.ActivityDashboardBinding
-import com.wallpaper.setting.Setting
+import com.wallpaper.base_app.setting.Setting
 
 class Dashboard : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding

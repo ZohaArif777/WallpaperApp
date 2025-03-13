@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
         android:allowBackup="true"
@@ -17,37 +19,37 @@
         android:theme="@style/Theme.Wallpaper"
         tools:targetApi="31">
         <activity
-            android:name=".features.Language"
+            android:name=".base_app.language.Language"
             android:exported="false" />
         <activity
-            android:name=".features.LockscreenPreview"
+            android:name=".features.lockScreens.LockscreenPreview"
             android:exported="false" />
         <activity
-            android:name=".features.RingtonePlayer"
+            android:name=".features.ringtons.RingtonePlayer"
             android:exported="false" />
         <activity
-            android:name=".features.Ringtone"
+            android:name=".features.ringtons.Ringtone"
             android:exported="false" />
         <activity
-            android:name=".features.wallpaperPreview"
+            android:name=".features.wallpapers.wallpaperPreview"
             android:exported="false" />
         <activity
-            android:name=".features.WallpaperPlayer"
+            android:name=".features.wallpapers.WallpaperPlayer"
             android:exported="false" />
         <activity
-            android:name=".features.WallpaperList"
+            android:name=".features.wallpapers.WallpaperList"
             android:exported="false" />
         <activity
-            android:name=".setting.Setting"
+            android:name=".base_app.setting.Setting"
             android:exported="false" />
         <activity
-            android:name=".features.Wallpaper"
+            android:name=".features.wallpapers.Wallpaper"
             android:exported="false" />
         <activity
-            android:name=".base_app.Dashboard"
+            android:name=".base_app.activites.Dashboard"
             android:exported="false" />
         <activity
-            android:name=".base_app.Splashscreen"
+            android:name=".base_app.activites.Splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,7 +58,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".base_app.OnBoardingScreens"
+            android:name=".base_app.on_boardings.OnBoardingScreens"
             android:exported="false" />
 
         <meta-data

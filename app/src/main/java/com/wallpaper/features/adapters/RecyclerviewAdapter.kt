@@ -1,13 +1,16 @@
-package com.wallpaper.adapter
+package com.wallpaper.features.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.wallpaper.databinding.DetailedListItemBinding
 import com.wallpaper.databinding.ItemListBinding
-import com.wallpaper.dataclass.Wallpaper
+import com.wallpaper.features.data_class.Wallpaper
 
 class RecyclerviewAdapter(
+    var context : Context,
     private var wallpaperList: List<Wallpaper>,
     private val onItemClick: (Wallpaper) -> Unit,
     private val isDetailedView: Boolean
@@ -39,8 +42,11 @@ class RecyclerviewAdapter(
             }
 
             is WallpaperListViewHolder -> {
-                holder.binding.img.setImageResource(wallpaper.img)
-
+//                holder.binding.img.setImageResource(wallpaper.img)
+                Glide.with(context).load(wallpaper.imageUrl?.trim())
+                    .placeholder(com.wallpaper.R.drawable.wallpaper_2)
+                    .error(com.wallpaper.R.drawable.wallpaper_2)
+                    .into(holder.binding.img)
                 holder.binding.root.setOnClickListener {
                     onItemClick(wallpaper)
                 }
