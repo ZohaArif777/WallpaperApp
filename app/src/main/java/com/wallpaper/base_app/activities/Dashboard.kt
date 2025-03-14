@@ -1,4 +1,4 @@
-package com.wallpaper.base_app.activites
+package com.wallpaper.base_app.activities
 
 import android.content.Intent
 import android.os.Bundle

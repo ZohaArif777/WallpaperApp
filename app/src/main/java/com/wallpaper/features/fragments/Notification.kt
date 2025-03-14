@@ -1,4 +1,4 @@
-package com.wallpaper.fragments
+package com.wallpaper.features.fragments
 
 import android.content.Context
 import android.media.MediaMetadataRetriever
@@ -10,9 +10,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wallpaper.R
-import com.wallpaper.adapter.RingtoneAdapter
+import com.wallpaper.features.adapters.RingtoneAdapter
 import com.wallpaper.databinding.FragmentNotificationBinding
-import com.wallpaper.dataclass.Ringtones
+import com.wallpaper.features.data_class.Ringtones
 
 class Notification : Fragment() {
     private lateinit var ringtoneAdapter: RingtoneAdapter

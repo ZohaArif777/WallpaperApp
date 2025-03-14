@@ -1,7 +1,8 @@
-package com.wallpaper.features
+package com.wallpaper.features.lockScreens
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.wallpaper.R
 import com.wallpaper.databinding.ActivityLockscreenPreviewBinding
 import java.text.SimpleDateFormat
@@ -17,9 +18,10 @@ class LockscreenPreview : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
-        val wallpaperResId = intent.getIntExtra("WALLPAPER_IMAGE", R.drawable.hd_wallpaper1)
-        binding.imgWallpaper.setImageResource(wallpaperResId)
-        binding.preImg.setImageResource(wallpaperResId)
+        val wallpaperUrl = intent.getStringExtra("WALLPAPER_IMAGE") ?: ""
+        if (wallpaperUrl.isNotEmpty()) {
+            Glide.with(this).load(wallpaperUrl).into(binding.imgWallpaper)
+        }
         updateDateTime()
     }
 

@@ -1,13 +1,14 @@
-package com.wallpaper.features
+package com.wallpaper.features.ringtons
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 import com.google.android.material.tabs.TabLayoutMediator
-import com.wallpaper.adapter.RingtoneViewpagerAdapter
+import com.wallpaper.R
+import com.wallpaper.features.adapters.RingtoneViewpagerAdapter
 import com.wallpaper.databinding.ActivityRingtoneBinding
-import com.wallpaper.fragments.ApplyRingtone
-import com.wallpaper.fragments.Notification
+import com.wallpaper.features.fragments.ApplyRingtone
+import com.wallpaper.features.fragments.Notification
 
 class Ringtone : AppCompatActivity() {
     private lateinit var binding: ActivityRingtoneBinding
@@ -33,10 +34,11 @@ class Ringtone : AppCompatActivity() {
         binding.ringtoneViewpager.adapter = adapter
         TabLayoutMediator(binding.tabLayout, binding.ringtoneViewpager) { tab, position ->
             tab.text = when (position) {
-                0 -> "Notification"
-                1 -> " Ringtone"
+                0 -> getString(R.string.notification)  // Directly fetch the string resource
+                1 -> getString(R.string.ringtones)      // Use a string resource for better localization
                 else -> "Tab $position"
             }
         }.attach()
+
     }
 }

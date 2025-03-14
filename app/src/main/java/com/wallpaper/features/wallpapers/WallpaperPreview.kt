@@ -2,6 +2,7 @@ package com.wallpaper.features.wallpapers
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.wallpaper.R
 
 import com.wallpaper.databinding.ActivityWallpaperPreviewBinding
@@ -19,10 +20,11 @@ class wallpaperPreview : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
+        val wallpaperUrl = intent.getStringExtra("WALLPAPER_IMAGE") ?: ""
+        if (wallpaperUrl.isNotEmpty()) {
+            Glide.with(this).load(wallpaperUrl).into(binding.imgWallpaper)
+        }
 
-        val wallpaperResId = intent.getIntExtra("WALLPAPER_IMAGE", R.drawable.hd1)
-        binding.imgWallpaper.setImageResource(wallpaperResId)
-        binding.preImg.setImageResource(wallpaperResId)
         updateDateTime()
     }
 

@@ -1,7 +1,6 @@
-package com.wallpaper.features
+package com.wallpaper.features.ringtons
 
 import android.app.Dialog
-import android.content.Intent
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.net.Uri
@@ -12,11 +11,8 @@ import android.provider.Settings
 import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.wallpaper.R
 import com.wallpaper.databinding.ActivityRingtonePlayerBinding

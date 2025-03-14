@@ -3,6 +3,7 @@ package com.wallpaper.features.wallpapers
 import android.app.WallpaperManager
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.Gravity
@@ -18,6 +19,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.wallpaper.R
 import com.wallpaper.databinding.ActivityWallpaperPlayerBinding
 import com.wallpaper.features.lockScreens.LockscreenPreview
+import java.io.File
+import java.io.FileOutputStream
 import java.io.IOException
 
 class WallpaperPlayer : AppCompatActivity() {
@@ -29,11 +32,13 @@ class WallpaperPlayer : AppCompatActivity() {
         binding = ActivityWallpaperPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val wallpaperUrl = intent.getStringExtra("WALLPAPER_IMAGE")
+        val wallpaperUrl = intent.getStringExtra("WALLPAPER_IMAGE")?:""
+        val subcategory = intent.getStringExtra("WALLPAPER_CATEGORY") ?: "Unknown"
+        val category = intent.getStringExtra("WALLPAPER_MAIN_CATEGORY") ?: "Unknown"
 
-        if (!wallpaperUrl.isNullOrEmpty()) {
-            Glide.with(this).load(wallpaperUrl)
-                .into(binding.img)
+
+        if (wallpaperUrl.isNotEmpty()) {
+            Glide.with(this).load(wallpaperUrl).into(binding.img)
         }
 
         binding.btnBack.setOnClickListener {
@@ -46,7 +51,7 @@ class WallpaperPlayer : AppCompatActivity() {
             openLockPreviewActivity(wallpaperUrl)
         }
         binding.btnWallpaper.setOnClickListener {
-            showBottomSheetDialog(wallpaperUrl)
+            showBottomSheetDialog(wallpaperUrl, category, subcategory)
         }
 
         binding.btnFit.setOnClickListener {
@@ -80,7 +85,7 @@ class WallpaperPlayer : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun showBottomSheetDialog(wallpaperUrl: String?) {
+    private fun showBottomSheetDialog(wallpaperUrl: String?, category: String, subCategory: String) {
         if (wallpaperUrl.isNullOrEmpty()) {
             Toast.makeText(this, "No wallpaper selected!", Toast.LENGTH_SHORT).show()
             return
@@ -94,17 +99,17 @@ class WallpaperPlayer : AppCompatActivity() {
         val btnBothScreens = view.findViewById<ImageButton>(R.id.btnBothScreens)
 
         btnHomeScreen.setOnClickListener {
-            setWallpaper(wallpaperUrl, WallpaperManager.FLAG_SYSTEM)
+            setWallpaper(wallpaperUrl, WallpaperManager.FLAG_SYSTEM, category, subCategory)
             dialog.dismiss()
         }
 
         btnLockScreen.setOnClickListener {
-            setWallpaper(wallpaperUrl, WallpaperManager.FLAG_LOCK)
+            setWallpaper(wallpaperUrl, WallpaperManager.FLAG_LOCK, category, subCategory)
             dialog.dismiss()
         }
 
         btnBothScreens.setOnClickListener {
-            setWallpaper(wallpaperUrl, WallpaperManager.FLAG_SYSTEM or WallpaperManager.FLAG_LOCK)
+            setWallpaper(wallpaperUrl, WallpaperManager.FLAG_SYSTEM or WallpaperManager.FLAG_LOCK, category, subCategory)
             dialog.dismiss()
         }
 
@@ -112,7 +117,7 @@ class WallpaperPlayer : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun setWallpaper(wallpaperUrl: String?, flag: Int) {
+    private fun setWallpaper(wallpaperUrl: String?, flag: Int, category: String, subCategory: String) {
         if (wallpaperUrl.isNullOrEmpty()) {
             Toast.makeText(this, "Invalid wallpaper URL!", Toast.LENGTH_SHORT).show()
             return
@@ -124,9 +129,12 @@ class WallpaperPlayer : AppCompatActivity() {
                 .load(wallpaperUrl)
                 .into(object : CustomTarget<Bitmap>() {
                     override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
-                        val wallpaperManager = WallpaperManager.getInstance(this@WallpaperPlayer)
-                        wallpaperManager.setBitmap(resource, null, true, flag)
-                        showSuccessDialog()
+                        val savedFile = saveImageToCache(resource, wallpaperUrl, category, subCategory)
+                        if (savedFile != null) {
+                            applyWallpaper(savedFile, flag)
+                        } else {
+                            Toast.makeText(this@WallpaperPlayer, "Failed to save wallpaper", Toast.LENGTH_SHORT).show()
+                        }
                     }
 
                     override fun onLoadCleared(placeholder: Drawable?) {
@@ -136,6 +144,41 @@ class WallpaperPlayer : AppCompatActivity() {
         } catch (e: IOException) {
             e.printStackTrace()
             Toast.makeText(this, "Failed to set wallpaper", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun saveImageToCache(bitmap: Bitmap, wallpaperUrl: String, category: String, subCategory: String): File? {
+        val cacheDir = File(getExternalFilesDir(null), "Wallpapers/$category/$subCategory")
+        if (!cacheDir.exists()) cacheDir.mkdirs()
+
+        val fileName = wallpaperUrl.substringAfterLast("/")
+        val file = File(cacheDir, fileName)
+
+        // If file already exists, return it
+        if (file.exists()) return file
+
+        return try {
+            val fos = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
+            fos.flush()
+            fos.close()
+            file
+        } catch (e: IOException) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+    private fun applyWallpaper(file: File, flag: Int) {
+        try {
+            val bitmap = BitmapFactory.decodeFile(file.absolutePath)
+            val wallpaperManager = WallpaperManager.getInstance(this)
+            wallpaperManager.setBitmap(bitmap, null, true, flag)
+
+            showSuccessDialog()
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Toast.makeText(this, "Failed to apply wallpaper", Toast.LENGTH_SHORT).show()
         }
     }
 

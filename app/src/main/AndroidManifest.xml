@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
 
@@ -46,10 +45,10 @@
             android:name=".features.wallpapers.Wallpaper"
             android:exported="false" />
         <activity
-            android:name=".base_app.activites.Dashboard"
+            android:name=".base_app.activities.Dashboard"
             android:exported="false" />
         <activity
-            android:name=".base_app.activites.Splashscreen"
+            android:name=".base_app.activities.Splashscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
