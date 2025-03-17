@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,7 +9,6 @@
     android:background="@color/pink"
     tools:context=".features.lockScreens.LockscreenPreview">
 
-    <!-- Background Wallpaper -->
     <ImageView
         android:id="@+id/imgWallpaper"
         android:layout_width="match_parent"
@@ -22,27 +22,25 @@
         android:alpha="0.8"
         android:background="#80000000" />
 
-
-    <!-- Back Button -->
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/textview"
-        android:contentDescription="@string/Back"
-        android:src="@drawable/white_arrow"
+        android:backgroundTint="@color/transparent"
+        android:contentDescription="@string/back"
+        android:src="@drawable/forward_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white" />
 
-    <!-- White Border Constraint Layout (Centering the Preview) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="40dp"
+        android:layout_margin="@dimen/_40sdp"
         android:background="@drawable/preview"
         android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -56,18 +54,17 @@
             style="@style/RoundedShape"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
-
+            android:layout_margin="@dimen/_5sdp"
             android:contentDescription="@string/preview_image"
             android:scaleType="centerCrop" />
 
         <!-- Time Display -->
         <ImageView
             android:id="@+id/battery"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:contentDescription="@string/battery"
-            android:padding="10dp"
+            android:padding="@dimen/_10sdp"
             android:src="@drawable/battery"
             app:layout_constraintBottom_toTopOf="@+id/txtTime"
             app:layout_constraintEnd_toEndOf="parent"
@@ -80,10 +77,10 @@
             android:id="@+id/txtTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="@dimen/_80sdp"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="32sp"
+            android:textSize="@dimen/_32ssp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,10 +92,10 @@
             android:id="@+id/txtDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="@dimen/_18ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtTime"
@@ -109,7 +106,7 @@
             android:id="@+id/buttonLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -118,23 +115,23 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/torch"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="48dp"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_48sdp"
                 android:background="@drawable/button_background"
                 android:contentDescription="@string/call"
-                android:padding="10dp"
+                android:padding="@dimen/_10sdp"
                 android:src="@drawable/flashlight"
                 app:tint="@color/white" />
 
             <ImageButton
                 android:id="@+id/camera"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="48dp"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_48sdp"
                 android:background="@drawable/button_background"
                 android:contentDescription="@string/camera"
-                android:padding="10dp"
+                android:padding="@dimen/_10sdp"
                 android:src="@drawable/camera" />
         </LinearLayout>
 

@@ -1,9 +1,9 @@
-package com.wallpaper.features
+package com.wallpaper.base_app.language
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.wallpaper.adapter.LanguageAdapter
+import com.wallpaper.base_app.language.adapter.LanguageAdapter
 import com.wallpaper.databinding.ActivityLanguageBinding
 
 class Language : AppCompatActivity() {
@@ -22,16 +22,28 @@ class Language : AppCompatActivity() {
 
         val languages = listOf(
             "English",
-            "Chinese",
-            "Russian",
-            "Hindi",
-            "Spanish",
-            "French",
             "Arabic",
-            "Portuguese",
+            "Czech",
+            "Finnish",
+            "French",
+            "German",
+            "Greek",
+            "Hindi",
+            "Hungarian",
             "Indonesian",
             "Italian",
-            "German"
+            "Japanese",
+            "Korean",
+            "Luxembourg",
+            "Norwegian",
+            "Persian",
+            "Polish",
+            "Portuguese",
+            "Russian",
+            "Spanish",
+            "Swedish",
+            "Turkish",
+            "Urdu"
         )
 
         languageAdapter = LanguageAdapter(languages, selectedLanguage) { selected ->

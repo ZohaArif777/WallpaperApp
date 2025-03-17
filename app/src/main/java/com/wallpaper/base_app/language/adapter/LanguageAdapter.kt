@@ -1,4 +1,4 @@
-package com.wallpaper.adapter
+package com.wallpaper.base_app.language.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

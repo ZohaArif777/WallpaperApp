@@ -5,9 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.wallpaper.R
-import com.wallpaper.features.adapters.ViewPagerAdapter
-import com.wallpaper.features.adapters.ViewPagerItem
-import com.wallpaper.base_app.activites.Dashboard
+import com.wallpaper.base_app.on_boardings.adapter.ViewPagerItem
+import com.wallpaper.base_app.activities.Dashboard
+import com.wallpaper.base_app.localization.SharedPrefs
+import com.wallpaper.base_app.on_boardings.adapter.OnBoardingAdapter
 import com.wallpaper.databinding.OnboardingScreensBinding
 
 class OnBoardingScreens : AppCompatActivity() {
@@ -42,7 +43,7 @@ class OnBoardingScreens : AppCompatActivity() {
             )
         )
 
-        val adapter = ViewPagerAdapter(items)
+        val adapter = OnBoardingAdapter(items)
         binding.viewPager.adapter = adapter
         binding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
@@ -51,9 +52,13 @@ class OnBoardingScreens : AppCompatActivity() {
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                binding.btnNext.text = if (position == items.lastIndex) "Start" else "Next"
+                binding.btnNext.text = if (position == items.lastIndex)
+                    getString(R.string.start)
+                else
+                    getString(R.string.next)
             }
         })
+
     }
 
 
@@ -73,10 +78,7 @@ class OnBoardingScreens : AppCompatActivity() {
     }
 
     private fun completeOnboarding() {
-        val prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE)
-        val editor = prefs.edit()
-        editor.putBoolean("OnboardingCompleted", true)
-        editor.apply()
+        SharedPrefs.setPrefsBoolean(this@OnBoardingScreens,false,SharedPrefs.firstTimeKey)
         startActivity(Intent(this, Dashboard::class.java))
         finish()
     }

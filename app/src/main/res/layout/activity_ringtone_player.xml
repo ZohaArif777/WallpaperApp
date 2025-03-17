@@ -6,16 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_black"
-    tools:context=".features.RingtonePlayer">
+    tools:context=".features.ringtons.RingtonePlayer">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:background="@drawable/toolbar"
         android:backgroundTint="@color/app_black"
-        android:minHeight="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,9 +22,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="8dp">
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/_10sdp">
 
+            <!-- Back Arrow Button -->
             <ImageButton
                 android:id="@+id/btn"
                 android:layout_width="wrap_content"
@@ -34,20 +33,24 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/back"
                 android:src="@drawable/forward_arrow"
-                app:tint="@color/white" />
+                app:tint="@color/white"
+                android:padding="8dp" />
 
+            <!-- Title -->
             <TextView
                 android:id="@+id/ringtone_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/outfit"
+                android:gravity="center"
                 android:text="@string/ringtones"
-                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold"
+                android:fontFamily="@font/outfit"
+                android:layout_marginStart="8dp" />
         </LinearLayout>
+
     </androidx.appcompat.widget.Toolbar>
 
     <!-- Ringtone Name -->
@@ -170,18 +173,19 @@
         android:id="@+id/popup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/_15sdp"
         android:background="@drawable/dialog_success"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_layout">
 
         <!-- "Set As" TextView -->
         <TextView
             android:id="@+id/tv_set_as"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/outfit"
             android:text="@string/set_as"
             android:textColor="@color/white"

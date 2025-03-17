@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 import com.google.android.material.tabs.TabLayoutMediator
 import com.wallpaper.R
-import com.wallpaper.features.adapters.RingtoneViewpagerAdapter
+import com.wallpaper.features.ringtons.adapter.RingtoneViewpagerAdapter
 import com.wallpaper.databinding.ActivityRingtoneBinding
 import com.wallpaper.features.fragments.ApplyRingtone
 import com.wallpaper.features.fragments.Notification
@@ -18,7 +18,7 @@ class Ringtone : AppCompatActivity() {
         setContentView(binding.root)
 
         setupViewPagerWithTabs()
-        binding.btnBack.setOnClickListener {
+        binding.btn.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
 
@@ -34,8 +34,8 @@ class Ringtone : AppCompatActivity() {
         binding.ringtoneViewpager.adapter = adapter
         TabLayoutMediator(binding.tabLayout, binding.ringtoneViewpager) { tab, position ->
             tab.text = when (position) {
-                0 -> getString(R.string.notification)  // Directly fetch the string resource
-                1 -> getString(R.string.ringtones)      // Use a string resource for better localization
+                0 -> getString(R.string.notification)
+                1 -> getString(R.string.ringtones)
                 else -> "Tab $position"
             }
         }.attach()

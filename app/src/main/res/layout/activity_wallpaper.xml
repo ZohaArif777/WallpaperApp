@@ -8,7 +8,6 @@
     android:background="@color/app_black"
     tools:context=".features.wallpapers.Wallpaper">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_wallpaper"
         android:layout_width="0dp"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".features.wallpaperPreview">
+    tools:context=".features.wallpapers.wallpaperPreview">
 
 
     <!-- Background Wallpaper -->
@@ -115,13 +115,13 @@
 
         <LinearLayout
             android:id="@+id/topButtonLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="8dp"
             app:layout_constraintBottom_toTopOf="@id/buttonLayout"
             app:layout_constraintEnd_toEndOf="@id/preImg"
+            app:layout_constraintHeight_percent=".15"
             app:layout_constraintStart_toStartOf="@id/preImg">
 
             <LinearLayout
@@ -231,14 +231,13 @@
 
         <LinearLayout
             android:id="@+id/buttonLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/preImg"
+            app:layout_constraintHeight_percent=".15"
             app:layout_constraintStart_toStartOf="@id/preImg">
 
             <LinearLayout
@@ -258,12 +257,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:fontFamily="@font/outfit"
                     android:gravity="center_horizontal"
                     android:text="@string/message"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/_10ssp" />
             </LinearLayout>
 
             <LinearLayout
@@ -284,13 +283,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:fontFamily="@font/outfit"
                     android:gravity="center_horizontal"
                     android:text="@string/calculator"
                     android:textColor="@color/white"
 
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/_10ssp" />
             </LinearLayout>
 
             <LinearLayout
@@ -311,13 +310,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:fontFamily="@font/outfit"
                     android:gravity="center_horizontal"
                     android:text="@string/gallery"
                     android:textColor="@color/white"
 
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/_10ssp" />
             </LinearLayout>
 
             <LinearLayout
@@ -338,12 +337,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:fontFamily="@font/outfit"
                     android:gravity="center_horizontal"
                     android:text="@string/facebook"
                     android:textColor="@color/white"
-                    android:textSize="12sp" />
+                    android:textSize="@dimen/_10ssp" />
             </LinearLayout>
 
         </LinearLayout>

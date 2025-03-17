@@ -1,6 +1,6 @@
 package com.wallpaper.features.data_class
 
-data class Wallpaper(
+data class WallpaperModel(
     val img: Int = 0,
     val txt: String? = "",
     val isCategory: Boolean = false,

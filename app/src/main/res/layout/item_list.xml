@@ -26,15 +26,16 @@
             android:background="@drawable/list_layout"
             android:fontFamily="@font/outfit"
             android:gravity="center"
-            android:padding="10dp"
-            android:text=""
+            android:text="@string/iphone"
             android:textColor="@color/white"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.9" />
+            app:layout_constraintEnd_toEndOf="parent"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

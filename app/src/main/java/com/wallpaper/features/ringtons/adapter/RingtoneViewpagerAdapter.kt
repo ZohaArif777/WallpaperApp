@@ -1,4 +1,4 @@
-package com.wallpaper.adapter
+package com.wallpaper.features.ringtons.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

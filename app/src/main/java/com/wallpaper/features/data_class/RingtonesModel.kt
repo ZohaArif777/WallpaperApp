@@ -1,6 +1,6 @@
-package com.wallpaper.dataclass
+package com.wallpaper.features.data_class
 
-data class Ringtones(val name: String,
+data class RingtonesModel(val name: String,
                      val size: String,
                      val duration: String,
                      val rawResId: Int)

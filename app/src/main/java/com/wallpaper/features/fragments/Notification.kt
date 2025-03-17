@@ -10,13 +10,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wallpaper.R
-import com.wallpaper.features.adapters.RingtoneAdapter
+import com.wallpaper.features.ringtons.adapter.RingtoneAdapter
 import com.wallpaper.databinding.FragmentNotificationBinding
-import com.wallpaper.features.data_class.Ringtones
+import com.wallpaper.features.data_class.RingtonesModel
 
 class Notification : Fragment() {
     private lateinit var ringtoneAdapter: RingtoneAdapter
-    private val notificationList = mutableListOf<Ringtones>()
+    private val notificationList = mutableListOf<RingtonesModel>()
     private var _binding: FragmentNotificationBinding? = null
     private val binding get() = _binding!!
 
@@ -40,16 +40,16 @@ class Notification : Fragment() {
 
     private fun loadNotifications() {
         val rawResources = listOf(
-            R.raw.notification1,
-            R.raw.notification8,
-            R.raw.notification3,
-            R.raw.notification4,
-            R.raw.notification4,
-            R.raw.notification6,
-            R.raw.notification7,
-            R.raw.notification8,
-            R.raw.notification9,
-            R.raw.notification10
+            R.raw.bell_notification,
+            R.raw.sci_fi_reject,
+            R.raw.positive_notification,
+            R.raw.software_interface_remove,
+            R.raw.software_interface_remove,
+            R.raw.magic_marimba,
+            R.raw.tile_game_reveal,
+            R.raw.sci_fi_reject,
+            R.raw.magic_drop,
+            R.raw.door_bell
         )
 
         rawResources.forEach { resId ->
@@ -68,7 +68,7 @@ class Notification : Fragment() {
 
                 val fileSize = getRawFileSize(requireContext(), resId)
                 notificationList.add(
-                    Ringtones(
+                    RingtonesModel(
                         notificationName,
                         fileSize,
                         durationFormatted,

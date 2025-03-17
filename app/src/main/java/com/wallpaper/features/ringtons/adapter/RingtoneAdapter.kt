@@ -1,4 +1,4 @@
-package com.wallpaper.features.adapters
+package com.wallpaper.features.ringtons.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.wallpaper.R
-import com.wallpaper.features.ringtons.RingtonePlayer
-import com.wallpaper.features.data_class.Ringtones
 import com.wallpaper.databinding.RingtoneListBinding
+import com.wallpaper.features.data_class.RingtonesModel
+import com.wallpaper.features.ringtons.RingtonePlayer
 
 class RingtoneAdapter(
     private val context: Context,
-    private val ringtoneList: List<Ringtones>,
+    private val ringtoneList: List<RingtonesModel>,
     private val soundType: String
 ) : RecyclerView.Adapter<RingtoneAdapter.ViewHolder>() {
 
@@ -31,16 +31,9 @@ class RingtoneAdapter(
             text.text = ringtone.name
             size.text = ringtone.size
             duration.text = ringtone.duration
-//            arrowButton.setOnClickListener {
-//                val intent = Intent(context, RingtonePlayer::class.java)
-//                context.startActivity(intent)
-//            }
-            val typeface = ResourcesCompat.getFont(context, R.font.outfit)
-            text.typeface = typeface
-            size.typeface = typeface
-            duration.typeface = typeface
 
-            arrowButton.setOnClickListener {
+
+            text.setOnClickListener {
                 val intent = Intent(context, RingtonePlayer::class.java).apply {
                     putExtra("RINGTONE_NAME", ringtone.name)
                     putExtra("RINGTONE_SIZE", ringtone.size)

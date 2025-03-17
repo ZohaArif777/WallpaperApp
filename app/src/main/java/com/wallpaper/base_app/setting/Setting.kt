@@ -1,4 +1,4 @@
-package com.wallpaper.setting
+package com.wallpaper.base_app.setting
 
 import android.app.WallpaperManager
 import android.content.ActivityNotFoundException
@@ -8,7 +8,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.wallpaper.databinding.ActivitySettingBinding
-import com.wallpaper.features.Language
+import com.wallpaper.base_app.language.Language
+import com.wallpaper.base_app.localization.LocalizationActivity
+import com.wallpaper.base_app.localization.SharedPrefs
 import java.io.IOException
 
 class Setting : AppCompatActivity() {
@@ -25,14 +27,20 @@ class Setting : AppCompatActivity() {
         binding.apply {
             btnBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
             arrowIcon.setOnClickListener { navigateToLanguage() }
+
             languageButton.setOnClickListener { navigateToLanguage() }
             rateButton.setOnClickListener { openAppInStore() }
             shareButton.setOnClickListener { shareApp() }
             wallpaperButton.setOnClickListener { resetToDefaultWallpaper() }
+
+            val selectedLanguageName = SharedPrefs.getPrefsString(this@Setting, "selectedLanguageName", "English")
+            languageSelectedText.text = selectedLanguageName
+
             val versionName = packageManager.getPackageInfo(packageName, 0).versionName
             versionText.text = versionName
         }
     }
+
 
 
     private fun openAppInStore() {
@@ -71,7 +79,8 @@ class Setting : AppCompatActivity() {
     }
 
     private fun navigateToLanguage() {
-        val intent = Intent(this, Language::class.java)
+        val intent = Intent(this, LocalizationActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }

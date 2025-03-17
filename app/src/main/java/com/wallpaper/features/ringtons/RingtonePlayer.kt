@@ -1,6 +1,7 @@
 package com.wallpaper.features.ringtons
 
 import android.app.Dialog
+import android.content.Intent
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.net.Uri
@@ -26,29 +27,28 @@ class RingtonePlayer : AppCompatActivity() {
     private var currentSoundType = ""
 
     private val ringtoneList = listOf(
-        R.raw.ringtone1,
-        R.raw.ringtone2,
-        R.raw.ringtone3,
-        R.raw.ringtone4,
-        R.raw.ringtone5,
-        R.raw.ringtone6,
-        R.raw.ringtone6,
-        R.raw.ringtone8,
-        R.raw.ringtone9,
-        R.raw.ringtone10
+        R.raw.vintage_telephone,
+        R.raw.urgent_simple_tone,
+        R.raw.old_ringtone,
+        R.raw.telephone_ring,
+        R.raw.on_hold_ringtone,
+        R.raw.waiting_ringtone,
+        R.raw.music_ringtone,
+        R.raw.office_ringtone,
+        R.raw.toy_telephone
     )
 
     private val notificationList = listOf(
-        R.raw.notification1,
-        R.raw.notification8,
-        R.raw.notification3,
-        R.raw.notification4,
-        R.raw.notification4,
-        R.raw.notification6,
-        R.raw.notification7,
-        R.raw.notification8,
-        R.raw.notification9,
-        R.raw.notification10
+        R.raw.bell_notification,
+        R.raw.sci_fi_reject,
+        R.raw.positive_notification,
+        R.raw.software_interface_remove,
+        R.raw.software_interface_remove,
+        R.raw.magic_marimba,
+        R.raw.tile_game_reveal,
+        R.raw.sci_fi_reject,
+        R.raw.magic_drop,
+        R.raw.door_bell
     )
 
     private var currentIndex: Int = 0
@@ -194,7 +194,6 @@ class RingtonePlayer : AppCompatActivity() {
         stopAndReleaseMediaPlayer()
     }
 
-
     override fun onResume() {
         super.onResume()
         if (Settings.System.canWrite(this)) {
@@ -202,8 +201,23 @@ class RingtonePlayer : AppCompatActivity() {
         }
     }
 
+    private fun checkAndRequestPermission(): Boolean {
+        if (!Settings.System.canWrite(this)) {
+            val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS)
+            intent.data = Uri.parse("package:$packageName")
+            startActivity(intent)
+            return false
+        }
+        return true
+    }
+
     private fun setSoundAs(type: String) {
+        if (!checkAndRequestPermission()) {
+            return
+        }
+
         val soundUri = Uri.parse("android.resource://$packageName/${selectedList[currentIndex]}")
+
         RingtoneManager.setActualDefaultRingtoneUri(
             this, when (type) {
                 "Ringtone" -> RingtoneManager.TYPE_RINGTONE
@@ -237,6 +251,4 @@ class RingtonePlayer : AppCompatActivity() {
 
         dialog.show()
     }
-
-
 }

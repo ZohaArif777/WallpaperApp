@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.wallpaper.R
 import com.wallpaper.base_app.Constants
-import com.wallpaper.features.adapters.RecyclerviewAdapter
+import com.wallpaper.features.wallpapers.adapter.RecyclerviewAdapter
 import com.wallpaper.databinding.ActivityWallpaperListBinding
-import com.wallpaper.features.data_class.Wallpaper
+import com.wallpaper.features.data_class.WallpaperModel
 
 class WallpaperList : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperListBinding
@@ -33,13 +32,13 @@ class WallpaperList : AppCompatActivity() {
 
     private fun setupRecyclerView(subcategory: String) {
         val wallpaperList = getWallpapersBySubcategory(subcategory)
-        val mainCategory = getMainCategory(subcategory) // Get the main category
+        val mainCategory = getMainCategory(subcategory)
 
         adapter = RecyclerviewAdapter(this, wallpaperList, { selectedWallpaper ->
-            selectedWallpaper.let { wallpaper ->  // Ensure wallpaper is not null
+            selectedWallpaper.let { wallpaper ->
                 val intent = Intent(this, WallpaperPlayer::class.java).apply {
                     putExtra("WALLPAPER_IMAGE", wallpaper.imageUrl)
-                    putExtra("WALLPAPER_MAIN_CATEGORY", mainCategory) // Corrected intent
+                    putExtra("WALLPAPER_MAIN_CATEGORY", mainCategory)
                     putExtra("WALLPAPER_CATEGORY", subcategory)
                 }
                 startActivity(intent)
@@ -50,7 +49,6 @@ class WallpaperList : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
     }
 
-    // Function to get the main category based on the subcategory
     private fun getMainCategory(subcategory: String): String {
         return when (subcategory) {
             "iPhone 16", "iPhone 15", "iPhone 14", "iPhone 13", "iPhone 12", "iPhone 11" -> "iPhone"
@@ -61,7 +59,7 @@ class WallpaperList : AppCompatActivity() {
         }
     }
 
-    private fun getWallpapersBySubcategory(subcategory: String): List<Wallpaper> {
+    private fun getWallpapersBySubcategory(subcategory: String): List<WallpaperModel> {
         val categoryMap = mapOf(
             "iPhone 16" to Constants.iphone16,
             "iPhone 15" to Constants.iphone15,
@@ -99,7 +97,7 @@ class WallpaperList : AppCompatActivity() {
         val wallpapers = List(5) { index ->
             val url = "${Constants.BASE_URL}$categoryKey/${index + 1}.png"
             Log.d("WallpaperList", "Generated Wallpaper URL: $url")
-            Wallpaper(url)
+            WallpaperModel(url)
         }
         return wallpapers
     }

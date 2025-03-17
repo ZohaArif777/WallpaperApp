@@ -1,4 +1,4 @@
-package com.wallpaper.features.adapters
+package com.wallpaper.base_app.on_boardings.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wallpaper.R
 
-class ViewPagerAdapter(private val items: List<ViewPagerItem>) :
-    RecyclerView.Adapter<ViewPagerAdapter.PagerViewHolder>() {
+class OnBoardingAdapter(private val items: List<ViewPagerItem>) :
+    RecyclerView.Adapter<OnBoardingAdapter.PagerViewHolder>() {
 
     class PagerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView)

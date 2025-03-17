@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.wallpaper.R
-import com.wallpaper.features.adapters.RecyclerviewAdapter
+import com.wallpaper.features.wallpapers.adapter.RecyclerviewAdapter
 import com.wallpaper.databinding.ActivityWallpaperBinding
-import com.wallpaper.features.data_class.Wallpaper
+import com.wallpaper.features.data_class.WallpaperModel
 
 class Wallpaper : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperBinding
@@ -41,42 +41,42 @@ class Wallpaper : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
     }
 
-    private fun getSubCategories(category: String): List<Wallpaper> {
+    private fun getSubCategories(category: String): List<WallpaperModel> {
         return when (category) {
             "iPhone" -> listOf(
-                Wallpaper(R.drawable.iphone16_1, "iPhone 16"),
-                Wallpaper(R.drawable.iphone15_1, "iPhone 15"),
-                Wallpaper(R.drawable.iphone14_1, "iPhone 14"),
-                Wallpaper(R.drawable.iphone13_1, "iPhone 13"),
-                Wallpaper(R.drawable.iphone12_1, "iPhone 12"),
-                Wallpaper(R.drawable.iphone11_1, "iPhone 11")
+                WallpaperModel(R.drawable.iphone16_1, "iPhone 16"),
+                WallpaperModel(R.drawable.iphone15_1, "iPhone 15"),
+                WallpaperModel(R.drawable.iphone14_1, "iPhone 14"),
+                WallpaperModel(R.drawable.iphone13_1, "iPhone 13"),
+                WallpaperModel(R.drawable.iphone12_1, "iPhone 12"),
+                WallpaperModel(R.drawable.iphone11_1, "iPhone 11")
             )
 
             "HD" -> listOf(
-                Wallpaper(R.drawable.car, "Car"),
-                Wallpaper(R.drawable.animal, "Animal"),
-                Wallpaper(R.drawable.nature, "Nature"),
-                Wallpaper(R.drawable.aesthetics, "Aesthetics"),
-                Wallpaper(R.drawable.city, "City"),
-                Wallpaper(R.drawable.abstracts, "Abstract")
+                WallpaperModel(R.drawable.car, "Car"),
+                WallpaperModel(R.drawable.animal, "Animal"),
+                WallpaperModel(R.drawable.nature, "Nature"),
+                WallpaperModel(R.drawable.aesthetics, "Aesthetics"),
+                WallpaperModel(R.drawable.city, "City"),
+                WallpaperModel(R.drawable.abstracts, "Abstract")
             )
 
             "iOS" -> listOf(
-                Wallpaper(R.drawable.ios18, "iOS 18"),
-                Wallpaper(R.drawable.ios17, "iOS 17"),
-                Wallpaper(R.drawable.ios16, "iOS 16"),
-                Wallpaper(R.drawable.ios15, "iOS 15"),
-                Wallpaper(R.drawable.ios14, "iOS 14"),
-                Wallpaper(R.drawable.ios13, "iOS 13")
+                WallpaperModel(R.drawable.ios18, "iOS 18"),
+                WallpaperModel(R.drawable.ios17, "iOS 17"),
+                WallpaperModel(R.drawable.ios16, "iOS 16"),
+                WallpaperModel(R.drawable.ios15, "iOS 15"),
+                WallpaperModel(R.drawable.ios14, "iOS 14"),
+                WallpaperModel(R.drawable.ios13, "iOS 13")
             )
 
             "Samsung" -> listOf(
-                Wallpaper(R.drawable.s25, "S25"),
-                Wallpaper(R.drawable.s24, "S24"),
-                Wallpaper(R.drawable.s23, "S23"),
-                Wallpaper(R.drawable.s22, "S22"),
-                Wallpaper(R.drawable.s21, "S21"),
-                Wallpaper(R.drawable.s20, "S20")
+                WallpaperModel(R.drawable.s25, "S25"),
+                WallpaperModel(R.drawable.s24, "S24"),
+                WallpaperModel(R.drawable.s23, "S23"),
+                WallpaperModel(R.drawable.s22, "S22"),
+                WallpaperModel(R.drawable.s21, "S21"),
+                WallpaperModel(R.drawable.s20, "S20")
             )
 
             else -> emptyList()

@@ -8,120 +8,135 @@
     android:background="#1E1D1D"
     tools:context=".base_app.activities.Dashboard">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:paddingHorizontal="10dp"
-            android:layout_height="50dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:paddingHorizontal="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:fontFamily="@font/outfit_semibold"
+            android:text="@string/iphone_Wallpaper"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/premium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/setting"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:src="@drawable/premium_img"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/toolbar_text"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/outfit"
-                android:text="@string/iphone_Wallpaper"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/setting"
+            android:src="@drawable/setting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/premium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/setting"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:visibility="gone"
-                android:src="@drawable/premium_img" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageButton
-                android:id="@+id/setting"
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/setting"
-                android:src="@drawable/setting"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/iphone_Wallpaper"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".2"
-        android:layout_margin="10dp"
-        android:layout_marginTop="56dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:background="@drawable/layout_shape"
         android:backgroundTint="#374151"
-        android:orientation="vertical"
-        android:padding="16dp"
+        android:padding="@dimen/_16sdp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
+        <!-- iPhone Image -->
         <ImageView
             android:id="@+id/iphoneimg1"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:contentDescription="@string/screen2"
             android:src="@drawable/iphone"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintWidth_percent="0.3" />
 
-
+        <!-- iPhone Title -->
         <TextView
             android:id="@+id/iphone_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
             android:fontFamily="@font/outfit"
             android:text="@string/iphone"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintStart_toEndOf="@id/iphoneimg1"
             app:layout_constraintTop_toTopOf="@+id/iphoneimg1" />
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:fontFamily="@font/outfit"
             android:text="@string/wallpaper_title"
             android:textColor="@color/white"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/iphoneimg1"
             app:layout_constraintStart_toEndOf="@+id/iphoneimg1"
-            app:layout_constraintTop_toBottomOf="@+id/iphone_title" />
+            app:layout_constraintTop_toBottomOf="@id/iphone_title" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/iphone_arrow_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:src="@drawable/arrow_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/outfit"
         android:text="@string/more_catagories"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/_18ssp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iphone_Wallpaper" />
 
@@ -129,9 +144,9 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent=".2"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
@@ -140,19 +155,17 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="10dp">
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp">
 
-            <!-- iOS Section -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Ios_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/layout_shape"
                 android:backgroundTint="#374151"
-                android:minWidth="180dp"
-                android:minHeight="170dp"
-                android:padding="10dp">
+                android:minWidth="@dimen/_150sdp"
+                android:padding="@dimen/_10sdp">
 
                 <ImageView
                     android:id="@+id/iOSWallpaper1"
@@ -166,21 +179,23 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/arrow_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintWidth_percent=".2"
+                    app:layout_constraintHeight_percent=".3"
                     android:background="@color/transparent"
                     android:src="@drawable/arrow_button"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/outfit"
                     android:gravity="start"
                     android:text="@string/IOS"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textSize="@dimen/_18sdp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/iOSWallpaper1"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +203,6 @@
                     app:layout_constraintTop_toTopOf="@+id/iOSWallpaper1" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Samsung Section -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/samsung"
                 android:layout_width="wrap_content"
@@ -196,9 +210,8 @@
                 android:layout_marginStart="16dp"
                 android:background="@drawable/layout_shape"
                 android:backgroundTint="#374151"
-                android:minWidth="180dp"
-                android:minHeight="170dp"
-                android:padding="10dp">
+                android:minWidth="@dimen/_150sdp"
+                android:padding="@dimen/_10sdp">
 
                 <ImageView
                     android:id="@+id/SamsungWallpaper1"
@@ -207,13 +220,14 @@
                     android:contentDescription="@string/sam"
                     android:src="@drawable/samsung"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/Samsung_arrow_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintWidth_percent=".2"
+                    app:layout_constraintHeight_percent=".3"
                     android:background="@color/transparent"
                     android:src="@drawable/arrow_button"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -225,7 +239,7 @@
                     android:fontFamily="@font/outfit"
                     android:text="@string/samsung"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/SamsungWallpaper1"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -233,7 +247,6 @@
                     app:layout_constraintTop_toTopOf="@+id/SamsungWallpaper1" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- HD Section -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/hd"
                 android:layout_width="wrap_content"
@@ -241,9 +254,8 @@
                 android:layout_marginStart="16dp"
                 android:background="@drawable/layout_shape"
                 android:backgroundTint="#374151"
-                android:minWidth="180dp"
-                android:minHeight="170dp"
-                android:padding="10dp">
+                android:minWidth="@dimen/_150sdp"
+                android:padding="@dimen/_10sdp">
 
                 <ImageView
                     android:id="@+id/HDWallpaper1"
@@ -257,8 +269,10 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/HD_arrow_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintWidth_percent=".2"
+                    app:layout_constraintHeight_percent=".3"
                     android:background="@color/transparent"
                     android:src="@drawable/arrow_button"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -267,35 +281,30 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/outfit"
                     android:text="@string/HD"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textSize="@dimen/_15sdp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/HDWallpaper1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/HDWallpaper1"
-                    app:layout_constraintTop_toBottomOf="@id/HD_arrow_button" />
+                    app:layout_constraintTop_toTopOf="@+id/HDWallpaper1" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </HorizontalScrollView>
 
-
-    <!--    Ringtones-->
-
     <TextView
         android:id="@+id/ringtones_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
         android:fontFamily="@font/outfit"
         android:text="@string/Ringtones"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/_18ssp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
@@ -318,8 +327,10 @@
 
         <ImageView
             android:id="@+id/ringtone_img"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent=".30"
+            app:layout_constraintHeight_percent=".90"
             android:background="@drawable/ringtone_button_shape"
             android:contentDescription="@string/ringtones_screen"
             android:padding="8dp"
@@ -344,36 +355,28 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:fontFamily="@font/outfit"
             android:text="@string/explore_new_ringtones_n_in_one_place"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintBottom_toBottomOf="@+id/ringtone_img"
             app:layout_constraintStart_toEndOf="@+id/ringtone_img"
             app:layout_constraintTop_toBottomOf="@+id/ringtone_title" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/ringtone_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
             android:background="@color/transparent"
             android:src="@drawable/arrow_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:contentDescription="@string/music"
-            android:src="@drawable/ringtone_img"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
