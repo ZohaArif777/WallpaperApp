@@ -66,6 +66,7 @@
     <string name="home">Startseite</string>
     <string name="img">Bild</string>
     <string name="Next">Weiter</string>
+    <string name="LanguageApplySuccessfully">Sprache erfolgreich angewendet</string>
     <string name="skip">Überspringen</string>
     <string name="_vieew">Bild</string>
     <string name="imgview">Bildansicht</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">Hintergrund</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Starten</string>
+    <string name="download">Herunterladen</string>
+    <string name="internet_error">Internetverbindung erforderlich, um Hintergrundbilder anzuzeigen</string>
+    <string name="set_sound_success">%1$s wurde erfolgreich eingestellt!</string>
 </resources>

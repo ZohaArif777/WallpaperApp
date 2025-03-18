@@ -66,6 +66,7 @@
     <string name="home">ana sayfa</string>
     <string name="img">resim</string>
     <string name="Next">Sonraki</string>
+    <string name="LanguageApplySuccessfully">Dil başarıyla uygulandı</string>
     <string name="skip">Atla</string>
     <string name="_vieew">resim</string>
     <string name="imgview">resim görümü</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">duvar kağıdı</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Başlat</string>
+    <string name="download">İndir</string>
+    <string name="internet_error">Duvar kağıtlarını görüntülemek için internet bağlantısı gereklidir</string>
+    <string name="set_sound_success">%1$s başarıyla ayarlandı!</string>
 </resources>

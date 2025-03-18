@@ -21,9 +21,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:paddingHorizontal="@dimen/_10sdp">
+            android:orientation="horizontal">
 
             <!-- Back Arrow Button -->
             <ImageButton
@@ -32,23 +31,23 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/back"
+                android:padding="8dp"
                 android:src="@drawable/forward_arrow"
-                app:tint="@color/white"
-                android:padding="8dp" />
+                app:tint="@color/white" />
 
             <!-- Title -->
             <TextView
                 android:id="@+id/ringtone_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/outfit"
                 android:gravity="center"
                 android:text="@string/ringtones"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_20sdp"
-                android:textStyle="bold"
-                android:fontFamily="@font/outfit"
-                android:layout_marginStart="8dp" />
+                android:textStyle="bold" />
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -127,13 +126,12 @@
         android:id="@+id/seekbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/popup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_layout">
 
-        <!-- Start Time -->
         <TextView
             android:id="@+id/start_time"
             android:layout_width="wrap_content"
@@ -144,7 +142,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/seekBar"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- SeekBar -->
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="0dp"
@@ -157,7 +154,6 @@
             app:layout_constraintStart_toEndOf="@id/start_time"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- End Time -->
         <TextView
             android:id="@+id/end_time"
             android:layout_width="wrap_content"
@@ -173,14 +169,12 @@
         android:id="@+id/popup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_15sdp"
+        android:layout_margin="@dimen/_10sdp"
         android:background="@drawable/dialog_success"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar_layout">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <!-- "Set As" TextView -->
         <TextView
             android:id="@+id/tv_set_as"
             android:layout_width="wrap_content"
@@ -195,7 +189,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Buttons Layout -->
         <LinearLayout
             android:id="@+id/buttons_layout"
             android:layout_width="match_parent"
@@ -208,7 +201,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_set_as">
 
-            <!-- Ringtone Button -->
             <LinearLayout
                 android:id="@+id/btn_ringtone"
                 android:layout_width="0dp"
@@ -238,7 +230,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Notification Button -->
             <LinearLayout
                 android:id="@+id/btn_notification"
                 android:layout_width="0dp"
@@ -269,7 +260,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Alarm Button -->
             <LinearLayout
                 android:id="@+id/btn_alarm"
                 android:layout_width="0dp"

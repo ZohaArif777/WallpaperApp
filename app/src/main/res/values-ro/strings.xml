@@ -66,6 +66,7 @@
     <string name="home">acasă</string>
     <string name="img">img</string>
     <string name="Next">Următor</string>
+    <string name="LanguageApplySuccessfully">Limba a fost aplicată cu succes</string>
     <string name="skip">Sari peste</string>
     <string name="_vieew">imagine</string>
     <string name="imgview">vizualizare img</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">tapet</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Pornire</string>
+    <string name="download">Descărcare</string>
+    <string name="internet_error">Este necesară o conexiune la internet pentru a vizualiza imaginile de fundal</string>
+    <string name="set_sound_success">%1$s a fost setat cu succes!</string>
 </resources>

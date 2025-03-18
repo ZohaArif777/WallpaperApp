@@ -66,6 +66,7 @@
     <string name="home">home</string>
     <string name="img">img</string>
     <string name="Next">Avanti</string>
+    <string name="LanguageApplySuccessfully">Lingua applicata con successo</string>
     <string name="skip">Salta</string>
     <string name="_vieew">immagine</string>
     <string name="imgview">visualizza immagine</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">sfondo</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Avvia</string>
+    <string name="download">Scarica</string>
+    <string name="internet_error">È necessaria una connessione Internet per visualizzare gli sfondi</string>
+    <string name="set_sound_success">%1$s impostato con successo!</string>
 </resources>

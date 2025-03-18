@@ -66,6 +66,7 @@
     <string name="home">홈</string>
     <string name="img">이미지</string>
     <string name="Next">다음</string>
+    <string name="LanguageApplySuccessfully">언어가 성공적으로 적용되었습니다</string>
     <string name="skip">건너뛰기</string>
     <string name="_vieew">이미지</string>
     <string name="imgview">이미지뷰</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">배경화면</string>
     <string name="sam">샘</string>
     <string name="hd_">HD</string>
+    <string name="start">시작</string>
+    <string name="download">다운로드</string>
+    <string name="internet_error">배경 화면을 보려면 인터넷 연결이 필요합니다</string>
+    <string name="set_sound_success">%1$s 설정이 성공적으로 완료되었습니다!</string>
 </resources>

@@ -1,30 +1,37 @@
 package com.wallpaper.features.ringtons
 
 import android.app.Dialog
+import android.content.ContentValues
 import android.content.Intent
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.os.Environment
+import android.provider.MediaStore
 import android.provider.Settings
 import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.SeekBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import com.wallpaper.R
 import com.wallpaper.databinding.ActivityRingtonePlayerBinding
+import java.io.File
+import java.io.FileOutputStream
+import java.io.InputStream
 import java.util.concurrent.TimeUnit
 
 class RingtonePlayer : AppCompatActivity() {
 
     private lateinit var binding: ActivityRingtonePlayerBinding
     private var mediaPlayer: MediaPlayer? = null
-    private val handler = Handler(Looper.getMainLooper())
-    private var currentSoundType = ""
+    private var currentIndex: Int = 0
+    private var selectedList: List<Int> = listOf()
 
     private val ringtoneList = listOf(
         R.raw.vintage_telephone,
@@ -43,7 +50,6 @@ class RingtonePlayer : AppCompatActivity() {
         R.raw.sci_fi_reject,
         R.raw.positive_notification,
         R.raw.software_interface_remove,
-        R.raw.software_interface_remove,
         R.raw.magic_marimba,
         R.raw.tile_game_reveal,
         R.raw.sci_fi_reject,
@@ -51,17 +57,12 @@ class RingtonePlayer : AppCompatActivity() {
         R.raw.door_bell
     )
 
-    private var currentIndex: Int = 0
-    private var selectedList: List<Int> = ringtoneList
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityRingtonePlayerBinding.inflate(layoutInflater)
-        binding.btn.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
-        }
         setContentView(binding.root)
+
+        binding.btn.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
         val ringtoneName = intent.getStringExtra("RINGTONE_NAME")
         val ringtoneResId = intent.getIntExtra("RINGTONE_RES_ID", -1)
@@ -71,11 +72,11 @@ class RingtonePlayer : AppCompatActivity() {
         currentIndex = selectedList.indexOf(ringtoneResId).takeIf { it != -1 } ?: 0
 
         updateSoundName()
+        binding.textName.text = ringtoneName
 
         binding.btnPlayPause.setOnClickListener { togglePlayPause() }
         binding.btnNext.setOnClickListener { playNextSound() }
         binding.btnBack.setOnClickListener { playPreviousSound() }
-        binding.textName.text = ringtoneName
 
         binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -88,30 +89,22 @@ class RingtonePlayer : AppCompatActivity() {
 
         playSound()
 
-        binding.btnRingtone.setOnClickListener { setSoundAs("Ringtone") }
-        binding.btnNotification.setOnClickListener { setSoundAs("Notification") }
-        binding.btnAlarm.setOnClickListener { setSoundAs("Alarm") }
+        binding.btnRingtone.setOnClickListener { setRingtoneDirectly() }
+        binding.btnNotification.setOnClickListener { setSoundAs(RingtoneManager.TYPE_NOTIFICATION) }
+        binding.btnAlarm.setOnClickListener { setSoundAs(RingtoneManager.TYPE_ALARM) }
     }
 
     private fun togglePlayPause() {
-        if (mediaPlayer == null) {
-            playSound()
-        } else {
-            mediaPlayer?.let {
-                try {
-                    if (it.isPlaying) {
-                        it.pause()
-                        binding.btnPlayPause.setImageResource(R.drawable.play_button)
-                    } else {
-                        it.start()
-                        updateSeekBar()
-                        binding.btnPlayPause.setImageResource(R.drawable.pause)
-                    }
-                } catch (e: IllegalStateException) {
-                    restartMediaPlayer()
-                }
+        mediaPlayer?.let {
+            if (it.isPlaying) {
+                it.pause()
+                binding.btnPlayPause.setImageResource(R.drawable.play_button)
+            } else {
+                it.start()
+                updateSeekBar()
+                binding.btnPlayPause.setImageResource(R.drawable.pause)
             }
-        }
+        } ?: playSound()
     }
 
     private fun playSound() {
@@ -150,18 +143,6 @@ class RingtonePlayer : AppCompatActivity() {
         mediaPlayer?.let { player ->
             binding.seekBar.max = player.duration
             binding.endTime.text = formatTime(player.duration)
-
-            handler.post(object : Runnable {
-                override fun run() {
-                    mediaPlayer?.let {
-                        if (it.isPlaying) {
-                            binding.seekBar.progress = it.currentPosition
-                            binding.startTime.text = formatTime(it.currentPosition)
-                            handler.postDelayed(this, 500)
-                        }
-                    }
-                }
-            })
         }
     }
 
@@ -171,16 +152,10 @@ class RingtonePlayer : AppCompatActivity() {
         binding.btnPlayPause.setImageResource(R.drawable.play_button)
     }
 
-    private fun restartMediaPlayer() {
-        stopAndReleaseMediaPlayer()
-        playSound()
-    }
-
     private fun stopAndReleaseMediaPlayer() {
         mediaPlayer?.stop()
         mediaPlayer?.release()
         mediaPlayer = null
-        handler.removeCallbacksAndMessages(null)
     }
 
     private fun formatTime(milliseconds: Int): String {
@@ -189,65 +164,75 @@ class RingtonePlayer : AppCompatActivity() {
         return String.format("%02d:%02d", minutes, seconds)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        stopAndReleaseMediaPlayer()
-    }
+    private fun getCacheAudioUri(resId: Int): Uri? {
+        val fileName = "${resources.getResourceEntryName(resId)}.mp3"
+        val cacheFile = File(cacheDir, fileName)
 
-    override fun onResume() {
-        super.onResume()
-        if (Settings.System.canWrite(this)) {
-            setSoundAs(currentSoundType)
+        if (!cacheFile.exists()) {
+            try {
+                val inputStream: InputStream = resources.openRawResource(resId)
+                val outputStream = FileOutputStream(cacheFile)
+                inputStream.copyTo(outputStream)
+                outputStream.close()
+                inputStream.close()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                return null
+            }
         }
+
+        return FileProvider.getUriForFile(this, "$packageName.provider", cacheFile)
     }
 
-    private fun checkAndRequestPermission(): Boolean {
-        if (!Settings.System.canWrite(this)) {
-            val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS)
-            intent.data = Uri.parse("package:$packageName")
-            startActivity(intent)
-            return false
-        }
-        return true
-    }
-
-    private fun setSoundAs(type: String) {
-        if (!checkAndRequestPermission()) {
+    private fun setRingtoneDirectly() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.System.canWrite(this)) {
+            requestWriteSettingsPermission()
             return
         }
 
-        val soundUri = Uri.parse("android.resource://$packageName/${selectedList[currentIndex]}")
+        val uri = getCacheAudioUri(selectedList[currentIndex]) ?: return
+        RingtoneManager.setActualDefaultRingtoneUri(this, RingtoneManager.TYPE_RINGTONE, uri)
+        showSuccessDialog("Ringtone")
+    }
 
-        RingtoneManager.setActualDefaultRingtoneUri(
-            this, when (type) {
-                "Ringtone" -> RingtoneManager.TYPE_RINGTONE
-                "Notification" -> RingtoneManager.TYPE_NOTIFICATION
-                "Alarm" -> RingtoneManager.TYPE_ALARM
-                else -> return
-            }, soundUri
-        )
+    private fun setSoundAs(type: Int) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.System.canWrite(this)) {
+            requestWriteSettingsPermission()
+            return
+        }
 
-        showSuccessDialog(type)
+        val uri = getCacheAudioUri(selectedList[currentIndex]) ?: return
+        RingtoneManager.setActualDefaultRingtoneUri(this, type, uri)
+
+        val typeString = when (type) {
+            RingtoneManager.TYPE_NOTIFICATION -> "Notification"
+            RingtoneManager.TYPE_ALARM -> "Alarm"
+            else -> "Ringtone"
+        }
+        showSuccessDialog(typeString)
+    }
+
+    private fun requestWriteSettingsPermission() {
+        val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS)
+        intent.data = Uri.parse("package:$packageName")
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+
+        Toast.makeText(this, "Please enable Modify System Settings", Toast.LENGTH_LONG).show()
     }
 
     private fun showSuccessDialog(type: String) {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_done)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        dialog.window?.setLayout(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
+        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         dialog.window?.setGravity(Gravity.CENTER)
 
         val btnClose = dialog.findViewById<ImageButton>(R.id.btnClose)
         val textMessage = dialog.findViewById<TextView>(R.id.successMessage)
 
-        textMessage.text = "$type set successfully!"
-
-        btnClose.setOnClickListener {
-            dialog.dismiss()
-        }
+        textMessage.text = getString(R.string.set_sound_success, type)
+        btnClose.setOnClickListener { dialog.dismiss() }
 
         dialog.show()
     }

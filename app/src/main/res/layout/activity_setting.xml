@@ -25,17 +25,15 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <!-- Image Button on Left -->
             <ImageButton
                 android:id="@+id/btn_back"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/back"
                 android:src="@drawable/forward_arrow"
                 app:tint="@color/white" />
 
-            <!-- Centered Text -->
             <TextView
                 android:id="@+id/toolbar_text"
                 android:layout_width="0dp"
@@ -51,7 +49,6 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <!-- Premium Layout -->
     <LinearLayout
         android:id="@+id/premium_layout"
         android:layout_width="0dp"
@@ -80,17 +77,17 @@
 
             <TextView
                 android:id="@+id/premium_text"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/outfit"
                 android:text="@string/upgrade_to_premium"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_13sdp"
+                android:textSize="@dimen/_12sdp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/premium_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/outfit"
                 android:text="@string/enjoy_without_ads"
@@ -124,12 +121,12 @@
 
         <TextView
             android:id="@+id/wallpaper_text"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/outfit"
             android:text="@string/wallpaper_settings"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -145,7 +142,7 @@
             android:paddingVertical="@dimen/_12sdp"
             android:text="@string/restore_to_system_wallpaper"
             android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/language_selected_text"
             app:layout_constraintStart_toStartOf="parent"

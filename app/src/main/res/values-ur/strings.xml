@@ -66,6 +66,7 @@
     <string name="home">ہوم</string>
     <string name="img">تصویر</string>
     <string name="Next">آگے</string>
+    <string name="LanguageApplySuccessfully">زبان کامیابی سے لاگو ہو گئی</string>
     <string name="skip">اسکپ</string>
     <string name="_vieew">تصویر</string>
     <string name="imgview">تصویر دیکھیں</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">وال پیپر</string>
     <string name="sam">سام</string>
     <string name="hd_">ایچ ڈی</string>
+    <string name="start">شروع کریں</string>
+    <string name="download">ڈاؤن لوڈ</string>
+    <string name="internet_error">وال پیپر دیکھنے کے لیے انٹرنیٹ کنکشن ضروری ہے</string>
+    <string name="set_sound_success">%1$s کامیابی کے ساتھ سیٹ ہو گیا!</string>
 </resources>

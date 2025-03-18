@@ -1,10 +1,15 @@
 package com.wallpaper.features.wallpapers
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.wallpaper.R
 import com.wallpaper.base_app.Constants
 import com.wallpaper.features.wallpapers.adapter.RecyclerviewAdapter
 import com.wallpaper.databinding.ActivityWallpaperListBinding
@@ -31,17 +36,43 @@ class WallpaperList : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(subcategory: String) {
+        if (!isInternetAvailable()) {
+            Toast.makeText(
+                this,
+                getString(R.string.internet_error),
+                Toast.LENGTH_LONG
+            ).show()
+            return
+        }
+
         val wallpaperList = getWallpapersBySubcategory(subcategory)
+
+        if (wallpaperList.isEmpty()) {
+            Log.e("WallpaperList", "No wallpapers available for: $subcategory")
+            Toast.makeText(this, "No wallpapers found for this category", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val mainCategory = getMainCategory(subcategory)
 
         adapter = RecyclerviewAdapter(this, wallpaperList, { selectedWallpaper ->
             selectedWallpaper.let { wallpaper ->
-                val intent = Intent(this, WallpaperPlayer::class.java).apply {
-                    putExtra("WALLPAPER_IMAGE", wallpaper.imageUrl)
-                    putExtra("WALLPAPER_MAIN_CATEGORY", mainCategory)
-                    putExtra("WALLPAPER_CATEGORY", subcategory)
+                if (!isInternetAvailable()) {
+                    Toast.makeText(this, "Internet required to load wallpaper", Toast.LENGTH_SHORT)
+                        .show()
+                    return@let
                 }
-                startActivity(intent)
+
+                if (wallpaper.imageUrl?.isNotEmpty() == true) {
+                    val intent = Intent(this, WallpaperPlayer::class.java).apply {
+                        putExtra("WALLPAPER_IMAGE", wallpaper.imageUrl)
+                        putExtra("WALLPAPER_MAIN_CATEGORY", mainCategory)
+                        putExtra("WALLPAPER_CATEGORY", subcategory)
+                    }
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Invalid wallpaper URL", Toast.LENGTH_SHORT).show()
+                }
             }
         }, isDetailedView = true)
 
@@ -93,12 +124,20 @@ class WallpaperList : AppCompatActivity() {
             Log.e("WallpaperList", "No wallpapers found for: $subcategory")
             return emptyList()
         }
-
         val wallpapers = List(5) { index ->
             val url = "${Constants.BASE_URL}$categoryKey/${index + 1}.png"
             Log.d("WallpaperList", "Generated Wallpaper URL: $url")
             WallpaperModel(url)
         }
         return wallpapers
+    }
+
+    private fun isInternetAvailable(): Boolean {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+
+        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 }

@@ -66,6 +66,7 @@
     <string name="home">beranda</string>
     <string name="img">gambar</string>
     <string name="Next">Berikutnya</string>
+    <string name="LanguageApplySuccessfully">Bahasa berhasil diterapkan</string>
     <string name="skip">Lewati</string>
     <string name="_vieew">gambar</string>
     <string name="imgview">tampilan gambar</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">wallpaper</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Mulai</string>
+    <string name="download">Unduh</string>
+    <string name="internet_error">Koneksi internet diperlukan untuk melihat wallpaper</string>
+    <string name="set_sound_success">%1$s berhasil disetel!</string>
 </resources>

@@ -2,7 +2,9 @@ package com.wallpaper.features.wallpapers
 
 import android.app.WallpaperManager
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
@@ -27,48 +29,44 @@ import java.io.IOException
 class WallpaperPlayer : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperPlayerBinding
     private var isFullscreen = false
-    private var savedFile: File? = null // To store downloaded file
+    private var savedFile: File? = null
+    private lateinit var sharedPreferences: SharedPreferences
+    private var wallpaperUrl: String? = null
+    private var fileName: String? = null
+    private var category: String? = null
+    private var subcategory: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWallpaperPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val wallpaperUrl = intent.getStringExtra("WALLPAPER_IMAGE") ?: ""
-        val subcategory = intent.getStringExtra("WALLPAPER_CATEGORY") ?: "Unknown"
-        val category = intent.getStringExtra("WALLPAPER_MAIN_CATEGORY") ?: "Unknown"
+        sharedPreferences = getSharedPreferences("WallpaperPrefs", Context.MODE_PRIVATE)
 
-        if (wallpaperUrl.isNotEmpty()) {
+        wallpaperUrl = intent.getStringExtra("WALLPAPER_IMAGE")
+        category = intent.getStringExtra("WALLPAPER_MAIN_CATEGORY") ?: "Unknown"
+        subcategory = intent.getStringExtra("WALLPAPER_CATEGORY") ?: "Unknown"
+
+        if (!wallpaperUrl.isNullOrEmpty()) {
             Glide.with(this).load(wallpaperUrl).into(binding.img)
+            fileName = wallpaperUrl!!.substringAfterLast("/")
+            checkIfWallpaperDownloaded()
         }
 
-        binding.btnWallpaper.text = getString(R.string.download)
-
-        binding.btnBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
-        }
-        binding.btnHome.setOnClickListener {
-            openPreviewActivity(wallpaperUrl)
-        }
-        binding.btnLock.setOnClickListener {
-            openLockPreviewActivity(wallpaperUrl)
-        }
+        binding.btnBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
+        binding.btnHome.setOnClickListener { openPreviewActivity(wallpaperUrl) }
+        binding.btnLock.setOnClickListener { openLockPreviewActivity(wallpaperUrl) }
 
         binding.btnWallpaper.setOnClickListener {
             if (savedFile == null) {
-                downloadWallpaper(wallpaperUrl, category, subcategory)
+                downloadWallpaper(wallpaperUrl, category ?: "Unknown", subcategory ?: "Unknown")
             } else {
                 showSetWallpaperDialog(savedFile!!)
             }
         }
 
-        binding.btnFit.setOnClickListener {
-            toggleFullscreenMode()
-        }
-
-        binding.img.setOnClickListener {
-            if (isFullscreen) toggleFullscreenMode()
-        }
+        binding.btnFit.setOnClickListener { toggleFullscreenMode() }
+        binding.img.setOnClickListener { if (isFullscreen) toggleFullscreenMode() }
     }
 
     private fun toggleFullscreenMode() {
@@ -79,6 +77,26 @@ class WallpaperPlayer : AppCompatActivity() {
         binding.btnLock.visibility = visibility
         binding.btnWallpaper.visibility = visibility
         binding.btnFit.visibility = visibility
+    }
+
+    private fun checkIfWallpaperDownloaded() {
+        if (fileName == null) return
+
+        val key = "$fileName|$category|$subcategory"  // Unique key format
+        val isDownloaded = sharedPreferences.getBoolean(key, false)
+
+        if (isDownloaded) {
+            savedFile = getSavedFilePath(fileName!!)
+            binding.btnWallpaper.text = getString(R.string.apply)
+        } else {
+            binding.btnWallpaper.text = getString(R.string.download)
+        }
+    }
+
+    private fun getSavedFilePath(fileName: String): File? {
+        val cacheDir = File(getExternalFilesDir(null), "Wallpapers")
+        val file = File(cacheDir, fileName)
+        return if (file.exists()) file else null
     }
 
     private fun openPreviewActivity(wallpaperUrl: String?) {
@@ -93,7 +111,7 @@ class WallpaperPlayer : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun downloadWallpaper(wallpaperUrl: String?, category: String, subCategory: String) {
+    private fun downloadWallpaper(wallpaperUrl: String?, category: String, subcategory: String) {
         if (wallpaperUrl.isNullOrEmpty()) {
             Toast.makeText(this, "Invalid wallpaper URL!", Toast.LENGTH_SHORT).show()
             return
@@ -111,10 +129,12 @@ class WallpaperPlayer : AppCompatActivity() {
                 override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
                     progressDialog.dismiss()
 
-                    savedFile = saveImageToCache(resource, wallpaperUrl, category, subCategory)
+                    savedFile = saveImageToCache(resource, fileName!!)
                     if (savedFile != null) {
-                        // Update button text to "Apply"
-                        binding.btnWallpaper.text = "Apply"
+                        val key = "$fileName|$category|$subcategory"  // Store unique key
+                        sharedPreferences.edit().putBoolean(key, true).apply()
+
+                        binding.btnWallpaper.text = getString(R.string.apply)
                         Toast.makeText(
                             this@WallpaperPlayer,
                             "Wallpaper downloaded successfully",
@@ -162,16 +182,10 @@ class WallpaperPlayer : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun saveImageToCache(
-        bitmap: Bitmap,
-        wallpaperUrl: String,
-        category: String,
-        subCategory: String
-    ): File? {
-        val cacheDir = File(getExternalFilesDir(null), "Wallpapers/$category/$subCategory")
+    private fun saveImageToCache(bitmap: Bitmap, fileName: String): File? {
+        val cacheDir = File(getExternalFilesDir(null), "Wallpapers")
         if (!cacheDir.exists()) cacheDir.mkdirs()
 
-        val fileName = wallpaperUrl.substringAfterLast("/")
         val file = File(cacheDir, fileName)
         if (file.exists()) return file
         return try {
@@ -210,9 +224,7 @@ class WallpaperPlayer : AppCompatActivity() {
         dialog.window?.setGravity(Gravity.CENTER)
 
         val btnClose = dialog.findViewById<ImageButton>(R.id.btnClose)
-        btnClose.setOnClickListener {
-            dialog.dismiss()
-        }
+        btnClose.setOnClickListener { dialog.dismiss() }
 
         dialog.show()
     }

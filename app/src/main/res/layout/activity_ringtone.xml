@@ -8,14 +8,12 @@
     android:background="@color/app_black"
     tools:context=".features.ringtons.Ringtone">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/toolbar"
         android:backgroundTint="@color/app_black"
-        android:minHeight="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,10 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="@dimen/_10sdp">
+            android:gravity="center_vertical">
 
-            <!-- Back Arrow Button -->
             <ImageButton
                 android:id="@+id/btn"
                 android:layout_width="wrap_content"
@@ -35,10 +31,8 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/back"
                 android:src="@drawable/forward_arrow"
-                app:tint="@color/white"
-                android:padding="8dp" />
+                app:tint="@color/white" />
 
-            <!-- Title -->
             <TextView
                 android:id="@+id/ringtone_title"
                 android:layout_width="0dp"
@@ -49,12 +43,10 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/_20sdp"
                 android:textStyle="bold"
-                android:fontFamily="@font/outfit"
-                android:layout_marginStart="8dp" />
+                android:fontFamily="@font/outfit" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- TabLayout -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"

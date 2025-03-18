@@ -66,6 +66,7 @@
     <string name="home">αρχική</string>
     <string name="img">εικόνα</string>
     <string name="Next">Επόμενο</string>
+    <string name="LanguageApplySuccessfully">Η γλώσσα εφαρμόστηκε με επιτυχία</string>
     <string name="skip">Παράλειψη</string>
     <string name="_vieew">εικόνα</string>
     <string name="imgview">προβολή εικόνας</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">ταπετσαρία</string>
     <string name="sam">Σαμ</string>
     <string name="hd_">hd</string>
+    <string name="start">Έναρξη</string>
+    <string name="download">Λήψη</string>
+    <string name="internet_error">Απαιτείται σύνδεση στο διαδίκτυο για την προβολή των ταπετσαριών</string>
+    <string name="set_sound_success">%1$s ρυθμίστηκε με επιτυχία!</string>
 </resources>

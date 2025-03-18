@@ -66,6 +66,7 @@
     <string name="home">thuis</string>
     <string name="img">afbeelding</string>
     <string name="Next">Volgende</string>
+    <string name="LanguageApplySuccessfully">Sprache erfolgreich angewendet</string>
     <string name="skip">Overslaan</string>
     <string name="_vieew">afbeelding</string>
     <string name="imgview">afbeeldingweergave</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">achtergrond</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Start</string>
+    <string name="download">Downloaden</string>
+    <string name="internet_error">Internetverbinding vereist om achtergronden te bekijken</string>
+    <string name="set_sound_success">%1$s wurde erfolgreich eingestellt!</string>
 </resources>

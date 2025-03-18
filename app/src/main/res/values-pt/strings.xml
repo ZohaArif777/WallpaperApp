@@ -66,6 +66,7 @@
     <string name="home">Início</string>
     <string name="img">img</string>
     <string name="Next">Próximo</string>
+    <string name="LanguageApplySuccessfully">Idioma aplicado com sucesso</string>
     <string name="skip">Pular</string>
     <string name="_vieew">imagem</string>
     <string name="imgview">imgview</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">papel de parede</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Iniciar</string>
+    <string name="download">Baixar</string>
+    <string name="internet_error">É necessária uma conexão com a Internet para visualizar os papéis de parede</string>
+    <string name="set_sound_success">%1$s foi definido com sucesso!</string>
 </resources>

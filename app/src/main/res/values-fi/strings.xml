@@ -66,6 +66,7 @@
     <string name="home">koti</string>
     <string name="img">kuva</string>
     <string name="Next">Seuraava</string>
+    <string name="LanguageApplySuccessfully">Η γλώσσα εφαρμόστηκε με επιτυχία</string>
     <string name="skip">Ohita</string>
     <string name="_vieew">kuva</string>
     <string name="imgview">kuvannäkymä</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">taustakuva</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Aloita</string>
+    <string name="download">Lataa</string>
+    <string name="internet_error">Internet-yhteys tarvitaan taustakuvien katseluun</string>
+    <string name="set_sound_success">%1$s asetettu onnistuneesti!</string>
 </resources>

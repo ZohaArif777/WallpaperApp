@@ -1,4 +1,4 @@
-package com.wallpaper.fragments
+package com.wallpaper.features.fragments
 
 import android.content.Context
 import android.media.MediaMetadataRetriever
@@ -10,14 +10,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wallpaper.R
-import com.wallpaper.adapter.RingtoneAdapter
+import com.wallpaper.features.ringtons.adapter.RingtoneAdapter
 import com.wallpaper.databinding.FragmentApplyRingtoneBinding
-import com.wallpaper.dataclass.Ringtones
+import com.wallpaper.features.data_class.RingtonesModel
 
 class ApplyRingtone : Fragment() {
     private var _binding: FragmentApplyRingtoneBinding? = null
     private val binding get() = _binding!!
-    private val ringtoneList = mutableListOf<Ringtones>()
+    private val ringtoneList = mutableListOf<RingtonesModel>()
     private lateinit var ringtoneAdapter: RingtoneAdapter
 
     override fun onCreateView(
@@ -43,10 +43,10 @@ class ApplyRingtone : Fragment() {
 
     private fun loadRingtones() {
         val rawResources = listOf(
-            R.raw.ringtone1, R.raw.ringtone2, R.raw.ringtone3,
-            R.raw.ringtone4, R.raw.ringtone5, R.raw.ringtone6,
-            R.raw.ringtone6, R.raw.ringtone8, R.raw.ringtone9,
-            R.raw.ringtone10
+            R.raw.vintage_telephone, R.raw.urgent_simple_tone, R.raw.old_ringtone,
+            R.raw.telephone_ring, R.raw.on_hold_ringtone, R.raw.waiting_ringtone,
+            R.raw.waiting_ringtone, R.raw.music_ringtone, R.raw.office_ringtone,
+            R.raw.toy_telephone
         )
 
         ringtoneList.clear()
@@ -54,7 +54,7 @@ class ApplyRingtone : Fragment() {
         ringtoneAdapter.notifyDataSetChanged()
     }
 
-    private fun getRingtoneInfo(resId: Int): Ringtones? {
+    private fun getRingtoneInfo(resId: Int): RingtonesModel? {
         return try {
             val context = requireContext()
             val ringtoneName = resources.getResourceEntryName(resId)
@@ -64,7 +64,7 @@ class ApplyRingtone : Fragment() {
             val formattedDuration = formatDuration(durationMs)
             val fileSize = getRawFileSize(context, resId)
 
-            Ringtones(ringtoneName, fileSize, formattedDuration, resId)
+            RingtonesModel(ringtoneName, fileSize, formattedDuration, resId)
         } catch (e: Exception) {
             e.printStackTrace()
             null

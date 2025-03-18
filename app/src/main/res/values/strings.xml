@@ -66,6 +66,7 @@
     <string name="home">home</string>
     <string name="img">img</string>
     <string name="Next">Next</string>
+    <string name="LanguageApplySuccessfully"> LanguageApplySuccessfully</string>
     <string name="skip">Skip</string>
     <string name="_vieew">image</string>
     <string name="imgview">imgview</string>
@@ -132,4 +133,9 @@
     <string name="Wallpaper">wallpaper</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Start</string>
+    <string name="download">Download</string>
+    <string name="internet_error">Internet connection required to view wallpapers</string>
+    <string name="set_sound_success">"%1$s set successfully!"</string>
+
 </resources>

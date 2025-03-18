@@ -66,6 +66,7 @@
     <string name="home">główna</string>
     <string name="img">obraz</string>
     <string name="Next">Dalej</string>
+    <string name="LanguageApplySuccessfully">Język został pomyślnie zastosowany</string>
     <string name="skip">Pomiń</string>
     <string name="_vieew">obraz</string>
     <string name="imgview">podgląd_obrazu</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">tapeta</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Start</string>
+    <string name="download">Pobierz</string>
+    <string name="internet_error">Połączenie z Internetem jest wymagane do wyświetlania tapet</string>
+    <string name="set_sound_success">%1$s został pomyślnie ustawiony!</string>
 </resources>

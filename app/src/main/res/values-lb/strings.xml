@@ -66,6 +66,7 @@
     <string name="home">Doheem</string>
     <string name="img">Bild</string>
     <string name="Next">Weider</string>
+    <string name="LanguageApplySuccessfully">Sprooch erfollegräich ugewannt</string>
     <string name="skip">Iwwersprangen</string>
     <string name="_vieew">Bild</string>
     <string name="imgview">Bildweiderginn</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">Tapéit</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Start</string>
+    <string name="download">Eroflueden</string>
+    <string name="internet_error">Eng Internetverbindung ass erfuerderlech, fir Tapéiten ze gesinn</string>
+    <string name="set_sound_success">%1$s gouf erfollegräich gesat!</string>
 </resources>

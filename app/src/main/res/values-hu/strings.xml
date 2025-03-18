@@ -66,6 +66,7 @@
     <string name="home">kezdőlap</string>
     <string name="img">kép</string>
     <string name="Next">Következő</string>
+    <string name="LanguageApplySuccessfully">A nyelv sikeresen alkalmazva</string>
     <string name="skip">Kihagyás</string>
     <string name="_vieew">kép</string>
     <string name="imgview">képnézet</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">háttérkép</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Indítás</string>
+    <string name="download">Letöltés</string>
+    <string name="internet_error">A háttérképek megtekintéséhez internetkapcsolat szükséges</string>
+    <string name="set_sound_success">%1$s sikeresen beállítva</string>
 </resources>

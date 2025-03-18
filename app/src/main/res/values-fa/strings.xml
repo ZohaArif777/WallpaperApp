@@ -66,6 +66,7 @@
     <string name="home">خانه</string>
     <string name="img">تصویر</string>
     <string name="Next">بعدی</string>
+    <string name="LanguageApplySuccessfully">زبان با موفقیت اعمال شد</string>
     <string name="skip">رد کردن</string>
     <string name="_vieew">تصویر</string>
     <string name="imgview">مشاهده تصویر</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">والپیپر</string>
     <string name="sam">سام</string>
     <string name="hd_">HD</string>
+    <string name="start">شروع</string>
+    <string name="download">دانلود</string>
+    <string name="internet_error">برای مشاهده پس‌زمینه‌ها، اتصال به اینترنت لازم است</string>
+    <string name="set_sound_success">%1$s با موفقیت تنظیم شد!</string>
 </resources>

@@ -66,6 +66,7 @@
     <string name="home">hjem</string>
     <string name="img">bilde</string>
     <string name="Next">Neste</string>
+    <string name="LanguageApplySuccessfully">Språket ble brukt vellykket</string>
     <string name="skip">Hopp over</string>
     <string name="_vieew">bilde</string>
     <string name="imgview">bildevisning</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">bakgrunn</string>
     <string name="sam">sam</string>
     <string name="hd_">hd</string>
+    <string name="start">Start</string>
+    <string name="download">Last ned</string>
+    <string name="internet_error">Internett-tilkobling kreves for å vise bakgrunnsbilder</string>
+    <string name="set_sound_success">%1$s ble satt vellykket!</string>
 </resources>

@@ -66,6 +66,7 @@
     <string name="home">главная</string>
     <string name="img">изображение</string>
     <string name="Next">Далее</string>
+    <string name="LanguageApplySuccessfully">Язык успешно применен</string>
     <string name="skip">Пропустить</string>
     <string name="_vieew">изображение</string>
     <string name="imgview">предпросмотр</string>
@@ -132,4 +133,8 @@
     <string name="Wallpaper">обои</string>
     <string name="sam">сам</string>
     <string name="hd_">hd</string>
+    <string name="start">Начать</string>
+    <string name="download">Скачать</string>
+    <string name="internet_error">Для просмотра обоев требуется подключение к интернету</string>
+    <string name="set_sound_success">%1$s успешно установлен!</string>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:backgroundTint="@color/app_black"
-    tools:context=".fragments.Notification">
+    tools:context=".features.fragments.Notification">
 
 
     <androidx.recyclerview.widget.RecyclerView
