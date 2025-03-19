@@ -1,14 +1,11 @@
 package com.wallpaper.features.ringtons
 
 import android.app.Dialog
-import android.content.ContentValues
 import android.content.Intent
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.net.Uri
-import android.os.Build
-import android.os.Bundle
-import android.os.Environment
+import android.os.*
 import android.provider.MediaStore
 import android.provider.Settings
 import android.view.Gravity
@@ -32,6 +29,19 @@ class RingtonePlayer : AppCompatActivity() {
     private var mediaPlayer: MediaPlayer? = null
     private var currentIndex: Int = 0
     private var selectedList: List<Int> = listOf()
+
+    private val handler = Handler(Looper.getMainLooper())
+    private val updateSeekBarRunnable = object : Runnable {
+        override fun run() {
+            mediaPlayer?.let { player ->
+                if (player.isPlaying) {
+                    binding.seekBar.progress = player.currentPosition
+                    binding.startTime.text = formatTime(player.currentPosition)
+                    handler.postDelayed(this, 500)
+                }
+            }
+        }
+    }
 
     private val ringtoneList = listOf(
         R.raw.vintage_telephone,
@@ -101,7 +111,7 @@ class RingtonePlayer : AppCompatActivity() {
                 binding.btnPlayPause.setImageResource(R.drawable.play_button)
             } else {
                 it.start()
-                updateSeekBar()
+                handler.post(updateSeekBarRunnable)
                 binding.btnPlayPause.setImageResource(R.drawable.pause)
             }
         } ?: playSound()
@@ -113,7 +123,9 @@ class RingtonePlayer : AppCompatActivity() {
             setOnCompletionListener { resetSeekBar() }
             start()
         }
+
         updateSeekBar()
+        handler.post(updateSeekBarRunnable)
         binding.btnPlayPause.setImageResource(R.drawable.pause)
     }
 
@@ -147,6 +159,7 @@ class RingtonePlayer : AppCompatActivity() {
     }
 
     private fun resetSeekBar() {
+        handler.removeCallbacks(updateSeekBarRunnable)
         binding.seekBar.progress = 0
         binding.startTime.text = "00:00"
         binding.btnPlayPause.setImageResource(R.drawable.play_button)
@@ -235,5 +248,11 @@ class RingtonePlayer : AppCompatActivity() {
         btnClose.setOnClickListener { dialog.dismiss() }
 
         dialog.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacks(updateSeekBarRunnable)
+        stopAndReleaseMediaPlayer()
     }
 }

@@ -135,6 +135,11 @@
     <string name="hd_">hd</string>
     <string name="start">Aloita</string>
     <string name="download">Lataa</string>
-    <string name="internet_error">Internet-yhteys tarvitaan taustakuvien katseluun</string>
     <string name="set_sound_success">%1$s asetettu onnistuneesti!</string>
+    <string name="check_your_internet_connection">Tarkista internet-yhteytesi</string>
+    <string name="open_internet_setting">Avaa internet-asetukset</string>
+    <string name="exit">Poistu</string>
+    <string name="are_you_sure_to_exit">Oletko varma, että haluat poistua?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Ei internetyhteyttä</string>
 </resources>

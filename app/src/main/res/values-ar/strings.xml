@@ -3,10 +3,10 @@
     <string name="hello_blank_fragment">مرحبًا، جزء فارغ</string>
     <string name="wallpaper">الخلفيات</string>
     <string name="ringtones">النغمات</string>
-    <string name="samsung">Samsung</string>
-    <string name="ios">iOS</string>
-    <string name="hd">HD</string>
-    <string name="iphone">iPhone</string>
+    <string name="samsung">سامسونج</string>
+    <string name="ios">آي أو إس</string>
+    <string name="hd">عالي الدقة</string>
+    <string name="iphone">آيفون</string>
     <string name="write_your_feedback_here">اكتب ملاحظاتك هنا</string>
     <string name="toggle_theme">تبديل السمة</string>
     <string name="wallpaper_title">استكشف خلفيات آيفون المذهلة \nفي مكان واحد</string>
@@ -34,7 +34,7 @@
     <string name="buy_premium_version">شراء النسخة المتميزة</string>
     <string name="wallpaper_settings">إعدادات الخلفية</string>
     <string name="restore_to_system_wallpaper">استعادة الخلفية الافتراضية</string>
-    <string name="general">General</string>
+    <string name="general">عام</string>
     <string name="share_app_with_friends_and_family">شارك التطبيق مع الأصدقاء والعائلة</string>
     <string name="rate_application">قيم التطبيق</string>
     <string name="privacy_policy">سياسة الخصوصية</string>
@@ -59,7 +59,7 @@
     <string name="alarm">منبه</string>
     <string name="phone_wallpaper">خلفية الهاتف</string>
     <string name="_0">0%</string>
-    <string name="iphone_wallpaper">خلفيات iPhone</string>
+    <string name="iphone_wallpaper">خلفيات آيفون</string>
     <string name="image">صورة</string>
     <string name="fit">ملاءمة</string>
     <string name="lock">قفل</string>
@@ -75,19 +75,19 @@
     <string name="media_title">عنوان الوسائط</string>
     <string name="size_0_mb">الحجم: 0 ميجابايت</string>
     <string name="_00_0">00:00</string>
-    <string name="iphone_Wallpaper">خلفيات iPhone</string>
+    <string name="iphone_Wallpaper">خلفيات آيفون</string>
     <string name="more_catagories">المزيد من الفئات</string>
-    <string name="IOS">iOS</string>
+    <string name="IOS">آي أو إس</string>
     <string name="explore_new_ringtones_n_in_one_place">اكتشف نغمات جديدة\nفي مكان واحد</string>
     <string name="image_title">عنوان الصورة</string>
     <string name="wallpaper_name">اسم الخلفية</string>
     <string name="splash_image">صورة البداية</string>
-    <string name="explore_stunning_iphone_wallpaper_to_n_personalize_your_screen_effortlessly">استكشف خلفيات iPhone الرائعة\nلتخصيص شاشتك بسهولة</string>
+    <string name="explore_stunning_iphone_wallpaper_to_n_personalize_your_screen_effortlessly">استكشف خلفيات آيفون الرائعة\nلتخصيص شاشتك بسهولة</string>
     <string name="HdWallpapers">خلفيات عالية الدقة\n</string>
     <string name="Discoverhighqualitywallpapersforastunningscreenexperience">اكتشف خلفيات عالية الجودة \nلتحصل على تجربة شاشة مذهلة</string>
     <string name="iPhonrRindtones">نغمات iPhone</string>
     <string name="EnjoythebestiPhoneringtonesforapremiumsoundexperience">استمتع بأفضل نغمات iPhone \nلتجربة صوتية متميزة</string>
-    <string name="iosscreen">شاشة iOS</string>
+    <string name="iosscreen">شاشة آي أو إس</string>
     <string name="HD">عالي الدقة</string>
     <string name="Samsung">سامسونج</string>
     <string name="hdscreen">شاشة عالية الدقة</string>
@@ -137,4 +137,10 @@
     <string name="download">تنزيل</string>
     <string name="internet_error">مطلوب اتصال بالإنترنت لعرض الخلفيات</string>
     <string name="set_sound_success">%1$s تم تعيينه بنجاح!</string>
+    <string name="check_your_internet_connection">تحقق من اتصالك بالإنترنت</string>
+    <string name="open_internet_setting">افتح إعدادات الإنترنت</string>
+    <string name="exit">خروج</string>
+    <string name="are_you_sure_to_exit">ل أنت متأكد من الخروج؟</string>
+    <string name="ok">حسنًا</string>
+    <string name="no_internet">لا يوجد إنترنت</string>
 </resources>

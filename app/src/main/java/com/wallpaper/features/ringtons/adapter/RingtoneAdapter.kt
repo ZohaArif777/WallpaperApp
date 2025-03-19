@@ -31,7 +31,10 @@ class RingtoneAdapter(
             text.text = ringtone.name
             size.text = ringtone.size
             duration.text = ringtone.duration
-
+            arrowButton.setOnClickListener {
+                val intent = Intent(context, RingtonePlayer::class.java)
+                context.startActivity(intent)
+            }
 
             text.setOnClickListener {
                 val intent = Intent(context, RingtonePlayer::class.java).apply {

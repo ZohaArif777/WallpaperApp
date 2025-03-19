@@ -137,4 +137,10 @@
     <string name="download">Ladda ner</string>
     <string name="internet_error">Internetanslutning krävs för att visa bakgrundsbilder</string>
     <string name="set_sound_success">%1$s har ställts in framgångsrikt!</string>
+    <string name="check_your_internet_connection">Kontrollera din internetanslutning</string>
+    <string name="open_internet_setting">Öppna internetinställningar</string>
+    <string name="exit">Avsluta</string>
+    <string name="are_you_sure_to_exit">Är du säker på att du vill avsluta?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Ingen internetanslutning</string>
 </resources>

@@ -16,18 +16,19 @@ import java.io.IOException
 class Setting : AppCompatActivity() {
     private lateinit var binding: ActivitySettingBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupUI()
+
     }
 
     private fun setupUI() {
         binding.apply {
             btnBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
             arrowIcon.setOnClickListener { navigateToLanguage() }
-
             languageButton.setOnClickListener { navigateToLanguage() }
             rateButton.setOnClickListener { openAppInStore() }
             shareButton.setOnClickListener { shareApp() }

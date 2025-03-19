@@ -137,4 +137,10 @@
     <string name="download">Unduh</string>
     <string name="internet_error">Koneksi internet diperlukan untuk melihat wallpaper</string>
     <string name="set_sound_success">%1$s berhasil disetel!</string>
+    <string name="check_your_internet_connection">Periksa koneksi internet Anda</string>
+    <string name="open_internet_setting">Buka pengaturan internet</string>
+    <string name="exit">Keluar</string>
+    <string name="are_you_sure_to_exit">Apakah Anda yakin ingin keluar?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Tidak ada internet</string>
 </resources>

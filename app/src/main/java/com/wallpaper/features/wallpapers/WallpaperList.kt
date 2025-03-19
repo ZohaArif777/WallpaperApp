@@ -1,23 +1,28 @@
 package com.wallpaper.features.wallpapers
 
-import android.content.Context
-import android.content.Intent
+import android.content.*
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.wallpaper.R
 import com.wallpaper.base_app.Constants
-import com.wallpaper.features.wallpapers.adapter.RecyclerviewAdapter
 import com.wallpaper.databinding.ActivityWallpaperListBinding
+import com.wallpaper.databinding.DialogNoInternetBinding
+import com.wallpaper.features.wallpapers.adapter.RecyclerviewAdapter
 import com.wallpaper.features.data_class.WallpaperModel
 
 class WallpaperList : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperListBinding
     private lateinit var adapter: RecyclerviewAdapter
+    private var dialog: BottomSheetDialog? = null
+    private lateinit var networkReceiver: BroadcastReceiver
+    private var subcategory: String = "Wallpapers"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,20 +33,36 @@ class WallpaperList : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        val subcategory = intent.getStringExtra("WALLPAPER_SUBCATEGORY") ?: "Wallpapers"
+        subcategory = intent.getStringExtra("WALLPAPER_SUBCATEGORY") ?: "Wallpapers"
         Log.d("WallpaperList", "Received subcategory: $subcategory")
         binding.wallpaperText.text = subcategory
 
         setupRecyclerView(subcategory)
+
+        networkReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context?, intent: Intent?) {
+                if (isInternetAvailable()) {
+                    Log.d("WallpaperList", "Internet is back! Reloading wallpapers...")
+                    dialog?.dismiss() // Dismiss the no-internet dialog
+                    setupRecyclerView(subcategory)
+                }
+            }
+        }
+        registerReceiver(networkReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        try {
+            unregisterReceiver(networkReceiver) // Unregister to prevent crashes
+        } catch (e: Exception) {
+            Log.e("WallpaperList", "Receiver not registered: ${e.message}")
+        }
     }
 
     private fun setupRecyclerView(subcategory: String) {
         if (!isInternetAvailable()) {
-            Toast.makeText(
-                this,
-                getString(R.string.internet_error),
-                Toast.LENGTH_LONG
-            ).show()
+            showNoInternetDialog()
             return
         }
 
@@ -58,8 +79,7 @@ class WallpaperList : AppCompatActivity() {
         adapter = RecyclerviewAdapter(this, wallpaperList, { selectedWallpaper ->
             selectedWallpaper.let { wallpaper ->
                 if (!isInternetAvailable()) {
-                    Toast.makeText(this, "Internet required to load wallpaper", Toast.LENGTH_SHORT)
-                        .show()
+                    showNoInternetDialog()
                     return@let
                 }
 
@@ -78,6 +98,33 @@ class WallpaperList : AppCompatActivity() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
+    }
+
+    private fun isInternetAvailable(): Boolean {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+
+        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+
+    private fun showNoInternetDialog() {
+        val dialogBinding = DialogNoInternetBinding.inflate(layoutInflater)
+        dialog = BottomSheetDialog(this)
+        dialog?.setContentView(dialogBinding.root)
+
+        dialogBinding.titleText.text = getString(R.string.check_your_internet_connection)
+
+        dialogBinding.internet.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
+        }
+
+        dialogBinding.close.setOnClickListener {
+            dialog?.dismiss()
+        }
+
+        dialog?.show()
     }
 
     private fun getMainCategory(subcategory: String): String {
@@ -130,14 +177,5 @@ class WallpaperList : AppCompatActivity() {
             WallpaperModel(url)
         }
         return wallpapers
-    }
-
-    private fun isInternetAvailable(): Boolean {
-        val connectivityManager =
-            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val network = connectivityManager.activeNetwork ?: return false
-        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
-
-        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 }

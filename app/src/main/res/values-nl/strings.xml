@@ -137,4 +137,10 @@
     <string name="download">Downloaden</string>
     <string name="internet_error">Internetverbinding vereist om achtergronden te bekijken</string>
     <string name="set_sound_success">%1$s wurde erfolgreich eingestellt!</string>
+    <string name="check_your_internet_connection">Controleer je internetverbinding</string>
+    <string name="open_internet_setting">Open internetinstellingen</string>
+    <string name="exit">Afsluiten</string>
+    <string name="are_you_sure_to_exit">Weet je zeker dat je wilt afsluiten?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Geen internet</string>
 </resources>

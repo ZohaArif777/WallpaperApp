@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.wallpaper.R
 import com.wallpaper.databinding.DetailedListItemBinding
 import com.wallpaper.databinding.ItemListBinding
 import com.wallpaper.features.data_class.WallpaperModel
 
 class RecyclerviewAdapter(
-    var context : Context,
+    private var context: Context,
     private var wallpaperList: List<WallpaperModel>,
     private val onItemClick: (WallpaperModel) -> Unit,
     private val isDetailedView: Boolean
@@ -34,7 +36,10 @@ class RecyclerviewAdapter(
         when (holder) {
             is WallpaperViewHolder -> {
                 holder.binding.txtWallpaper.text = wallpaper.txt
-                holder.binding.img.setImageResource(wallpaper.img)
+
+                Glide.with(context)
+                    .load(wallpaper.imageUrl?.trim())  // Load from URL
+                    .into(holder.binding.img) // Set to ImageView
 
                 holder.binding.root.setOnClickListener {
                     onItemClick(wallpaper)
@@ -42,10 +47,11 @@ class RecyclerviewAdapter(
             }
 
             is WallpaperListViewHolder -> {
-//                holder.binding.img.setImageResource(wallpaper.img)
-                Glide.with(context).load(wallpaper.imageUrl?.trim())
-
+                Glide.with(context)
+                    .load(wallpaper.imageUrl?.trim())
+                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                     .into(holder.binding.img)
+
                 holder.binding.root.setOnClickListener {
                     onItemClick(wallpaper)
                 }

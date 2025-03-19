@@ -137,4 +137,10 @@
     <string name="download">Letöltés</string>
     <string name="internet_error">A háttérképek megtekintéséhez internetkapcsolat szükséges</string>
     <string name="set_sound_success">%1$s sikeresen beállítva</string>
+    <string name="check_your_internet_connection">Ellenőrizze az internetkapcsolatát</string>
+    <string name="open_internet_setting">Nyissa meg az internetbeállításokat</string>
+    <string name="exit">Kilépés</string>
+    <string name="are_you_sure_to_exit">Biztosan ki akar lépni?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Nincs internet</string>
 </resources>

@@ -137,4 +137,10 @@
     <string name="download">Λήψη</string>
     <string name="internet_error">Απαιτείται σύνδεση στο διαδίκτυο για την προβολή των ταπετσαριών</string>
     <string name="set_sound_success">%1$s ρυθμίστηκε με επιτυχία!</string>
+    <string name="check_your_internet_connection">Ελέγξτε τη σύνδεσή σας στο διαδίκτυο</string>
+    <string name="open_internet_setting">Άνοιγμα ρυθμίσεων διαδικτύου</string>
+    <string name="exit">Έξοδος</string>
+    <string name="are_you_sure_to_exit">Είστε σίγουροι ότι θέλετε να βγείτε;</string>
+    <string name="ok">Εντάξει</string>
+    <string name="no_internet">Χωρίς σύνδεση στο διαδίκτυο</string>
 </resources>

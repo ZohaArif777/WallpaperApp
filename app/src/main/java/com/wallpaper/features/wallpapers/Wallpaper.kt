@@ -1,37 +1,86 @@
 package com.wallpaper.features.wallpapers
 
-import android.content.Intent
+import android.content.*
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
+import android.provider.Settings
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.wallpaper.R
-import com.wallpaper.features.wallpapers.adapter.RecyclerviewAdapter
+import com.wallpaper.base_app.Constants
 import com.wallpaper.databinding.ActivityWallpaperBinding
+import com.wallpaper.databinding.DialogNoInternetBinding
 import com.wallpaper.features.data_class.WallpaperModel
+import com.wallpaper.features.wallpapers.adapter.RecyclerviewAdapter
 
 class Wallpaper : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperBinding
     private lateinit var adapter: RecyclerviewAdapter
+    private var dialog: BottomSheetDialog? = null
+    private lateinit var networkReceiver: BroadcastReceiver
+    private var category: String = "Wallpapers"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWallpaperBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val category = intent.getStringExtra("CATEGORY_NAME") ?: "Wallpapers"
-        binding.wallpaperText.text = category
-
         binding.btnBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
 
+        category = intent.getStringExtra("CATEGORY_NAME") ?: "Wallpapers"
+        Log.d("Wallpaper", "Received category: $category")
+        binding.wallpaperText.text = category
+
         setupRecyclerView(category)
+
+        // Register BroadcastReceiver to monitor internet connectivity
+        networkReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context?, intent: Intent?) {
+                if (isInternetAvailable()) {
+                    Log.d("Wallpaper", "Internet is back! Reloading wallpapers...")
+                    dialog?.dismiss() // Dismiss the no-internet dialog
+                    setupRecyclerView(category)
+                }
+            }
+        }
+        registerReceiver(networkReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        try {
+            unregisterReceiver(networkReceiver) // Unregister to prevent crashes
+        } catch (e: Exception) {
+            Log.e("Wallpaper", "Receiver not registered: ${e.message}")
+        }
     }
 
     private fun setupRecyclerView(category: String) {
+        if (!isInternetAvailable()) {
+            showNoInternetDialog()
+            return
+        }
+
         val wallpaperList = getSubCategories(category)
 
-        adapter = RecyclerviewAdapter(this,wallpaperList, { selectedCategory ->
+        if (wallpaperList.isEmpty()) {
+            Log.e("Wallpaper", "No wallpapers available for: $category")
+            Toast.makeText(this, "No wallpapers found for this category", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        adapter = RecyclerviewAdapter(this, wallpaperList, { selectedCategory ->
+            if (!isInternetAvailable()) {
+                showNoInternetDialog()
+                return@RecyclerviewAdapter
+            }
+
             val intent = Intent(this, WallpaperList::class.java)
             intent.putExtra("WALLPAPER_SUBCATEGORY", selectedCategory.txt)
             startActivity(intent)
@@ -41,42 +90,69 @@ class Wallpaper : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
     }
 
+    private fun isInternetAvailable(): Boolean {
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+
+        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+
+    private fun showNoInternetDialog() {
+        val dialogBinding = DialogNoInternetBinding.inflate(layoutInflater)
+        dialog = BottomSheetDialog(this)
+        dialog?.setContentView(dialogBinding.root)
+
+        dialogBinding.titleText.text = getString(R.string.check_your_internet_connection)
+
+        dialogBinding.internet.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
+        }
+
+        dialogBinding.close.setOnClickListener {
+            dialog?.dismiss()
+        }
+
+        dialog?.show()
+    }
+
     private fun getSubCategories(category: String): List<WallpaperModel> {
         return when (category) {
             "iPhone" -> listOf(
-                WallpaperModel(R.drawable.iphone16_1, "iPhone 16"),
-                WallpaperModel(R.drawable.iphone15_1, "iPhone 15"),
-                WallpaperModel(R.drawable.iphone14_1, "iPhone 14"),
-                WallpaperModel(R.drawable.iphone13_1, "iPhone 13"),
-                WallpaperModel(R.drawable.iphone12_1, "iPhone 12"),
-                WallpaperModel(R.drawable.iphone11_1, "iPhone 11")
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone16/1.png", txt = "iPhone 16"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone15/1.png", txt = "iPhone 15"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone14/1.png", txt = "iPhone 14"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone13/1.png", txt = "iPhone 13"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone12/1.png", txt = "iPhone 12"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone11/1.png", txt = "iPhone 11")
             )
 
             "HD" -> listOf(
-                WallpaperModel(R.drawable.car, "Car"),
-                WallpaperModel(R.drawable.animal, "Animal"),
-                WallpaperModel(R.drawable.nature, "Nature"),
-                WallpaperModel(R.drawable.aesthetics, "Aesthetics"),
-                WallpaperModel(R.drawable.city, "City"),
-                WallpaperModel(R.drawable.abstracts, "Abstract")
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}car/1.png", txt = "Car"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}animal/1.png", txt = "Animal"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}nature/1.png", txt = "Nature"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}aesthetics/1.png", txt = "Aesthetics"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}city/1.png", txt = "City"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}abstract/1.png", txt = "Abstract")
             )
 
             "iOS" -> listOf(
-                WallpaperModel(R.drawable.ios18, "iOS 18"),
-                WallpaperModel(R.drawable.ios17, "iOS 17"),
-                WallpaperModel(R.drawable.ios16, "iOS 16"),
-                WallpaperModel(R.drawable.ios15, "iOS 15"),
-                WallpaperModel(R.drawable.ios14, "iOS 14"),
-                WallpaperModel(R.drawable.ios13, "iOS 13")
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios18/1.png", txt = "iOS 18"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios17/1.png", txt = "iOS 17"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios16/1.png", txt = "iOS 16"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios15/1.png", txt = "iOS 15"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios14/1.png", txt = "iOS 14"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios13/1.png", txt = "iOS 13")
             )
 
             "Samsung" -> listOf(
-                WallpaperModel(R.drawable.s25, "S25"),
-                WallpaperModel(R.drawable.s24, "S24"),
-                WallpaperModel(R.drawable.s23, "S23"),
-                WallpaperModel(R.drawable.s22, "S22"),
-                WallpaperModel(R.drawable.s21, "S21"),
-                WallpaperModel(R.drawable.s20, "S20")
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}s25/1.png", txt = "S25"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}s24/1.png", txt = "S24"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}s23/1.png", txt = "S23"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}s22/1.png", txt = "S22"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}s21/1.png", txt = "S21"),
+                WallpaperModel(imageUrl = "${Constants.BASE_URL}s20/1.png", txt = "S20")
             )
 
             else -> emptyList()

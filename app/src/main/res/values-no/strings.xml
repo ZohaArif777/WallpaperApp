@@ -137,4 +137,10 @@
     <string name="download">Last ned</string>
     <string name="internet_error">Internett-tilkobling kreves for å vise bakgrunnsbilder</string>
     <string name="set_sound_success">%1$s ble satt vellykket!</string>
+    <string name="check_your_internet_connection">Sjekk internettforbindelsen din</string>
+    <string name="open_internet_setting">Åpne internettinnstillinger</string>
+    <string name="exit">Avslutt</string>
+    <string name="are_you_sure_to_exit">Er du sikker på at du vil avslutte?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">ngen internett</string>
 </resources>

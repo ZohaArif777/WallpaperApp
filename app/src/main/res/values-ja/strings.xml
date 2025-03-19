@@ -137,4 +137,10 @@
     <string name="download">ダウンロード</string>
     <string name="internet_error">壁紙を表示するにはインターネット接続が必要です</string>
     <string name="set_sound_success">%1$s が正常に設定されました！</string>
+    <string name="check_your_internet_connection">インターネット接続を確認してください</string>
+    <string name="open_internet_setting">インターネット設定を開</string>
+    <string name="exit">終了</string>
+    <string name="are_you_sure_to_exit">本当に終了しますか？</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">インターネットなし</string>
 </resources>

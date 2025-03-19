@@ -137,4 +137,10 @@
     <string name="download">डाउनलोड</string>
     <string name="internet_error">वॉलपेपर देखने के लिए इंटरनेट कनेक्शन आवश्यक है</string>
     <string name="set_sound_success">%1$s सफलतापूर्वक सेट किया गया!</string>
+    <string name="check_your_internet_connection">अपना इंटरनेट कनेक्शन जांचें</string>
+    <string name="open_internet_setting">इंटरनेट सेटिंग खोलें</string>
+    <string name="exit">बाहर जाएं</string>
+    <string name="are_you_sure_to_exit">क्या आप वाकई बाहर जाना चाहते हैं?</string>
+    <string name="ok">ठीक है</string>
+    <string name="no_internet">>कोई इंटरनेट नहीं</string>
 </resources>

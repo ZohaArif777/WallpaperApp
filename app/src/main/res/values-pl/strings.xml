@@ -137,4 +137,10 @@
     <string name="download">Pobierz</string>
     <string name="internet_error">Połączenie z Internetem jest wymagane do wyświetlania tapet</string>
     <string name="set_sound_success">%1$s został pomyślnie ustawiony!</string>
+    <string name="check_your_internet_connection">Sprawdź swoje połączenie internetowe</string>
+    <string name="open_internet_setting">Otwórz ustawienia internetu</string>
+    <string name="exit">Wyjdź</string>
+    <string name="are_you_sure_to_exit">Czy na pewno chcesz wyjść?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Brak internetu</string>
 </resources>

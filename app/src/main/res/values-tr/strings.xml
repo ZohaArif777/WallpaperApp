@@ -137,4 +137,10 @@
     <string name="download">İndir</string>
     <string name="internet_error">Duvar kağıtlarını görüntülemek için internet bağlantısı gereklidir</string>
     <string name="set_sound_success">%1$s başarıyla ayarlandı!</string>
+    <string name="check_your_internet_connection">İnternet bağlantınızı kontrol edin</string>
+    <string name="open_internet_setting">İnternet ayarlarını aç</string>
+    <string name="exit">Çıkış</string>
+    <string name="are_you_sure_to_exit">Çıkmak istediğinizden emin misiniz?</string>
+    <string name="ok">Tamam</string>
+    <string name="no_internet">Internet bağlantısı yok</string>
 </resources>

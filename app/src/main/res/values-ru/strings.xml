@@ -137,4 +137,10 @@
     <string name="download">Скачать</string>
     <string name="internet_error">Для просмотра обоев требуется подключение к интернету</string>
     <string name="set_sound_success">%1$s успешно установлен!</string>
+    <string name="check_your_internet_connection">Проверьте подключение к интернету</string>
+    <string name="open_internet_setting">Открыть настройки интернета</string>
+    <string name="exit">Выход</string>
+    <string name="are_you_sure_to_exit">Вы уверены, что хотите выйти?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Нет интернета</string>
 </resources>

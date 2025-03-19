@@ -111,7 +111,6 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@+id/iphoneimg1"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iphoneimg1"
             app:layout_constraintTop_toBottomOf="@id/iphone_title" />
 
@@ -370,7 +369,6 @@
             android:textSize="@dimen/_10ssp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/ringtone_img"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ringtone_img"
             app:layout_constraintTop_toBottomOf="@+id/ringtone_title" />
 

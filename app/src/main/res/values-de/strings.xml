@@ -137,4 +137,10 @@
     <string name="download">Herunterladen</string>
     <string name="internet_error">Internetverbindung erforderlich, um Hintergrundbilder anzuzeigen</string>
     <string name="set_sound_success">%1$s wurde erfolgreich eingestellt!</string>
+    <string name="check_your_internet_connection">Überprüfen Sie Ihre Internetverbindung</string>
+    <string name="open_internet_setting">nterneteinstellungen öffnen</string>
+    <string name="exit">Beenden</string>
+    <string name="are_you_sure_to_exit">Sind Sie sicher, dass Sie beenden möchten?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Kein Internet</string>
 </resources>

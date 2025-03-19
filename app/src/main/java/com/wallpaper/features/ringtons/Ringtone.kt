@@ -21,7 +21,6 @@ class Ringtone : AppCompatActivity() {
         binding.btn.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
-
     }
 
     private fun setupViewPagerWithTabs() {

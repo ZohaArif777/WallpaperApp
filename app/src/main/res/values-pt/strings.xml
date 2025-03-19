@@ -137,4 +137,10 @@
     <string name="download">Baixar</string>
     <string name="internet_error">É necessária uma conexão com a Internet para visualizar os papéis de parede</string>
     <string name="set_sound_success">%1$s foi definido com sucesso!</string>
+    <string name="check_your_internet_connection">Verifique sua conexão com a Internet</string>
+    <string name="open_internet_setting">Abrir configurações da Internet</string>
+    <string name="exit">Sair</string>
+    <string name="are_you_sure_to_exit">Tem certeza de que deseja sair?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Sem Internet</string>
 </resources>

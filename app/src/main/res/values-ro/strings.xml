@@ -137,4 +137,10 @@
     <string name="download">Descărcare</string>
     <string name="internet_error">Este necesară o conexiune la internet pentru a vizualiza imaginile de fundal</string>
     <string name="set_sound_success">%1$s a fost setat cu succes!</string>
+    <string name="check_your_internet_connection">Verifică conexiunea ta la internet</string>
+    <string name="open_internet_setting">Deschide setările de internet</string>
+    <string name="exit">Ieșire</string>
+    <string name="are_you_sure_to_exit">Ești sigur că vrei să ieși?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Fără internet</string>
 </resources>

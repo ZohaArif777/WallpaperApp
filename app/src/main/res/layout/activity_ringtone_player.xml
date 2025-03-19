@@ -24,7 +24,6 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <!-- Back Arrow Button -->
             <ImageButton
                 android:id="@+id/btn"
                 android:layout_width="wrap_content"
@@ -35,7 +34,6 @@
                 android:src="@drawable/forward_arrow"
                 app:tint="@color/white" />
 
-            <!-- Title -->
             <TextView
                 android:id="@+id/ringtone_title"
                 android:layout_width="0dp"

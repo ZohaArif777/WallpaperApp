@@ -137,4 +137,10 @@
     <string name="download">Eroflueden</string>
     <string name="internet_error">Eng Internetverbindung ass erfuerderlech, fir Tapéiten ze gesinn</string>
     <string name="set_sound_success">%1$s gouf erfollegräich gesat!</string>
+    <string name="check_your_internet_connection">Iwwerpréift Är Internetverbindung</string>
+    <string name="open_internet_setting">nternetastellungen opmaachen</string>
+    <string name="exit">Austrëtt</string>
+    <string name="are_you_sure_to_exit">Sidd Dir sécher datt Dir wëllt erausgoen?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Keng Internetverbindung</string>
 </resources>

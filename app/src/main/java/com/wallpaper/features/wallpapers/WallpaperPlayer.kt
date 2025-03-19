@@ -42,7 +42,6 @@ class WallpaperPlayer : AppCompatActivity() {
         setContentView(binding.root)
 
         sharedPreferences = getSharedPreferences("WallpaperPrefs", Context.MODE_PRIVATE)
-
         wallpaperUrl = intent.getStringExtra("WALLPAPER_IMAGE")
         category = intent.getStringExtra("WALLPAPER_MAIN_CATEGORY") ?: "Unknown"
         subcategory = intent.getStringExtra("WALLPAPER_CATEGORY") ?: "Unknown"
@@ -64,7 +63,6 @@ class WallpaperPlayer : AppCompatActivity() {
                 showSetWallpaperDialog(savedFile!!)
             }
         }
-
         binding.btnFit.setOnClickListener { toggleFullscreenMode() }
         binding.img.setOnClickListener { if (isFullscreen) toggleFullscreenMode() }
     }
@@ -82,7 +80,7 @@ class WallpaperPlayer : AppCompatActivity() {
     private fun checkIfWallpaperDownloaded() {
         if (fileName == null) return
 
-        val key = "$fileName|$category|$subcategory"  // Unique key format
+        val key = "$fileName|$category|$subcategory"
         val isDownloaded = sharedPreferences.getBoolean(key, false)
 
         if (isDownloaded) {
@@ -131,7 +129,7 @@ class WallpaperPlayer : AppCompatActivity() {
 
                     savedFile = saveImageToCache(resource, fileName!!)
                     if (savedFile != null) {
-                        val key = "$fileName|$category|$subcategory"  // Store unique key
+                        val key = "$fileName|$category|$subcategory"
                         sharedPreferences.edit().putBoolean(key, true).apply()
 
                         binding.btnWallpaper.text = getString(R.string.apply)

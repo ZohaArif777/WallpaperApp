@@ -137,4 +137,10 @@
     <string name="download">Stáhnout</string>
     <string name="internet_error">Pro zobrazení tapet je vyžadováno připojení k internetu</string>
     <string name="set_sound_success">%1$s bylo úspěšně nastaveno!</string>
+    <string name="check_your_internet_connection">Zkontrolujte své internetové připojení</string>
+    <string name="open_internet_setting">Otevřít nastavení internetu</string>
+    <string name="exit">Ukončit</string>
+    <string name="are_you_sure_to_exit">Opravdu chcete ukončit?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Žádný internet</string>
 </resources>

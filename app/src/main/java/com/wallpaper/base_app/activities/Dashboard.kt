@@ -1,15 +1,19 @@
 package com.wallpaper.base_app.activities
-
 import android.content.Intent
 import android.os.Bundle
+
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.wallpaper.R
+import com.wallpaper.base_app.setting.Setting
+import com.wallpaper.databinding.ActivityDashboardBinding
 import com.wallpaper.features.ringtons.Ringtone
 import com.wallpaper.features.wallpapers.Wallpaper
-import com.wallpaper.databinding.ActivityDashboardBinding
-import com.wallpaper.base_app.setting.Setting
 
 class Dashboard : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
+    private var exitDialog: BottomSheetDialog? = null // Using BottomSheetDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,10 +21,15 @@ class Dashboard : AppCompatActivity() {
         setContentView(binding.root)
 
         setupButtonListeners()
-        binding.setting.setOnClickListener {
-            val intent = Intent(this, Setting::class.java)
-            startActivity(intent)
-        }
+    }
+
+    override fun onBackPressed() {
+        showExitDialog()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        exitDialog?.dismiss()
     }
 
     private fun setupButtonListeners() {
@@ -60,4 +69,24 @@ class Dashboard : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun showExitDialog() {
+        if (exitDialog?.isShowing == true) return  // Prevent multiple dialogs
+
+        val dialogView = layoutInflater.inflate(R.layout.exit_dialog, null)
+        exitDialog = BottomSheetDialog(this).apply {
+            setContentView(dialogView)
+            setCancelable(true) // User can dismiss by tapping outside
+        }
+
+        val btnClose = dialogView.findViewById<Button>(R.id.close)
+        val btnExit = dialogView.findViewById<Button>(R.id.exit_button)
+
+        btnClose.setOnClickListener { exitDialog?.dismiss() }
+        btnExit.setOnClickListener {
+            finishAffinity()  // Close all activities
+            System.exit(0)    // Exit app
+        }
+
+        exitDialog?.show()
+    }
 }

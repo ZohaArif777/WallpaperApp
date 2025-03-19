@@ -137,4 +137,10 @@
     <string name="download">Scarica</string>
     <string name="internet_error">È necessaria una connessione Internet per visualizzare gli sfondi</string>
     <string name="set_sound_success">%1$s impostato con successo!</string>
+    <string name="check_your_internet_connection">Controlla la tua connessione Internet</string>
+    <string name="open_internet_setting">Apri le impostazioni Internet</string>
+    <string name="exit">Esci</string>
+    <string name="are_you_sure_to_exit">Sei sicuro di voler uscire?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">Nessuna connessione Internet</string>
 </resources>

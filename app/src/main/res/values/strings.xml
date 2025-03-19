@@ -121,7 +121,7 @@
     <string name="close">Close</string>
     <string name="success_icon">Success Icon</string>
     <string name="wallpaper_set_successfully">Wallpaper set successfully!</string>
-    <string name="language">language</string>
+    <string name="language">Language</string>
     <string name="language_icon">Language Icon</string>
     <string name="english">English</string>
     <string name="languages">Languages</string>
@@ -135,7 +135,12 @@
     <string name="hd_">hd</string>
     <string name="start">Start</string>
     <string name="download">Download</string>
-    <string name="internet_error">Internet connection required to view wallpapers</string>
     <string name="set_sound_success">"%1$s set successfully!"</string>
+    <string name="check_your_internet_connection">Check Your internet Connection</string>
+    <string name="open_internet_setting">Open internet setting</string>
+    <string name="exit">Exit</string>
+    <string name="are_you_sure_to_exit">Are you sure to exit?</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">No Internet</string>
 
 </resources>
