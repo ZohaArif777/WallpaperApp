@@ -143,4 +143,16 @@
     <string name="are_you_sure_to_exit">本当に終了しますか？</string>
     <string name="ok">OK</string>
     <string name="no_internet">インターネットなし</string>
+    <string name="iphone16_label">iPhone 16</string>
+    <string name="iphone15_label">iPhone 15</string>
+    <string name="iphone14_label">iPhone 14</string>
+    <string name="iphone13_label">iPhone 13</string>
+    <string name="iphone12_label">iPhone 12</string>
+    <string name="iphone11_label">iPhone 11</string>
+    <string name="car_label">車</string>
+    <string name="animal_label">動物</string>
+    <string name="nature_label">自然</string>
+    <string name="aesthetics_label">美学</string>
+    <string name="city_label">都市</string>
+    <string name="abstract_label">抽象</string>
 </resources>

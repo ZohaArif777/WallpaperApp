@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class wallpaperPreview : AppCompatActivity() {
+class WallpaperPreview : AppCompatActivity() {
     private lateinit var binding: ActivityWallpaperPreviewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

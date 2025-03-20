@@ -98,7 +98,7 @@ class WallpaperPlayer : AppCompatActivity() {
     }
 
     private fun openPreviewActivity(wallpaperUrl: String?) {
-        val intent = Intent(this, wallpaperPreview::class.java)
+        val intent = Intent(this, WallpaperPreview::class.java)
         intent.putExtra("WALLPAPER_IMAGE", wallpaperUrl)
         startActivity(intent)
     }

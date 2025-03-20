@@ -143,4 +143,16 @@
     <string name="are_you_sure_to_exit">Sidd Dir sécher datt Dir wëllt erausgoen?</string>
     <string name="ok">OK</string>
     <string name="no_internet">Keng Internetverbindung</string>
+    <string name="iphone16_label">iPhone 16</string>
+    <string name="iphone15_label">iPhone 15</string>
+    <string name="iphone14_label">iPhone 14</string>
+    <string name="iphone13_label">iPhone 13</string>
+    <string name="iphone12_label">iPhone 12</string>
+    <string name="iphone11_label">iPhone 11</string>
+    <string name="car_label">Auto</string>
+    <string name="animal_label">Déier</string>
+    <string name="nature_label">Natur</string>
+    <string name="aesthetics_label">Ästhetik</string>
+    <string name="city_label">Stad</string>
+    <string name="abstract_label">Abstrakt</string>
 </resources>

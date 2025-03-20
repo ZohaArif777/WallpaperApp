@@ -143,4 +143,16 @@
     <string name="are_you_sure_to_exit">آیا مطمئن هستید که می‌خواهید خارج شوید؟</string>
     <string name="ok">تأیید</string>
     <string name="no_internet">>بدون اینترنت</string>
+    <string name="iphone16_label">"آئی فون      16  "</string>
+    <string name="iphone15_label">"آئی فون      15  "</string>
+    <string name="iphone14_label">"آئی فون      14  "</string>
+    <string name="iphone13_label">"آئی فون      13  "</string>
+    <string name="iphone12_label">"آئی فون      12  "</string>
+    <string name="iphone11_label">"آئی فون      11  "</string>
+    <string name="car_label">ماشین</string>
+    <string name="animal_label">حیوان</string>
+    <string name="nature_label">طبیعت</string>
+    <string name="aesthetics_label">زیبایی‌شناسی</string>
+    <string name="city_label">شهر</string>
+    <string name="abstract_label">انتزاعی</string>
 </resources>

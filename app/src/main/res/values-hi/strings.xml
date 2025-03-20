@@ -143,4 +143,22 @@
     <string name="are_you_sure_to_exit">क्या आप वाकई बाहर जाना चाहते हैं?</string>
     <string name="ok">ठीक है</string>
     <string name="no_internet">>कोई इंटरनेट नहीं</string>
+    <string name="iphone16_label">आईफोन 16</string>
+    <string name="iphone15_label">आईफोन 15</string>
+    <string name="iphone14_label">आईफोन 14</string>
+    <string name="iphone13_label">आईफोन 13</string>
+    <string name="iphone12_label">आईफोन 12</string>
+    <string name="iphone11_label">आईफोन 11</string>
+    <string name="car_label">गाड़ी</string>
+    <string name="animal_label">जानवर</string>
+    <string name="nature_label">प्रकृति</string>
+    <string name="aesthetics_label">सौंदर्यशास्त्र</string>
+    <string name="city_label">शहर</string>
+    <string name="abstract_label">अमूर्त</string>
+    <string name="ios18_label">आईओएस 18</string>
+    <string name="ios17_label">आईओएस 17</string>
+    <string name="ios16_label">आईओएस 16</string>
+    <string name="ios15_label">आईओएस 15</string>
+    <string name="ios14_label">आईओएस 14</string>
+    <string name="ios13_label">आईओएस 13</string>
 </resources>

@@ -143,4 +143,16 @@
     <string name="are_you_sure_to_exit">Çıkmak istediğinizden emin misiniz?</string>
     <string name="ok">Tamam</string>
     <string name="no_internet">Internet bağlantısı yok</string>
+    <string name="iphone16_label">iPhone 16</string>
+    <string name="iphone15_label">iPhone 15</string>
+    <string name="iphone14_label">iPhone 14</string>
+    <string name="iphone13_label">iPhone 13</string>
+    <string name="iphone12_label">iPhone 12</string>
+    <string name="iphone11_label">iPhone 11</string>
+    <string name="car_label">Araba</string>
+    <string name="animal_label">Hayvan</string>
+    <string name="nature_label">Doğa</string>
+    <string name="aesthetics_label">Estetik</string>
+    <string name="city_label">Şehir</string>
+    <string name="abstract_label">Soyut</string>
 </resources>

@@ -135,12 +135,22 @@
     <string name="hd_">ایچ ڈی</string>
     <string name="start">شروع کریں</string>
     <string name="download">ڈاؤن لوڈ</string>
-    <string name="internet_error">وال پیپر دیکھنے کے لیے انٹرنیٹ کنکشن ضروری ہے</string>
-    <string name="set_sound_success">%1$s کامیابی کے ساتھ سیٹ ہو گیا!</string>
     <string name="check_your_internet_connection">اپنے انٹرنیٹ کنکشن کو چیک کریں</string>
     <string name="open_internet_setting">انٹرنیٹ سیٹنگ کھولیں</string>
     <string name="exit">باہر نکلیں</string>
     <string name="are_you_sure_to_exit">کیا آپ واقعی باہر نکلنا چاہتے ہیں؟</string>
     <string name="ok">ٹھیک ہے</string>
     <string name="no_internet">کوئی انٹرنیٹ نہیں</string>
+    <string name="iphone16_label">"آئی فون 16  "</string>
+    <string name="iphone15_label">"آئی فون 15  "</string>
+    <string name="iphone14_label">"آئی فون 14  "</string>
+    <string name="iphone13_label">"آئی فون 13  "</string>
+    <string name="iphone12_label">"آئی فون 12  "</string>
+    <string name="iphone11_label">"آئی فون 11  "</string>
+    <string name="car_label">گاڑی</string>
+    <string name="animal_label">جانور</string>
+    <string name="nature_label">قدرت</string>
+    <string name="aesthetics_label">حن</string>
+    <string name="city_label">شہر</string>
+    <string name="abstract_label">خیالی</string>
 </resources>

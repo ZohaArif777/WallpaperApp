@@ -135,7 +135,6 @@
     <string name="hd_">hd</string>
     <string name="start">Mulai</string>
     <string name="download">Unduh</string>
-    <string name="internet_error">Koneksi internet diperlukan untuk melihat wallpaper</string>
     <string name="set_sound_success">%1$s berhasil disetel!</string>
     <string name="check_your_internet_connection">Periksa koneksi internet Anda</string>
     <string name="open_internet_setting">Buka pengaturan internet</string>
@@ -143,4 +142,16 @@
     <string name="are_you_sure_to_exit">Apakah Anda yakin ingin keluar?</string>
     <string name="ok">OK</string>
     <string name="no_internet">Tidak ada internet</string>
+    <string name="iphone16_label">iPhone 16</string>
+    <string name="iphone15_label">iPhone 15</string>
+    <string name="iphone14_label">iPhone 14</string>
+    <string name="iphone13_label">iPhone 13</string>
+    <string name="iphone12_label">iPhone 12</string>
+    <string name="iphone11_label">iPhone 16</string>
+    <string name="car_label">Mobil</string>
+    <string name="animal_label">Hewan</string>
+    <string name="nature_label">Alam</string>
+    <string name="aesthetics_label">Estetika</string>
+    <string name="city_label">Kota</string>
+    <string name="abstract_label">Abstrak</string>
 </resources>

@@ -43,7 +43,7 @@ class WallpaperList : AppCompatActivity() {
             override fun onReceive(context: Context?, intent: Intent?) {
                 if (isInternetAvailable()) {
                     Log.d("WallpaperList", "Internet is back! Reloading wallpapers...")
-                    dialog?.dismiss() // Dismiss the no-internet dialog
+                    dialog?.dismiss()
                     setupRecyclerView(subcategory)
                 }
             }
@@ -54,7 +54,7 @@ class WallpaperList : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         try {
-            unregisterReceiver(networkReceiver) // Unregister to prevent crashes
+            unregisterReceiver(networkReceiver)
         } catch (e: Exception) {
             Log.e("WallpaperList", "Receiver not registered: ${e.message}")
         }

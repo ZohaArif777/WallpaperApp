@@ -142,4 +142,16 @@
     <string name="are_you_sure_to_exit">Oletko varma, että haluat poistua?</string>
     <string name="ok">OK</string>
     <string name="no_internet">Ei internetyhteyttä</string>
+    <string name="iphone16_label">iPhone 16</string>
+    <string name="iphone15_label">iPhone 15</string>
+    <string name="iphone14_label">iPhone 14</string>
+    <string name="iphone13_label">iPhone 13</string>
+    <string name="iphone12_label">iPhone 12</string>
+    <string name="iphone11_label">iPhone 11</string>
+    <string name="car_label">Auto</string>
+    <string name="animal_label">Eläin</string>
+    <string name="nature_label">Luonto</string>
+    <string name="aesthetics_label">Estetiikka</string>
+    <string name="city_label">Kaupunki</string>
+    <string name="abstract_label">Abstrakti</string>
 </resources>

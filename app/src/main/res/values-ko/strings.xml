@@ -143,4 +143,16 @@
     <string name="are_you_sure_to_exit">정말 종료하시겠습니까?</string>
     <string name="ok">확인</string>
     <string name="no_internet">인터넷 없음</string>
+    <string name="iphone16_label">아이폰 16</string>
+    <string name="iphone15_label">아이폰 15</string>
+    <string name="iphone14_label">아이폰 14</string>
+    <string name="iphone13_label">아이폰 13</string>
+    <string name="iphone12_label">아이폰 12</string>
+    <string name="iphone11_label">아이폰 11</string>
+    <string name="car_label">자동차</string>
+    <string name="animal_label">동물</string>
+    <string name="nature_label">자연</string>
+    <string name="aesthetics_label">미학</string>
+    <string name="city_label">도시</string>
+    <string name="abstract_label">추상</string>
 </resources>
