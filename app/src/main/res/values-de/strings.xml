@@ -143,6 +143,7 @@
     <string name="are_you_sure_to_exit">Sind Sie sicher, dass Sie beenden möchten?</string>
     <string name="ok">OK</string>
     <string name="no_internet">Kein Internet</string>
+    <string name="no">Nein</string>
     <string name="iphone16_label">iPhone 16</string>
     <string name="iphone15_label">iPhone 15</string>
     <string name="iphone14_label">iPhone 14</string>
@@ -167,4 +168,5 @@
     <string name="s22_label">S22</string>
     <string name="s21_label">S21</string>
     <string name="s20_label">S20</string>
+    <string name="yes">Ja</string>
 </resources>

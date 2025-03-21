@@ -135,12 +135,14 @@
     <string name="hd_">ایچ ڈی</string>
     <string name="start">شروع کریں</string>
     <string name="download">ڈاؤن لوڈ</string>
+    <string name="set_sound_success">%1$s کامیابی سے سیٹ ہو گیا!</string>
     <string name="check_your_internet_connection">اپنے انٹرنیٹ کنکشن کو چیک کریں</string>
     <string name="open_internet_setting">انٹرنیٹ سیٹنگ کھولیں</string>
     <string name="exit">باہر نکلیں</string>
     <string name="are_you_sure_to_exit">کیا آپ واقعی باہر نکلنا چاہتے ہیں؟</string>
     <string name="ok">ٹھیک ہے</string>
     <string name="no_internet">کوئی انٹرنیٹ نہیں</string>
+    <string name="no">نہیں</string>
     <string name="iphone16_label">"آئی فون 16  "</string>
     <string name="iphone15_label">"آئی فون 15  "</string>
     <string name="iphone14_label">"آئی فون 14  "</string>
@@ -153,4 +155,18 @@
     <string name="aesthetics_label">حن</string>
     <string name="city_label">شہر</string>
     <string name="abstract_label">خیالی</string>
+    <string name="s25_label">ایس 25</string>
+    <string name="s24_label">ایس 24</string>
+    <string name="s23_label">ایس 23</string>
+    <string name="s22_label">ایس 22</string>
+    <string name="s21_label">ایس 21</string>
+    <string name="s20_label">ایس 20</string>
+    <string name="ios18_label">آئی او ایس 18</string>
+    <string name="ios17_label">آئی او ایس 17</string>
+    <string name="ios16_label">آئی او ایس 16</string>
+    <string name="ios15_label">آئی او ایس 15</string>
+    <string name="ios14_label">آئی او ایس 14</string>
+    <string name="ios13_label">آئی او ایس 13</string>
+    <string name="yes">ہاں</string>
+
 </resources>

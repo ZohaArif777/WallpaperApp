@@ -33,18 +33,16 @@ class Wallpaper : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        category = intent.getStringExtra("CATEGORY_NAME") ?: "Wallpapers"
+        category = intent.getStringExtra("CATEGORY_NAME") ?: getString(R.string.wallpaper)
         Log.d("Wallpaper", "Received category: $category")
         binding.wallpaperText.text = category
 
         setupRecyclerView(category)
-
-        // Register BroadcastReceiver to monitor internet connectivity
         networkReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
                 if (isInternetAvailable()) {
                     Log.d("Wallpaper", "Internet is back! Reloading wallpapers...")
-                    dialog?.dismiss() // Dismiss the no-internet dialog
+                    dialog?.dismiss()
                     setupRecyclerView(category)
                 }
             }
@@ -119,40 +117,113 @@ class Wallpaper : AppCompatActivity() {
 
     private fun getSubCategories(category: String): List<WallpaperModel> {
         return when (category) {
-            "iPhone" -> listOf(
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone16/1.png", txt = "iPhone 16"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone15/1.png", txt = "iPhone 15"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone14/1.png", txt = "iPhone 14"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone13/1.png", txt = "iPhone 13"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone12/1.png", txt = "iPhone 12"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}iphone11/1.png", txt = "iPhone 11")
+            getString(R.string.iphone) -> listOf(
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}iphone16/1.png",
+                    txt = getString(R.string.iphone16_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}iphone15/1.png",
+                    txt = getString(R.string.iphone15_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}iphone14/1.png",
+                    txt = getString(R.string.iphone14_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}iphone13/1.png",
+                    txt = getString(R.string.iphone13_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}iphone12/1.png",
+                    txt = getString(R.string.iphone12_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}iphone11/1.png",
+                    txt = getString(R.string.iphone11_label)
+                )
             )
 
-            "HD" -> listOf(
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}car/1.png", txt = "Car"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}animal/1.png", txt = "Animal"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}nature/1.png", txt = "Nature"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}aesthetics/1.png", txt = "Aesthetics"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}city/1.png", txt = "City"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}abstract/1.png", txt = "Abstract")
+            getString(R.string.hd) -> listOf(
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}car/1.png",
+                    txt = getString(R.string.car_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}animal/1.png",
+                    txt = getString(R.string.animal_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}nature/1.png",
+                    txt = getString(R.string.nature_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}aesthetics/1.png",
+                    txt = getString(R.string.aesthetics_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}city/1.png",
+                    txt = getString(R.string.city_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}abstract/1.png",
+                    txt = getString(R.string.abstract_label)
+                )
             )
 
-            "iOS" -> listOf(
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios18/1.png", txt = "iOS 18"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios17/1.png", txt = "iOS 17"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios16/1.png", txt = "iOS 16"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios15/1.png", txt = "iOS 15"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios14/1.png", txt = "iOS 14"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}ios13/1.png", txt = "iOS 13")
+            getString(R.string.ios) -> listOf(
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}ios18/1.png",
+                    txt = getString(R.string.ios18_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}ios17/1.png",
+                    txt = getString(R.string.ios17_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}ios16/1.png",
+                    txt = getString(R.string.ios16_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}ios15/1.png",
+                    txt = getString(R.string.ios15_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}ios14/1.png",
+                    txt = getString(R.string.ios14_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}ios13/1.png",
+                    txt = getString(R.string.ios13_label)
+                )
             )
 
-            "Samsung" -> listOf(
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}s25/1.png", txt = "S25"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}s24/1.png", txt = "S24"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}s23/1.png", txt = "S23"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}s22/1.png", txt = "S22"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}s21/1.png", txt = "S21"),
-                WallpaperModel(imageUrl = "${Constants.BASE_URL}s20/1.png", txt = "S20")
+
+            getString(R.string.samsung) -> listOf(
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}s25/1.png",
+                    txt = getString(R.string.s25_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}s24/1.png",
+                    txt = getString(R.string.s24_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}s23/1.png",
+                    txt = getString(R.string.s23_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}s22/1.png",
+                    txt = getString(R.string.s22_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}s21/1.png",
+                    txt = getString(R.string.s21_label)
+                ),
+                WallpaperModel(
+                    imageUrl = "${Constants.BASE_URL}s20/1.png",
+                    txt = getString(R.string.s20_label)
+                )
             )
 
             else -> emptyList()

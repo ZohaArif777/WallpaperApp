@@ -22,7 +22,7 @@ class WallpaperList : AppCompatActivity() {
     private lateinit var adapter: RecyclerviewAdapter
     private var dialog: BottomSheetDialog? = null
     private lateinit var networkReceiver: BroadcastReceiver
-    private var subcategory: String = "Wallpapers"
+    private var subcategory: String = "Wallpaper"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +33,11 @@ class WallpaperList : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        subcategory = intent.getStringExtra("WALLPAPER_SUBCATEGORY") ?: "Wallpapers"
+        subcategory =
+            intent.getStringExtra("WALLPAPER_SUBCATEGORY") ?: getString(R.string.wallpaper)
         Log.d("WallpaperList", "Received subcategory: $subcategory")
         binding.wallpaperText.text = subcategory
-
         setupRecyclerView(subcategory)
-
         networkReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
                 if (isInternetAvailable()) {
@@ -74,7 +73,7 @@ class WallpaperList : AppCompatActivity() {
             return
         }
 
-        val mainCategory = getMainCategory(subcategory)
+        val mainCategory = getMainCategory(this, subcategory)
 
         adapter = RecyclerviewAdapter(this, wallpaperList, { selectedWallpaper ->
             selectedWallpaper.let { wallpaper ->
@@ -115,7 +114,6 @@ class WallpaperList : AppCompatActivity() {
         dialog?.setContentView(dialogBinding.root)
 
         dialogBinding.titleText.text = getString(R.string.check_your_internet_connection)
-
         dialogBinding.internet.setOnClickListener {
             startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
         }
@@ -127,42 +125,70 @@ class WallpaperList : AppCompatActivity() {
         dialog?.show()
     }
 
-    private fun getMainCategory(subcategory: String): String {
+    private fun getMainCategory(context: Context, subcategory: String): String {
         return when (subcategory) {
-            "iPhone 16", "iPhone 15", "iPhone 14", "iPhone 13", "iPhone 12", "iPhone 11" -> "iPhone"
-            "S25", "S24", "S23", "S22", "S21", "S20" -> "Samsung"
-            "iOS 18", "iOS 17", "iOS 16", "iOS 15", "iOS 14", "iOS 13" -> "iOS"
-            "Car", "Animal", "Nature", "Aesthetics", "City", "Abstract" -> "HD"
+            context.getString(R.string.iphone16_label),
+            context.getString(R.string.iphone15_label),
+            context.getString(R.string.iphone14_label),
+            context.getString(R.string.iphone13_label),
+            context.getString(R.string.iphone12_label),
+            context.getString(R.string.iphone11_label) ->
+                context.getString(R.string.iphone)
+
+            context.getString(R.string.s25_label),
+            context.getString(R.string.s24_label),
+            context.getString(R.string.s23_label),
+            context.getString(R.string.s22_label),
+            context.getString(R.string.s21_label),
+            context.getString(R.string.s20_label) ->
+                context.getString(R.string.samsung)
+
+            context.getString(R.string.ios18_label),
+            context.getString(R.string.ios17_label),
+            context.getString(R.string.ios16_label),
+            context.getString(R.string.ios15_label),
+            context.getString(R.string.ios14_label),
+            context.getString(R.string.ios13_label) ->
+                context.getString(R.string.ios)
+
+            context.getString(R.string.car_label),
+            context.getString(R.string.animal_label),
+            context.getString(R.string.nature_label),
+            context.getString(R.string.aesthetics_label),
+            context.getString(R.string.city_label),
+            context.getString(R.string.abstract_label) ->
+                context.getString(R.string.HD)
+
             else -> "Wallpapers"
         }
     }
 
     private fun getWallpapersBySubcategory(subcategory: String): List<WallpaperModel> {
         val categoryMap = mapOf(
-            "iPhone 16" to Constants.iphone16,
-            "iPhone 15" to Constants.iphone15,
-            "iPhone 14" to Constants.iphone14,
-            "iPhone 13" to Constants.iphone13,
-            "iPhone 12" to Constants.iphone12,
-            "iPhone 11" to Constants.iphone11,
-            "Abstract" to Constants.abstract,
-            "Car" to Constants.car,
-            "Animal" to Constants.animal,
-            "Nature" to Constants.nature,
-            "Aesthetics" to Constants.aesthetics,
-            "City" to Constants.city,
-            "S25" to Constants.s25,
-            "S24" to Constants.s24,
-            "S23" to Constants.s23,
-            "S22" to Constants.s22,
-            "S21" to Constants.s21,
-            "S20" to Constants.s20,
-            "iOS 18" to Constants.ios18,
-            "iOS 17" to Constants.ios17,
-            "iOS 16" to Constants.ios16,
-            "iOS 15" to Constants.ios15,
-            "iOS 14" to Constants.ios14,
-            "iOS 13" to Constants.ios13,
+            getString(R.string.iphone16_label) to Constants.iphone16,
+            getString(R.string.iphone15_label) to Constants.iphone15,
+            getString(R.string.iphone14_label) to Constants.iphone14,
+            getString(R.string.iphone13_label) to Constants.iphone13,
+            getString(R.string.iphone12_label) to Constants.iphone12,
+            getString(R.string.iphone11_label) to Constants.iphone11,
+            getString(R.string.abstract_label) to Constants.abstract,
+            getString(R.string.car_label) to Constants.car,
+            getString(R.string.animal_label) to Constants.animal,
+            getString(R.string.nature_label) to Constants.nature,
+            getString(R.string.aesthetics_label) to Constants.aesthetics,
+            getString(R.string.city_label) to Constants.city,
+            getString(R.string.s25_label) to Constants.s25,
+            getString(R.string.s24_label) to Constants.s24,
+            getString(R.string.s23_label) to Constants.s23,
+            getString(R.string.s22_label) to Constants.s22,
+            getString(R.string.s21_label) to Constants.s21,
+            getString(R.string.s20_label) to Constants.s20,
+            getString(R.string.ios18_label) to Constants.ios18,
+            getString(R.string.ios17_label) to Constants.ios17,
+            getString(R.string.ios16_label) to Constants.ios16,
+            getString(R.string.ios15_label) to Constants.ios15,
+            getString(R.string.ios14_label) to Constants.ios14,
+            getString(R.string.ios13_label) to Constants.ios13,
         )
 
         val categoryKey = categoryMap[subcategory]

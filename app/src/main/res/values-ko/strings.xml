@@ -135,7 +135,6 @@
     <string name="hd_">HD</string>
     <string name="start">시작</string>
     <string name="download">다운로드</string>
-    <string name="internet_error">배경 화면을 보려면 인터넷 연결이 필요합니다</string>
     <string name="set_sound_success">%1$s 설정이 성공적으로 완료되었습니다!</string>
     <string name="check_your_internet_connection">인터넷 연결을 확인하세요</string>
     <string name="open_internet_setting">인터넷 설정 열기</string>
@@ -143,6 +142,7 @@
     <string name="are_you_sure_to_exit">정말 종료하시겠습니까?</string>
     <string name="ok">확인</string>
     <string name="no_internet">인터넷 없음</string>
+    <string name="no">아니요</string>
     <string name="iphone16_label">아이폰 16</string>
     <string name="iphone15_label">아이폰 15</string>
     <string name="iphone14_label">아이폰 14</string>
@@ -155,4 +155,17 @@
     <string name="aesthetics_label">미학</string>
     <string name="city_label">도시</string>
     <string name="abstract_label">추상</string>
+    <string name="yes">네</string>
+    <string name="ios18_label">iOS 18</string>
+    <string name="ios17_label">iOS 17</string>
+    <string name="ios16_label">iOS 16</string>
+    <string name="ios15_label">iOS 15</string>
+    <string name="ios14_label">iOS 14</string>
+    <string name="ios13_label">iOS 13</string>
+    <string name="s25_label">S25</string>
+    <string name="s24_label">S24</string>
+    <string name="s23_label">S23</string>
+    <string name="s22_label">S22</string>
+    <string name="s21_label">S21</string>
+    <string name="s20_label">S20</string>
 </resources>

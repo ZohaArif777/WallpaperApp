@@ -4,8 +4,8 @@
     <string name="wallpaper">والپیپر</string>
     <string name="ringtones">زنگ‌ها</string>
     <string name="samsung">سامسونگ</string>
-    <string name="ios">iOS</string>
-    <string name="hd">HD</string>
+    <string name="ios">آی‌اواس</string>
+    <string name="hd">اچ‌دی</string>
     <string name="iphone">آیفون</string>
     <string name="write_your_feedback_here">بازخورد خود را اینجا بنویسید</string>
     <string name="toggle_theme">تغییر تم</string>
@@ -13,7 +13,7 @@
     <string name="wallpaper_description">مجموعه‌ای انحصاری از والپیپرهای باکیفیت را کشف کنید تا صفحه گوشی خود را متمایز کنید</string>
     <string name="ringtones_title">زنگ‌های تلفن منحصربه‌فرد</string>
     <string name="ringtones_description">مجموعه زنگ‌های خود را با انتخابی منحصربه‌فرد از صداهای جدید تازه کنید</string>
-    <string name="hd_wallpaper_title">والپیپرهای HD برای هر سبک</string>
+    <string name="hd_wallpaper_title">والپیپرهای اچ‌دی برای هر سبک</string>
     <string name="hd_wallpaper_description">کاوش در والپیپرهای خیره‌کننده HD برای هر سبک، از طبیعت تا هنر انتزاعی. مناسب‌ترین را برای گوشی خود بیابید!</string>
     <string name="exclusive_content_title">محتوای انحصاری</string>
     <string name="exclusive_content_description">به والپیپرها و زنگ‌های پریمیوم دسترسی داشته باشید</string>
@@ -44,7 +44,7 @@
     <string name="dashboard">داشبورد</string>
     <string name="setting">تنظیمات</string>
     <string name="iphone_button">آیفون</string>
-    <string name="hd_button">HD</string>
+    <string name="hd_button">اچ‌دی</string>
     <string name="ios_button">iOS</string>
     <string name="samsung_button">سامسونگ</string>
     <string name="Back">بازگشت</string>
@@ -77,20 +77,20 @@
     <string name="_00_0">۰۰:۰۰</string>
     <string name="iphone_Wallpaper">والپیپر آیفون</string>
     <string name="more_catagories">دسته‌بندی‌های بیشتر</string>
-    <string name="IOS">iOS</string>
+    <string name="IOS">آی‌اواس</string>
     <string name="explore_new_ringtones_n_in_one_place">کاوش در زنگ‌های جدید\nدر یک مکان</string>
     <string name="image_title">عنوان تصویر</string>
     <string name="wallpaper_name">نام والپیپر</string>
     <string name="splash_image">تصویر صفحه شروع</string>
     <string name="explore_stunning_iphone_wallpaper_to_n_personalize_your_screen_effortlessly">کاوش در والپیپرهای خیره‌کننده آیفون\nبرای شخصی‌سازی صفحه‌نمایش شما</string>
-    <string name="HdWallpapers">والپیپرهای HD\n</string>
+    <string name="HdWallpapers">والپیپرهای اچ‌دی\n</string>
     <string name="Discoverhighqualitywallpapersforastunningscreenexperience">کشف والپیپرهای باکیفیت \nبرای تجربه‌ای خیره‌کننده</string>
     <string name="iPhonrRindtones">زنگ‌های آیفون</string>
     <string name="EnjoythebestiPhoneringtonesforapremiumsoundexperience">از بهترین زنگ‌های آیفون \nبرای تجربه‌ای باکیفیت لذت ببرید</string>
     <string name="iosscreen">صفحه iOS</string>
-    <string name="HD">HD</string>
+    <string name="HD">اچ‌دی</string>
     <string name="Samsung">سامسونگ</string>
-    <string name="hdscreen">صفحه HD</string>
+    <string name="hdscreen">صفحه نمایش اچ‌دی</string>
     <string name="samsungscreen">صفحه سامسونگ</string>
     <string name="get_started">شروع کنید</string>
     <string name="apply">اعمال</string>
@@ -132,10 +132,9 @@
     <string name="about_us">درباره ما</string>
     <string name="Wallpaper">والپیپر</string>
     <string name="sam">سام</string>
-    <string name="hd_">HD</string>
+    <string name="hd_">اچ‌دی</string>
     <string name="start">شروع</string>
     <string name="download">دانلود</string>
-    <string name="internet_error">برای مشاهده پس‌زمینه‌ها، اتصال به اینترنت لازم است</string>
     <string name="set_sound_success">%1$s با موفقیت تنظیم شد!</string>
     <string name="check_your_internet_connection">اتصال اینترنت خود را بررسی کنید</string>
     <string name="open_internet_setting">باز کردن تنظیمات اینترنت</string>
@@ -143,6 +142,7 @@
     <string name="are_you_sure_to_exit">آیا مطمئن هستید که می‌خواهید خارج شوید؟</string>
     <string name="ok">تأیید</string>
     <string name="no_internet">>بدون اینترنت</string>
+    <string name="no">نه</string>
     <string name="iphone16_label">"آئی فون      16  "</string>
     <string name="iphone15_label">"آئی فون      15  "</string>
     <string name="iphone14_label">"آئی فون      14  "</string>
@@ -155,4 +155,18 @@
     <string name="aesthetics_label">زیبایی‌شناسی</string>
     <string name="city_label">شهر</string>
     <string name="abstract_label">انتزاعی</string>
+    <string name="yes">بله</string>
+    <string name="ios18_label">iOS ۱۸</string>
+    <string name="ios17_label">iOS ۱۷</string>
+    <string name="ios16_label">iOS ۱۶</string>
+    <string name="ios15_label">iOS ۱۵</string>
+    <string name="ios14_label">iOS ۱۴</string>
+    <string name="ios13_label">iOS ۱۳</string>
+    <string name="s25_label">S۲۵</string>
+    <string name="s24_label">S۲۴</string>
+    <string name="s23_label">S۲۳</string>
+    <string name="s22_label">S۲۲</string>
+    <string name="s21_label">S۲۱</string>
+    <string name="s20_label">S۲۰</string>
+
 </resources>

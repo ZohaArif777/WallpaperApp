@@ -135,7 +135,6 @@
     <string name="hd_">عالي الدقة</string>
     <string name="start">ابدأ</string>
     <string name="download">تنزيل</string>
-    <string name="internet_error">مطلوب اتصال بالإنترنت لعرض الخلفيات</string>
     <string name="set_sound_success">%1$s تم تعيينه بنجاح!</string>
     <string name="check_your_internet_connection">تحقق من اتصالك بالإنترنت</string>
     <string name="open_internet_setting">افتح إعدادات الإنترنت</string>
@@ -143,12 +142,13 @@
     <string name="are_you_sure_to_exit">ل أنت متأكد من الخروج؟</string>
     <string name="ok">حسنًا</string>
     <string name="no_internet">لا يوجد إنترنت</string>
-    <string name="iphone16_label">آيفون 16</string>
-    <string name="iphone15_label">آيفون 15</string>
-    <string name="iphone14_label">آيفون 14</string>
-    <string name="iphone13_label">آيفون 13</string>
-    <string name="iphone12_label">آيفون 12</string>
-    <string name="iphone11_label">آيفون 11</string>
+    <string name="no">لا</string>
+    <string name="iphone16_label">آيفون ١٦</string>
+    <string name="iphone15_label">آيفون ١٥</string>
+    <string name="iphone14_label">آيفون ١٤</string>
+    <string name="iphone13_label">آيفون ١٣</string>
+    <string name="iphone12_label">آيفون ١٢</string>
+    <string name="iphone11_label">آيفون ١١</string>
     <string name="car_label">سيارة</string>
     <string name="animal_label">حيوان</string>
     <string name="nature_label">طبيعة</string>
@@ -161,10 +161,11 @@
     <string name="ios15_label">آي أو إس15</string>
     <string name="ios14_label">آي أو إس14</string>
     <string name="ios13_label">آي أو إس13</string>
-    <string name="s25_label">S25</string>
-    <string name="s24_label">S24</string>
-    <string name="s23_label">S23</string>
-    <string name="s22_label">S22</string>
-    <string name="s21_label">S21</string>
-    <string name="s20_label">S20</string>
+    <string name="s25_label">إس 25</string>
+    <string name="s24_label">إس 24</string>
+    <string name="s23_label">إس 23</string>
+    <string name="s22_label">إس 22</string>
+    <string name="s21_label">إس 21</string>
+    <string name="s20_label">إس 20</string>
+    <string name="yes">نعم</string>
 </resources>

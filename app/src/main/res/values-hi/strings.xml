@@ -135,7 +135,6 @@
     <string name="hd_">एचडी</string>
     <string name="start">प्रारंभ करें</string>
     <string name="download">डाउनलोड</string>
-    <string name="internet_error">वॉलपेपर देखने के लिए इंटरनेट कनेक्शन आवश्यक है</string>
     <string name="set_sound_success">%1$s सफलतापूर्वक सेट किया गया!</string>
     <string name="check_your_internet_connection">अपना इंटरनेट कनेक्शन जांचें</string>
     <string name="open_internet_setting">इंटरनेट सेटिंग खोलें</string>
@@ -143,6 +142,7 @@
     <string name="are_you_sure_to_exit">क्या आप वाकई बाहर जाना चाहते हैं?</string>
     <string name="ok">ठीक है</string>
     <string name="no_internet">>कोई इंटरनेट नहीं</string>
+    <string name="no">नहीं</string>
     <string name="iphone16_label">आईफोन 16</string>
     <string name="iphone15_label">आईफोन 15</string>
     <string name="iphone14_label">आईफोन 14</string>
@@ -161,4 +161,11 @@
     <string name="ios15_label">आईओएस 15</string>
     <string name="ios14_label">आईओएस 14</string>
     <string name="ios13_label">आईओएस 13</string>
+    <string name="s25_label">एस२५</string>
+    <string name="s24_label">एस२४</string>
+    <string name="s23_label">एस२३</string>
+    <string name="s22_label">एस२२</string>
+    <string name="s21_label">एस२१</string>
+    <string name="s20_label">एस२०</string>
+    <string name="yes">हाँ</string>
 </resources>

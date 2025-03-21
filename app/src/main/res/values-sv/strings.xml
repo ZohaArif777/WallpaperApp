@@ -135,7 +135,6 @@
     <string name="hd_">hd</string>
     <string name="start">Start</string>
     <string name="download">Ladda ner</string>
-    <string name="internet_error">Internetanslutning krävs för att visa bakgrundsbilder</string>
     <string name="set_sound_success">%1$s har ställts in framgångsrikt!</string>
     <string name="check_your_internet_connection">Kontrollera din internetanslutning</string>
     <string name="open_internet_setting">Öppna internetinställningar</string>
@@ -143,6 +142,7 @@
     <string name="are_you_sure_to_exit">Är du säker på att du vill avsluta?</string>
     <string name="ok">OK</string>
     <string name="no_internet">Ingen internetanslutning</string>
+    <string name="no">Nej</string>
     <string name="iphone16_label">iPhone 16</string>
     <string name="iphone15_label">iPhone 15</string>
     <string name="iphone14_label">iPhone 14</string>
@@ -155,4 +155,17 @@
     <string name="aesthetics_label">Estetik</string>
     <string name="city_label">Stad</string>
     <string name="abstract_label">Abstrakt</string>
+    <string name="yes">Ja</string>
+    <string name="ios18_label">iOS 18</string>
+    <string name="ios17_label">iOS 17</string>
+    <string name="ios16_label">iOS 16</string>
+    <string name="ios15_label">iOS 15</string>
+    <string name="ios14_label">iOS 14</string>
+    <string name="ios13_label">iOS 13</string>
+    <string name="s25_label">S25</string>
+    <string name="s24_label">S24</string>
+    <string name="s23_label">S23</string>
+    <string name="s22_label">S22</string>
+    <string name="s21_label">S21</string>
+    <string name="s20_label">S20</string>
 </resources>

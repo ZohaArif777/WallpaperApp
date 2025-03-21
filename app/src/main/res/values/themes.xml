@@ -2,10 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Wallpaper" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/pink</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSurface">@color/light_surface</item>
+        <item name="colorOnPrimary">@color/app_black</item>
+        <item name="colorSurface">@color/app_black</item>
         <item name="colorOnSurface">@color/black</item>
-
         <item name="android:statusBarColor">@color/app_black</item>
     </style>
     <style name="Theme.Wallpaper" parent="Base.Theme.Wallpaper" />
