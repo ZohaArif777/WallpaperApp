@@ -168,4 +168,7 @@
     <string name="s22_label">S22</string>
     <string name="s21_label">S21</string>
     <string name="s20_label">S20</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">Internetanslutning krävs för att ladda bakgrundsbilder. Se till att du har en fungerande internetanslutning</string>
+    <string name="cancel">Avbryt</string>
+    <string name="Exit">Avsluta</string>
 </resources>

@@ -1,8 +1,10 @@
 package com.wallpaper.base_app.activities
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.wallpaper.base_app.localization.LocalizationActivity
 import com.wallpaper.base_app.localization.SharedPrefs
 import com.wallpaper.base_app.on_boardings.OnBoardingScreens
@@ -15,12 +17,22 @@ class Splashscreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashscreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+            Configuration.UI_MODE_NIGHT_YES -> AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_YES
+            )
+
+            Configuration.UI_MODE_NIGHT_NO -> AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_NO
+            )
+        }
         LocalizationActivity.setLocale(this)
 
-        binding.getStarted.setOnClickListener(){
+        binding.getStarted.setOnClickListener() {
 
             val isFirstTime = SharedPrefs.getPrefsBoolean(this, SharedPrefs.firstTimeKey, true)
-            val isLocalizationShown = SharedPrefs.getPrefsBoolean(this, SharedPrefs.localizationShownKey, false)
+            val isLocalizationShown =
+                SharedPrefs.getPrefsBoolean(this, SharedPrefs.localizationShownKey, false)
 
             if (isFirstTime) {
                 if (!isLocalizationShown) {

@@ -38,8 +38,8 @@ class RecyclerviewAdapter(
                 holder.binding.txtWallpaper.text = wallpaper.txt
 
                 Glide.with(context)
-                    .load(wallpaper.imageUrl?.trim())  // Load from URL
-                    .into(holder.binding.img) // Set to ImageView
+                    .load(wallpaper.imageUrl?.trim())
+                    .into(holder.binding.img)
 
                 holder.binding.root.setOnClickListener {
                     onItemClick(wallpaper)

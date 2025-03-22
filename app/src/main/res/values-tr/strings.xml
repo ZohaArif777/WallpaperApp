@@ -168,4 +168,7 @@
     <string name="s22_label">S22</string>
     <string name="s21_label">S21</string>
     <string name="s20_label">S20</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">Duvar kağıtlarını yüklemek için internet bağlantısı gereklidir. Uygun bir internet bağlantınız olduğundan emin olun</string>
+    <string name="cancel">İptal</string>
+    <string name="Exit">Çıkış</string>
 </resources>

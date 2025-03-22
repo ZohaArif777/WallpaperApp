@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_60sdp"
-        android:background="@color/transparent"
+        android:background="@drawable/dialogbox_layout"
         android:paddingHorizontal="@dimen/_10sdp"
         android:paddingTop="@dimen/_60sdp"
         android:paddingBottom="@dimen/_10sdp"
@@ -19,6 +19,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/outfit_semibold"
+            android:gravity="center"
+            android:text="@string/Exit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp"
+            app:layout_constraintBottom_toTopOf="@+id/theBestText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
         <TextView
             android:id="@+id/theBestText"
@@ -43,7 +58,7 @@
             android:layout_marginEnd="@dimen/_5sdp"
             android:backgroundTint="@color/lightGrey"
             android:fontFamily="@font/outfit_semibold"
-            android:text="@string/close"
+            android:text="@string/Exit"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
@@ -61,7 +76,7 @@
             android:backgroundTint="@color/green"
             android:fontFamily="@font/outfit_semibold"
             android:gravity="center"
-            android:text="@string/no"
+            android:text="@string/cancel"
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="@+id/btnExit"
@@ -71,10 +86,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_90sdp"
         android:background="@drawable/shape_circle"
-        android:backgroundTint="@color/app_black"
+        android:backgroundTint="#2B2B2C"
         android:elevation="@dimen/_5sdp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,102 +110,4 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    android:id="@+id/backScreen"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content">-->
-
-
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:id="@+id/constraintLayout6"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="@dimen/_60sdp"-->
-<!--        android:background="@color/app_black"-->
-<!--        android:backgroundTint="@color/transparent"-->
-<!--        android:paddingHorizontal="@dimen/_10sdp"-->
-<!--        android:paddingTop="@dimen/_60sdp"-->
-<!--        android:paddingBottom="@dimen/_10sdp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-
-<!--        <TextView-->
-<!--            android:id="@+id/theBestText"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="@dimen/_15sdp"-->
-<!--            android:layout_marginBottom="@dimen/_20sdp"-->
-<!--            android:fontFamily="@font/outfit_semibold"-->
-<!--            android:gravity="center"-->
-<!--            android:text="@string/are_you_sure_to_exit"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="@dimen/_15sdp"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/btnExit"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/btnExit"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="@dimen/_35sdp"-->
-<!--            android:layout_marginStart="@dimen/_15sdp"-->
-<!--            android:layout_marginEnd="@dimen/_5sdp"-->
-<!--            android:backgroundTint="@color/lightGrey"-->
-<!--            android:fontFamily="@font/outfit"-->
-<!--            android:text="@string/close"-->
-<!--            android:textAllCaps="false"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="@dimen/_12sdp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/cancelBtn"-->
-<!--            app:layout_constraintHorizontal_bias="0.5"-->
-<!--            app:layout_constraintStart_toStartOf="parent" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/cancelBtn"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="@dimen/_35sdp"-->
-<!--            android:layout_marginStart="@dimen/_5sdp"-->
-<!--            android:layout_marginEnd="@dimen/_15sdp"-->
-<!--            android:backgroundTint="@color/green"-->
-<!--            android:fontFamily="@font/outfit"-->
-<!--            android:gravity="center"-->
-<!--            android:text="@string/no"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="@dimen/_12sdp"-->
-<!--            app:layout_constraintBottom_toBottomOf="@+id/btnExit"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.5"-->
-<!--            app:layout_constraintStart_toEndOf="@+id/btnExit" />-->
-
-
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="@dimen/_80sdp"-->
-<!--        android:layout_height="@dimen/_80sdp"-->
-<!--        android:background="@drawable/exit"-->
-<!--        android:elevation="@dimen/_5sdp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/constraintLayout6">-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/dialogImg"-->
-<!--            android:layout_width="@dimen/_40sdp"-->
-<!--            android:layout_height="@dimen/_40sdp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:tint="@color/white" />-->
-
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 

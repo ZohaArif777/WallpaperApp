@@ -168,4 +168,7 @@
     <string name="s21_label">एस२१</string>
     <string name="s20_label">एस२०</string>
     <string name="yes">हाँ</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">वॉलपेपर लोड करने के लिए इंटरनेट कनेक्शन आवश्यक है। सुनिश्चित करें कि आपके पास सही इंटरनेट कनेक्शन है</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="Exit">बाहर जाएं</string>
 </resources>

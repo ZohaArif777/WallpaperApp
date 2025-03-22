@@ -168,4 +168,7 @@
     <string name="s22_label">S22</string>
     <string name="s21_label">S21</string>
     <string name="s20_label">S20</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">Internet-yhteys vaaditaan taustakuvien lataamiseen. Varmista, että sinulla on asianmukainen yhteys</string>
+    <string name="cancel">Peruuta</string>
+    <string name="Exit">Poistu</string>
 </resources>

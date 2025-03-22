@@ -168,4 +168,7 @@
     <string name="s21_label">إس 21</string>
     <string name="s20_label">إس 20</string>
     <string name="yes">نعم</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">مطلوب اتصال بالإنترنت لتحميل الخلفيات. تأكد من أن لديك إنترنت مناسب</string>
+    <string name="cancel">إلغاء</string>
+    <string name="Exit">خروج</string>
 </resources>

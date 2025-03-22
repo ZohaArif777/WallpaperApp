@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.wallpaper.databinding.ActivitySettingBinding
-import com.wallpaper.base_app.language.Language
 import com.wallpaper.base_app.localization.LocalizationActivity
 import com.wallpaper.base_app.localization.SharedPrefs
 import java.io.IOException
@@ -29,6 +28,7 @@ class Setting : AppCompatActivity() {
         binding.apply {
             btnBack.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
             arrowIcon.setOnClickListener { navigateToLanguage() }
+            languageLayout.setOnClickListener{navigateToLanguage()}
             languageButton.setOnClickListener { navigateToLanguage() }
             rateButton.setOnClickListener { openAppInStore() }
             shareButton.setOnClickListener { shareApp() }
@@ -82,6 +82,5 @@ class Setting : AppCompatActivity() {
     private fun navigateToLanguage() {
         val intent = Intent(this, LocalizationActivity::class.java)
         startActivity(intent)
-        finish()
     }
 }

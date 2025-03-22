@@ -169,4 +169,7 @@
     <string name="s21_label">S21</string>
     <string name="s20_label">S20</string>
     <string name="yes">Ja</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">Internetverbindung erforderlich, um Hintergrundbilder zu laden. Stellen Sie sicher, dass Sie eine ordnungsgemäße Internetverbindung haben</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="Exit">Beenden</string>
 </resources>

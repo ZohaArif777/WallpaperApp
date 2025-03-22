@@ -169,4 +169,7 @@
     <string name="s21_label">S21</string>
     <string name="s20_label">S20</string>
     <string name="yes">Ναι</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">Απαιτείται σύνδεση στο διαδίκτυο για τη φόρτωση ταπετσαριών. Βεβαιωθείτε ότι έχετε σωστή σύνδεση</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="Exit">Έξοδος</string>
 </resources>

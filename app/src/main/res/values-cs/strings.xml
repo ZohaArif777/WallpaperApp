@@ -169,4 +169,7 @@
     <string name="aesthetics_label">Estetika</string>
     <string name="city_label">Město</string>
     <string name="yes">Ano</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">Pro načtení tapet je vyžadováno připojení k internetu. Ujistěte se, že máte správné připojení</string>
+    <string name="cancel">Zrušit</string>
+    <string name="Exit">Ukončit</string>
 </resources>

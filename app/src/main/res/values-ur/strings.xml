@@ -168,5 +168,7 @@
     <string name="ios14_label">آئی او ایس 14</string>
     <string name="ios13_label">آئی او ایس 13</string>
     <string name="yes">ہاں</string>
-
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">وال پیپر لوڈ کرنے کے لیے انٹرنیٹ کنکشن ضروری ہے۔ یقینی بنائیں کہ آپ کے پاس مناسب انٹرنیٹ موجود ہے</string>
+    <string name="cancel">منسوخ کریں</string>
+    <string name="Exit">خروج</string>
 </resources>

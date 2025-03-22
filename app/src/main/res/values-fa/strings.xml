@@ -168,5 +168,7 @@
     <string name="s22_label">S۲۲</string>
     <string name="s21_label">S۲۱</string>
     <string name="s20_label">S۲۰</string>
-
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">برای بارگذاری تصاویر پس‌زمینه، اتصال به اینترنت لازم است. مطمئن شوید که اتصال اینترنت مناسبی دارید</string>
+    <string name="cancel">لغو</string>
+    <string name="Exit">خروج</string>
 </resources>

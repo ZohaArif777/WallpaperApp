@@ -168,4 +168,7 @@
     <string name="s22_label">S22</string>
     <string name="s21_label">S21</string>
     <string name="s20_label">S20</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">Internetverbinding vereist om achtergronden te laden. Zorg ervoor dat je een goede internetverbinding hebt</string>
+    <string name="cancel">Annuleren</string>
+    <string name="Exit">Afsluiten</string>
 </resources>

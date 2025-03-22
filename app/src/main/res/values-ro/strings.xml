@@ -169,4 +169,7 @@
     <string name="s22_label">S22</string>
     <string name="s21_label">S21</string>
     <string name="s20_label">S20</string>
+    <string name="internet_connection_required_to_load_wallpapers_make_sure_you_have_proper_internet">Este necesară o conexiune la internet pentru a încărca imaginile de fundal. Asigurați-vă că aveți o conexiune adecvată</string>
+    <string name="cancel">Anulează</string>
+    <string name="Exit">Ieșire</string>
 </resources>

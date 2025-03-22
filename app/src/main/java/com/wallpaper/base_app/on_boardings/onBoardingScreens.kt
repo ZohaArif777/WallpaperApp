@@ -19,10 +19,10 @@ class OnBoardingScreens : AppCompatActivity() {
         binding = OnboardingScreensBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         setupViewPager()
         setupButtons()
     }
+
 
     private fun setupViewPager() {
         val items = listOf(
