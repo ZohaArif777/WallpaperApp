@@ -28,7 +28,7 @@ class Splashscreen : AppCompatActivity() {
         }
         LocalizationActivity.setLocale(this)
 
-        binding.getStarted.setOnClickListener() {
+        binding.getStarted.setOnClickListener {
 
             val isFirstTime = SharedPrefs.getPrefsBoolean(this, SharedPrefs.firstTimeKey, true)
             val isLocalizationShown =
@@ -41,7 +41,7 @@ class Splashscreen : AppCompatActivity() {
                     }
                     startActivityForResult(intent, 1001)
                 } else {
-                    goToOnBoarding()
+                   goToOnBoarding()
                 }
             } else {
                 goToMain()

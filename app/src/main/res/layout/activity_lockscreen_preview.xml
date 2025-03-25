@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pink"
-    tools:context=".features.lockScreens.LockscreenPreview">
+    tools:context=".features.lockScreen.LockscreenPreview">
 
     <ImageView
         android:id="@+id/imgWallpaper"

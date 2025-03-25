@@ -37,7 +37,6 @@ class ApplyRingtone : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = ringtoneAdapter
         }
-
         loadRingtones()
     }
 
