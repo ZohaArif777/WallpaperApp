@@ -65,4 +65,5 @@ class Splashscreen : AppCompatActivity() {
         startActivity(Intent(this, Dashboard::class.java))
         finish()
     }
+
 }
